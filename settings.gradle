@@ -1,0 +1,2 @@
+include ':app', ':tesseract4android'
+include ':openCVLibrary346'
