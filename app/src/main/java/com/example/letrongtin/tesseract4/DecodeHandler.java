@@ -151,6 +151,7 @@ public class DecodeHandler extends Handler {
             Utils.bitmapToMat(bitmap, imageMat);
             detectText(imageMat);
             textResult = baseApi.getUTF8Text();
+
             timeRequired = System.currentTimeMillis() - start;
 
             // Check for failure to recognize text
