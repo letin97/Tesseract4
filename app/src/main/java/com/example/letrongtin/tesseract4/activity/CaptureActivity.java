@@ -17,7 +17,6 @@
 
 package com.example.letrongtin.tesseract4.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -34,6 +33,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.text.ClipboardManager;
 import android.text.SpannableStringBuilder;
 import android.text.style.CharacterStyle;
@@ -70,6 +71,14 @@ import com.example.letrongtin.tesseract4.camera.CameraManager;
 import com.example.letrongtin.tesseract4.camera.ShutterButton;
 import com.example.letrongtin.tesseract4.language.LanguageCodeHelper;
 import com.example.letrongtin.tesseract4.view.ViewfinderView;
+import com.google.ar.core.Anchor;
+import com.google.ar.core.HitResult;
+import com.google.ar.core.Plane;
+import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.rendering.ModelRenderable;
+import com.google.ar.sceneform.ux.ArFragment;
+import com.google.ar.sceneform.ux.BaseArFragment;
+import com.google.ar.sceneform.ux.TransformableNode;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
 import org.opencv.android.BaseLoaderCallback;
@@ -87,7 +96,7 @@ import java.io.IOException;
  *
  * The code for this class was adapted from the ZXing project: http://code.google.com/p/zxing/
  */
-public final class CaptureActivity extends Activity implements SurfaceHolder.Callback,
+public final class CaptureActivity extends AppCompatActivity implements SurfaceHolder.Callback,
         ShutterButton.OnShutterButtonListener {
 
     private static final String TAG = CaptureActivity.class.getSimpleName();
@@ -215,6 +224,12 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
     public Mat imageMat;
     public Mat imageMat2;
+
+
+    private ArFragment arFragment;
+    private ModelRenderable bearRenderable;
+    int selected=1;
+
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
         public void onManagerConnected(int status) {
@@ -379,6 +394,47 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         });
 
         isEngineReady = false;
+
+        FragmentManager fm= getSupportFragmentManager();
+
+        arFragment = (ArFragment)getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
+
+
+        setupModel();
+
+        arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
+            @Override
+            public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
+                if(selected == 1 )
+                {
+                    Anchor anchor = hitResult.createAnchor();
+                    AnchorNode anchorNode = new AnchorNode(anchor);
+                    anchorNode.setParent(arFragment.getArSceneView().getScene());
+                    createModel(anchorNode,selected);
+                }
+            }
+        });
+    }
+
+    private void setupModel() {
+        ModelRenderable.builder()
+                .setSource(this,R.raw.bear)
+                .build().thenAccept(renderable->bearRenderable = renderable)
+                .exceptionally(
+                        throwable -> {
+                            Toast.makeText(this, "Không thể load bear model", Toast.LENGTH_SHORT).show();
+                            return null;
+                        }
+                );
+    }
+
+    private void createModel(AnchorNode anchorNode, int selected) {
+        if(selected==1) {
+            TransformableNode bear = new TransformableNode(arFragment.getTransformationSystem());
+            bear.setParent(anchorNode);
+            bear.setRenderable(bearRenderable);
+            bear.select();
+        }
     }
 
     @Override
