@@ -33,12 +33,4 @@ dependencies {
     implementation project(path: ':tesseract4android')
     implementation group: 'org.xeustechnologies', name: 'jtar', version: '1.0.4'
     implementation project(path: ':openCVLibrary346')
-
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.8.0'
 }
-
-
-sceneform.asset('sampledata/bear.fbx',
-        'default',
-        'sampledata/bear.sfa',
-        'src/main/res/raw/bear')
