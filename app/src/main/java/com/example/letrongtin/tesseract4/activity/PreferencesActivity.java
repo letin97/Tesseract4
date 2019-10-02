@@ -2,19 +2,16 @@ package com.example.letrongtin.tesseract4.activity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 
-import com.example.letrongtin.tesseract4.OcrCharacterHelper;
 import com.example.letrongtin.tesseract4.R;
 import com.example.letrongtin.tesseract4.language.LanguageCodeHelper;
 
 public class PreferencesActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    // Preference keys not carried over from ZXing project
     public static final String KEY_SOURCE_LANGUAGE_PREFERENCE = "sourceLanguageCodeOcrPref";
     public static final String KEY_TARGET_LANGUAGE_PREFERENCE = "targetLanguageCodeTranslationPref";
     public static final String KEY_TOGGLE_TRANSLATION = "preference_translation_toggle_translation";

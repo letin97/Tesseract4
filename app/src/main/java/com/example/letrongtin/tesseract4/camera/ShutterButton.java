@@ -29,7 +29,7 @@ import android.widget.ImageView;
  * 
  * The code for this class was adapted from the ZXing project: http://code.google.com/p/zxing
  */
-public class ShutterButton extends ImageView {
+public class ShutterButton extends android.support.v7.widget.AppCompatImageView {
 	/**
 	 * A callback to be invoked when a ShutterButton's pressed state changes.
 	 */

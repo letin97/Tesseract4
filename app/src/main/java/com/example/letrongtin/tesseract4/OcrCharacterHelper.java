@@ -3,6 +3,7 @@ package com.example.letrongtin.tesseract4;
 import android.content.SharedPreferences;
 
 public class OcrCharacterHelper {
+
     public static final String KEY_CHARACTER_BLACKLIST_AFRIKAANS = "preference_character_blacklist_afrikaans";
     public static final String KEY_CHARACTER_BLACKLIST_ALBANIAN = "preference_character_blacklist_albanian";
     public static final String KEY_CHARACTER_BLACKLIST_ARABIC = "preference_character_blacklist_arabic";

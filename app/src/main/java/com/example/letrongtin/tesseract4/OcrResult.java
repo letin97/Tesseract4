@@ -9,6 +9,7 @@ import android.graphics.Rect;
 import java.util.List;
 
 public class OcrResult {
+
     private Bitmap bitmap;
     private String text;
 
@@ -51,7 +52,7 @@ public class OcrResult {
         this.paint = new Paint();
     }
 
-    public OcrResult() {
+    OcrResult() {
         timestamp = System.currentTimeMillis();
         this.paint = new Paint();
     }

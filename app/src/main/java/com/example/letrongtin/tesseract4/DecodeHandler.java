@@ -27,7 +27,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DecodeHandler extends Handler {
+
     private static String TAG = DecodeHandler.class.getSimpleName();
+
     private final CaptureActivity activity;
     private boolean running = true;
     private final TessBaseAPI baseApi;
@@ -39,7 +41,6 @@ public class DecodeHandler extends Handler {
     public Mat imageMat;
     public Mat imageMat2;
 
-
     DecodeHandler(CaptureActivity activity) {
         this.activity = activity;
         baseApi = activity.getBaseApi();
@@ -48,7 +49,6 @@ public class DecodeHandler extends Handler {
         imageMat = activity.imageMat;
         imageMat2 = activity.imageMat2;
     }
-
 
     public void handleMessage(Message message) {
         if (!running) {
@@ -148,6 +148,7 @@ public class DecodeHandler extends Handler {
             //baseApi.setImage(ReadFile.readBitmap(bitmap));
 //            textResult = getOcrOfBitmap();
             //Utils.bitmapToMat(bitmap, imageMat);
+
             Utils.bitmapToMat(bitmap, imageMat);
             detectText(imageMat);
             textResult = baseApi.getUTF8Text();

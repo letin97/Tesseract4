@@ -1,22 +1,6 @@
-/*
- * Copyright (C) 2008 ZXing authors
- * Copyright 2011 Robert Theis
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.letrongtin.tesseract4.activity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -28,7 +12,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -69,11 +52,20 @@ import com.example.letrongtin.tesseract4.OcrResultText;
 import com.example.letrongtin.tesseract4.R;
 import com.example.letrongtin.tesseract4.camera.CameraManager;
 import com.example.letrongtin.tesseract4.camera.ShutterButton;
+import com.example.letrongtin.tesseract4.common.helpers.CameraPermissionHelper;
 import com.example.letrongtin.tesseract4.language.LanguageCodeHelper;
 import com.example.letrongtin.tesseract4.view.ViewfinderView;
 import com.google.ar.core.Anchor;
+import com.google.ar.core.ArCoreApk;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
+import com.google.ar.core.Session;
+import com.google.ar.core.SharedCamera;
+import com.google.ar.core.exceptions.UnavailableApkTooOldException;
+import com.google.ar.core.exceptions.UnavailableArcoreNotInstalledException;
+import com.google.ar.core.exceptions.UnavailableDeviceNotCompatibleException;
+import com.google.ar.core.exceptions.UnavailableSdkTooOldException;
+import com.google.ar.core.exceptions.UnavailableUserDeclinedInstallationException;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
@@ -88,14 +80,8 @@ import org.opencv.core.Mat;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.EnumSet;
 
-/**
- * This activity opens the camera and does the actual scanning on a background thread. It draws a
- * viewfinder to help the user place the text correctly, shows feedback as the image processing
- * is happening, and then overlays the results when a scan is successful.
- *
- * The code for this class was adapted from the ZXing project: http://code.google.com/p/zxing/
- */
 public final class CaptureActivity extends AppCompatActivity implements SurfaceHolder.Callback,
         ShutterButton.OnShutterButtonListener {
 
@@ -138,7 +124,6 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
     /** Whether the light should be initially activated by default. */
     public static final boolean DEFAULT_TOGGLE_LIGHT = false;
-
 
     /** Flag to display the real-time recognition results at the top of the scanning screen. */
     private static final boolean CONTINUOUS_DISPLAY_RECOGNIZED_TEXT = true;
@@ -221,14 +206,19 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     private boolean isPaused;
     private static boolean isFirstLaunch; // True if this is the first time the app is being run
 
-
+    // penCV
     public Mat imageMat;
     public Mat imageMat2;
 
-
+    // ARCore
     private ArFragment arFragment;
     private ModelRenderable bearRenderable;
+
+    private boolean state=true;
     int selected=1;
+    Session sharedSession;
+    SharedCamera sharedCamera;
+    String cameraId;
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -259,6 +249,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         return cameraManager;
     }
 
+    @SuppressLint("ServiceCast")
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -273,6 +264,27 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.capture);
+
+        FragmentManager fm = getSupportFragmentManager();
+
+        arFragment = (ArFragment)getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
+
+
+        //setupModel();
+
+        arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
+            @Override
+            public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
+                if(selected == 1 )
+                {
+                    Anchor anchor = hitResult.createAnchor();
+                    AnchorNode anchorNode = new AnchorNode(anchor);
+                    anchorNode.setParent(arFragment.getArSceneView().getScene());
+                    createModel(anchorNode,selected);
+                }
+            }
+        });
+
         viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
         cameraButtonView = findViewById(R.id.camera_button_view);
         resultView = findViewById(R.id.result_view);
@@ -309,131 +321,143 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
         progressView = (View) findViewById(R.id.indeterminate_progress_indicator_view);
 
+        if (!CameraPermissionHelper.hasCameraPermission(this)) {
+            CameraPermissionHelper.requestCameraPermission(this);
+        }
+
+
+        ArCoreApk.Availability availability =
+                ArCoreApk.getInstance().checkAvailability(this);
+
+// Request ARCore installation or update if needed.
+        switch (availability) {
+            case SUPPORTED_INSTALLED:
+                break;
+            case SUPPORTED_APK_TOO_OLD:
+            case SUPPORTED_NOT_INSTALLED:
+                try {
+                    ArCoreApk.InstallStatus installStatus =
+                            ArCoreApk.getInstance().requestInstall(this,true);
+                } catch (UnavailableDeviceNotCompatibleException e) {
+                    e.printStackTrace();
+                } catch (UnavailableUserDeclinedInstallationException e) {
+                    e.printStackTrace();
+                }
+                break;
+        }
+
+        try {
+            sharedSession = new Session(this, EnumSet.of(Session.Feature.SHARED_CAMERA));
+        } catch (UnavailableArcoreNotInstalledException e) {
+            e.printStackTrace();
+        } catch (UnavailableApkTooOldException e) {
+            e.printStackTrace();
+        } catch (UnavailableSdkTooOldException e) {
+            e.printStackTrace();
+        } catch (UnavailableDeviceNotCompatibleException e) {
+            e.printStackTrace();
+        }
+
+        sharedCamera = sharedSession.getSharedCamera();
+
+        cameraId = sharedSession.getCameraConfig().getCameraId();
+        //cameraManager = (CameraManager) this.getSystemService(Context.CAMERA_SERVICE);
+        //cameraManager.openCamera(cameraId, wrappedCallback, backgroundHandler);
         cameraManager = new CameraManager(getApplication());
         viewfinderView.setCameraManager(cameraManager);
 
         // Set listener to change the size of the viewfinder rectangle.
-        viewfinderView.setOnTouchListener(new View.OnTouchListener() {
-            int lastX = -1;
-            int lastY = -1;
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        lastX = -1;
-                        lastY = -1;
-                        return true;
-                    case MotionEvent.ACTION_MOVE:
-                        int currentX = (int) event.getX();
-                        int currentY = (int) event.getY();
-
-                        try {
-                            Rect rect = cameraManager.getFramingRect();
-
-                            final int BUFFER = 50;
-                            final int BIG_BUFFER = 60;
-                            if (lastX >= 0) {
-                                // Adjust the size of the viewfinder rectangle. Check if the touch event occurs in the corner areas first, because the regions overlap.
-                                if (((currentX >= rect.left - BIG_BUFFER && currentX <= rect.left + BIG_BUFFER) || (lastX >= rect.left - BIG_BUFFER && lastX <= rect.left + BIG_BUFFER))
-                                        && ((currentY <= rect.top + BIG_BUFFER && currentY >= rect.top - BIG_BUFFER) || (lastY <= rect.top + BIG_BUFFER && lastY >= rect.top - BIG_BUFFER))) {
-                                    // Top left corner: adjust both top and left sides
-                                    cameraManager.adjustFramingRect( 2 * (lastX - currentX), 2 * (lastY - currentY));
-                                    viewfinderView.removeResultText();
-                                } else if (((currentX >= rect.right - BIG_BUFFER && currentX <= rect.right + BIG_BUFFER) || (lastX >= rect.right - BIG_BUFFER && lastX <= rect.right + BIG_BUFFER))
-                                        && ((currentY <= rect.top + BIG_BUFFER && currentY >= rect.top - BIG_BUFFER) || (lastY <= rect.top + BIG_BUFFER && lastY >= rect.top - BIG_BUFFER))) {
-                                    // Top right corner: adjust both top and right sides
-                                    cameraManager.adjustFramingRect( 2 * (currentX - lastX), 2 * (lastY - currentY));
-                                    viewfinderView.removeResultText();
-                                } else if (((currentX >= rect.left - BIG_BUFFER && currentX <= rect.left + BIG_BUFFER) || (lastX >= rect.left - BIG_BUFFER && lastX <= rect.left + BIG_BUFFER))
-                                        && ((currentY <= rect.bottom + BIG_BUFFER && currentY >= rect.bottom - BIG_BUFFER) || (lastY <= rect.bottom + BIG_BUFFER && lastY >= rect.bottom - BIG_BUFFER))) {
-                                    // Bottom left corner: adjust both bottom and left sides
-                                    cameraManager.adjustFramingRect(2 * (lastX - currentX), 2 * (currentY - lastY));
-                                    viewfinderView.removeResultText();
-                                } else if (((currentX >= rect.right - BIG_BUFFER && currentX <= rect.right + BIG_BUFFER) || (lastX >= rect.right - BIG_BUFFER && lastX <= rect.right + BIG_BUFFER))
-                                        && ((currentY <= rect.bottom + BIG_BUFFER && currentY >= rect.bottom - BIG_BUFFER) || (lastY <= rect.bottom + BIG_BUFFER && lastY >= rect.bottom - BIG_BUFFER))) {
-                                    // Bottom right corner: adjust both bottom and right sides
-                                    cameraManager.adjustFramingRect(2 * (currentX - lastX), 2 * (currentY - lastY));
-                                    viewfinderView.removeResultText();
-                                } else if (((currentX >= rect.left - BUFFER && currentX <= rect.left + BUFFER) || (lastX >= rect.left - BUFFER && lastX <= rect.left + BUFFER))
-                                        && ((currentY <= rect.bottom && currentY >= rect.top) || (lastY <= rect.bottom && lastY >= rect.top))) {
-                                    // Adjusting left side: event falls within BUFFER pixels of left side, and between top and bottom side limits
-                                    cameraManager.adjustFramingRect(2 * (lastX - currentX), 0);
-                                    viewfinderView.removeResultText();
-                                } else if (((currentX >= rect.right - BUFFER && currentX <= rect.right + BUFFER) || (lastX >= rect.right - BUFFER && lastX <= rect.right + BUFFER))
-                                        && ((currentY <= rect.bottom && currentY >= rect.top) || (lastY <= rect.bottom && lastY >= rect.top))) {
-                                    // Adjusting right side: event falls within BUFFER pixels of right side, and between top and bottom side limits
-                                    cameraManager.adjustFramingRect(2 * (currentX - lastX), 0);
-                                    viewfinderView.removeResultText();
-                                } else if (((currentY <= rect.top + BUFFER && currentY >= rect.top - BUFFER) || (lastY <= rect.top + BUFFER && lastY >= rect.top - BUFFER))
-                                        && ((currentX <= rect.right && currentX >= rect.left) || (lastX <= rect.right && lastX >= rect.left))) {
-                                    // Adjusting top side: event falls within BUFFER pixels of top side, and between left and right side limits
-                                    cameraManager.adjustFramingRect(0, 2 * (lastY - currentY));
-                                    viewfinderView.removeResultText();
-                                } else if (((currentY <= rect.bottom + BUFFER && currentY >= rect.bottom - BUFFER) || (lastY <= rect.bottom + BUFFER && lastY >= rect.bottom - BUFFER))
-                                        && ((currentX <= rect.right && currentX >= rect.left) || (lastX <= rect.right && lastX >= rect.left))) {
-                                    // Adjusting bottom side: event falls within BUFFER pixels of bottom side, and between left and right side limits
-                                    cameraManager.adjustFramingRect(0, 2 * (currentY - lastY));
-                                    viewfinderView.removeResultText();
-                                }
-                            }
-                        } catch (NullPointerException e) {
-                            Log.e(TAG, "Framing rect not available", e);
-                        }
-                        v.invalidate();
-                        lastX = currentX;
-                        lastY = currentY;
-                        return true;
-                    case MotionEvent.ACTION_UP:
-                        lastX = -1;
-                        lastY = -1;
-                        return true;
-                }
-                return false;
-            }
-        });
+//        viewfinderView.setOnTouchListener(new View.OnTouchListener() {
+//            int lastX = -1;
+//            int lastY = -1;
+//
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                switch (event.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        lastX = -1;
+//                        lastY = -1;
+//                        return true;
+//                    case MotionEvent.ACTION_MOVE:
+//                        int currentX = (int) event.getX();
+//                        int currentY = (int) event.getY();
+//
+//                        try {
+//                            Rect rect = cameraManager.getFramingRect();
+//
+//                            final int BUFFER = 50;
+//                            final int BIG_BUFFER = 60;
+//                            if (lastX >= 0) {
+//                                // Adjust the size of the viewfinder rectangle. Check if the touch event occurs in the corner areas first, because the regions overlap.
+//                                if (((currentX >= rect.left - BIG_BUFFER && currentX <= rect.left + BIG_BUFFER) || (lastX >= rect.left - BIG_BUFFER && lastX <= rect.left + BIG_BUFFER))
+//                                        && ((currentY <= rect.top + BIG_BUFFER && currentY >= rect.top - BIG_BUFFER) || (lastY <= rect.top + BIG_BUFFER && lastY >= rect.top - BIG_BUFFER))) {
+//                                    // Top left corner: adjust both top and left sides
+//                                    cameraManager.adjustFramingRect( 2 * (lastX - currentX), 2 * (lastY - currentY));
+//                                    viewfinderView.removeResultText();
+//                                } else if (((currentX >= rect.right - BIG_BUFFER && currentX <= rect.right + BIG_BUFFER) || (lastX >= rect.right - BIG_BUFFER && lastX <= rect.right + BIG_BUFFER))
+//                                        && ((currentY <= rect.top + BIG_BUFFER && currentY >= rect.top - BIG_BUFFER) || (lastY <= rect.top + BIG_BUFFER && lastY >= rect.top - BIG_BUFFER))) {
+//                                    // Top right corner: adjust both top and right sides
+//                                    cameraManager.adjustFramingRect( 2 * (currentX - lastX), 2 * (lastY - currentY));
+//                                    viewfinderView.removeResultText();
+//                                } else if (((currentX >= rect.left - BIG_BUFFER && currentX <= rect.left + BIG_BUFFER) || (lastX >= rect.left - BIG_BUFFER && lastX <= rect.left + BIG_BUFFER))
+//                                        && ((currentY <= rect.bottom + BIG_BUFFER && currentY >= rect.bottom - BIG_BUFFER) || (lastY <= rect.bottom + BIG_BUFFER && lastY >= rect.bottom - BIG_BUFFER))) {
+//                                    // Bottom left corner: adjust both bottom and left sides
+//                                    cameraManager.adjustFramingRect(2 * (lastX - currentX), 2 * (currentY - lastY));
+//                                    viewfinderView.removeResultText();
+//                                } else if (((currentX >= rect.right - BIG_BUFFER && currentX <= rect.right + BIG_BUFFER) || (lastX >= rect.right - BIG_BUFFER && lastX <= rect.right + BIG_BUFFER))
+//                                        && ((currentY <= rect.bottom + BIG_BUFFER && currentY >= rect.bottom - BIG_BUFFER) || (lastY <= rect.bottom + BIG_BUFFER && lastY >= rect.bottom - BIG_BUFFER))) {
+//                                    // Bottom right corner: adjust both bottom and right sides
+//                                    cameraManager.adjustFramingRect(2 * (currentX - lastX), 2 * (currentY - lastY));
+//                                    viewfinderView.removeResultText();
+//                                } else if (((currentX >= rect.left - BUFFER && currentX <= rect.left + BUFFER) || (lastX >= rect.left - BUFFER && lastX <= rect.left + BUFFER))
+//                                        && ((currentY <= rect.bottom && currentY >= rect.top) || (lastY <= rect.bottom && lastY >= rect.top))) {
+//                                    // Adjusting left side: event falls within BUFFER pixels of left side, and between top and bottom side limits
+//                                    cameraManager.adjustFramingRect(2 * (lastX - currentX), 0);
+//                                    viewfinderView.removeResultText();
+//                                } else if (((currentX >= rect.right - BUFFER && currentX <= rect.right + BUFFER) || (lastX >= rect.right - BUFFER && lastX <= rect.right + BUFFER))
+//                                        && ((currentY <= rect.bottom && currentY >= rect.top) || (lastY <= rect.bottom && lastY >= rect.top))) {
+//                                    // Adjusting right side: event falls within BUFFER pixels of right side, and between top and bottom side limits
+//                                    cameraManager.adjustFramingRect(2 * (currentX - lastX), 0);
+//                                    viewfinderView.removeResultText();
+//                                } else if (((currentY <= rect.top + BUFFER && currentY >= rect.top - BUFFER) || (lastY <= rect.top + BUFFER && lastY >= rect.top - BUFFER))
+//                                        && ((currentX <= rect.right && currentX >= rect.left) || (lastX <= rect.right && lastX >= rect.left))) {
+//                                    // Adjusting top side: event falls within BUFFER pixels of top side, and between left and right side limits
+//                                    cameraManager.adjustFramingRect(0, 2 * (lastY - currentY));
+//                                    viewfinderView.removeResultText();
+//                                } else if (((currentY <= rect.bottom + BUFFER && currentY >= rect.bottom - BUFFER) || (lastY <= rect.bottom + BUFFER && lastY >= rect.bottom - BUFFER))
+//                                        && ((currentX <= rect.right && currentX >= rect.left) || (lastX <= rect.right && lastX >= rect.left))) {
+//                                    // Adjusting bottom side: event falls within BUFFER pixels of bottom side, and between left and right side limits
+//                                    cameraManager.adjustFramingRect(0, 2 * (currentY - lastY));
+//                                    viewfinderView.removeResultText();
+//                                }
+//                            }
+//                        } catch (NullPointerException e) {
+//                            Log.e(TAG, "Framing rect not available", e);
+//                        }
+//                        v.invalidate();
+//                        lastX = currentX;
+//                        lastY = currentY;
+//                        return true;
+//                    case MotionEvent.ACTION_UP:
+//                        lastX = -1;
+//                        lastY = -1;
+//                        return true;
+//                }
+//                return false;
+//            }
+//        });
 
         isEngineReady = false;
 
-        FragmentManager fm= getSupportFragmentManager();
 
-        arFragment = (ArFragment)getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
-
-
-        setupModel();
-
-        arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
-            @Override
-            public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
-                if(selected == 1 )
-                {
-                    Anchor anchor = hitResult.createAnchor();
-                    AnchorNode anchorNode = new AnchorNode(anchor);
-                    anchorNode.setParent(arFragment.getArSceneView().getScene());
-                    createModel(anchorNode,selected);
-                }
-            }
-        });
-    }
-
-    private void setupModel() {
-        ModelRenderable.builder()
-                .setSource(this,R.raw.bear)
-                .build().thenAccept(renderable->bearRenderable = renderable)
-                .exceptionally(
-                        throwable -> {
-                            Toast.makeText(this, "Không thể load bear model", Toast.LENGTH_SHORT).show();
-                            return null;
-                        }
-                );
     }
 
     private void createModel(AnchorNode anchorNode, int selected) {
         if(selected==1) {
-            TransformableNode bear = new TransformableNode(arFragment.getTransformationSystem());
-            bear.setParent(anchorNode);
-            bear.setRenderable(bearRenderable);
-            bear.select();
+            TransformableNode bearTransform = new TransformableNode(arFragment.getTransformationSystem());
+            bearTransform.setParent(anchorNode);
+            bearTransform.setRenderable(bearRenderable);
+            bearTransform.select();
         }
     }
 
@@ -558,6 +582,8 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     /** Initializes the camera and starts the handler to begin previewing. */
     private void initCamera(SurfaceHolder surfaceHolder) {
         Log.d(TAG, "initCamera()");
+        if(state==true)
+            return;
         if (surfaceHolder == null) {
             throw new IllegalStateException("No SurfaceHolder provided");
         }

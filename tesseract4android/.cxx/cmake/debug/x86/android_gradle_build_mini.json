@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/CMakeLists.txt",
+    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/libjpeg/CMakeLists.txt",
+    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/libpng/CMakeLists.txt",
+    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/leptonica/CMakeLists.txt",
+    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/tesseract/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/x86 --target clean"
+  ],
+  "libraries": {
+    "leptonica-Debug-x86": {
+      "artifactName": "leptonica",
+      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/x86 --target leptonica",
+      "abi": "x86",
+      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/debug/obj/x86/libleptonica.so"
+    },
+    "png-Debug-x86": {
+      "artifactName": "png",
+      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/x86 --target png",
+      "abi": "x86",
+      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/debug/obj/x86/libpng.so"
+    },
+    "jpeg-Debug-x86": {
+      "artifactName": "jpeg",
+      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/x86 --target jpeg",
+      "abi": "x86",
+      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/debug/obj/x86/libjpeg.so"
+    },
+    "tesseract-Debug-x86": {
+      "artifactName": "tesseract",
+      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/x86 --target tesseract",
+      "abi": "x86",
+      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/debug/obj/x86/libtesseract.so"
+    }
+  }
+}

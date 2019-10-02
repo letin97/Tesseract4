@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/CMakeLists.txt",
+    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/libjpeg/CMakeLists.txt",
+    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/libpng/CMakeLists.txt",
+    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/leptonica/CMakeLists.txt",
+    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/tesseract/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/release/armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "png-Release-armeabi-v7a": {
+      "artifactName": "png",
+      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/release/armeabi-v7a --target png",
+      "abi": "armeabi-v7a",
+      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/release/obj/armeabi-v7a/libpng.so"
+    },
+    "jpeg-Release-armeabi-v7a": {
+      "artifactName": "jpeg",
+      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/release/armeabi-v7a --target jpeg",
+      "abi": "armeabi-v7a",
+      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/release/obj/armeabi-v7a/libjpeg.so"
+    },
+    "leptonica-Release-armeabi-v7a": {
+      "artifactName": "leptonica",
+      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/release/armeabi-v7a --target leptonica",
+      "abi": "armeabi-v7a",
+      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/release/obj/armeabi-v7a/libleptonica.so"
+    },
+    "tesseract-Release-armeabi-v7a": {
+      "artifactName": "tesseract",
+      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/release/armeabi-v7a --target tesseract",
+      "abi": "armeabi-v7a",
+      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/release/obj/armeabi-v7a/libtesseract.so"
+    }
+  }
+}

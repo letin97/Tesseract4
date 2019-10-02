@@ -1,0 +1,14 @@
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/libjpeg/CMakeFiles/rebuild_cache.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/libjpeg/CMakeFiles/edit_cache.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/libjpeg/CMakeFiles/jpeg.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/libpng/CMakeFiles/edit_cache.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/libpng/CMakeFiles/rebuild_cache.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/libpng/CMakeFiles/png.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/leptonica/CMakeFiles/edit_cache.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/leptonica/CMakeFiles/rebuild_cache.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/leptonica/CMakeFiles/leptonica.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/tesseract/CMakeFiles/edit_cache.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/tesseract/CMakeFiles/rebuild_cache.dir
+/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a/tesseract/CMakeFiles/tesseract.dir

@@ -6,6 +6,7 @@ import android.graphics.Rect;
 import java.util.List;
 
 public class OcrResultText {
+
     private final String text;
 
     private final int[] wordConfidences;

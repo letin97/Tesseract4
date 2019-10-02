@@ -10,6 +10,7 @@ import com.example.letrongtin.tesseract4.activity.CaptureActivity;
 import com.example.letrongtin.tesseract4.camera.CameraManager;
 
 public class CaptureActivityHandler extends Handler {
+
     private static final String TAG = CaptureActivityHandler.class.getSimpleName();
 
     private final CaptureActivity activity;
