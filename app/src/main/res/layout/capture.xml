@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <SurfaceView android:id="@+id/preview_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"/>
-
-    <fragment android:name="com.google.ar.sceneform.ux.ArFragment"
-        android:id="@+id/ux_fragment"
+    <SurfaceView
+        android:id="@+id/preview_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -21,8 +17,8 @@
         android:background="#0000"
         android:visibility="gone"/>
 
-
-    <LinearLayout android:id="@+id/result_view"
+    <LinearLayout
+        android:id="@+id/result_view"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +29,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
             android:padding="12dp">
@@ -44,7 +40,8 @@
                 android:layout_height="match_parent"
                 android:gravity="right|center_vertical">
 
-                <ImageView android:id="@+id/image_view"
+                <ImageView
+                    android:id="@+id/image_view"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:maxWidth="160dp"
@@ -58,7 +55,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <TextView android:id="@+id/source_language_text_view_label"
+                    <TextView
+                        android:id="@+id/source_language_text_view_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="OCR"
@@ -67,7 +65,8 @@
                         android:textSize="14sp"
                         android:paddingRight="4dp"/>
 
-                    <TextView android:id="@+id/source_language_text_view"
+                    <TextView
+                        android:id="@+id/source_language_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/result_minor_text"
@@ -80,7 +79,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <TextView android:id="@+id/translation_language_label_text_view"
+                    <TextView
+                        android:id="@+id/translation_language_label_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Translation"
@@ -89,7 +89,8 @@
                         android:textSize="14sp"
                         android:paddingRight="4dp"/>
 
-                    <TextView android:id="@+id/translation_language_text_view"
+                    <TextView
+                        android:id="@+id/translation_language_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/translation_text"
@@ -109,7 +110,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView android:id="@+id/ocr_result_text_view"
+                    <TextView
+                        android:id="@+id/ocr_result_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/result_text"
@@ -118,7 +120,8 @@
                         android:paddingLeft="12dp"
                         android:autoLink="web"/>
 
-                    <TextView android:id="@+id/translation_text_view"
+                    <TextView
+                        android:id="@+id/translation_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/translation_text"
@@ -128,19 +131,20 @@
                         android:autoLink="web"
                         android:clickable="true"/>
 
-                    <LinearLayout android:id="@+id/indeterminate_progress_indicator_view"
+                    <LinearLayout
+                        android:id="@+id/indeterminate_progress_indicator_view"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        >
+                        android:layout_height="wrap_content">
 
-                        <ProgressBar android:id="@+id/progress_small"
+                        <ProgressBar
+                            android:id="@+id/progress_small"
                             style="?android:attr/progressBarStyleSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="12dp"
                             android:paddingTop="10dp"/>
-                    </LinearLayout>
 
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -150,11 +154,13 @@
 
     </LinearLayout>
 
-    <RelativeLayout android:id="@+id/camera_button_view"
+    <RelativeLayout
+        android:id="@+id/camera_button_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView android:id="@+id/status_view_top"
+        <TextView
+            android:id="@+id/status_view_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -187,7 +193,8 @@
             android:scaleType="center"
             android:visibility="gone" />
 
-        <TextView android:id="@+id/status_view_bottom"
+        <TextView
+            android:id="@+id/status_view_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

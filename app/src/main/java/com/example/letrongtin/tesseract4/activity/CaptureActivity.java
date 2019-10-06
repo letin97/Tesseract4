@@ -53,6 +53,7 @@ import com.example.letrongtin.tesseract4.R;
 import com.example.letrongtin.tesseract4.camera.CameraManager;
 import com.example.letrongtin.tesseract4.camera.ShutterButton;
 import com.example.letrongtin.tesseract4.common.helpers.CameraPermissionHelper;
+import com.example.letrongtin.tesseract4.enums.AnimalEnum;
 import com.example.letrongtin.tesseract4.language.LanguageCodeHelper;
 import com.example.letrongtin.tesseract4.view.ViewfinderView;
 import com.google.ar.core.Anchor;
@@ -206,19 +207,9 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     private boolean isPaused;
     private static boolean isFirstLaunch; // True if this is the first time the app is being run
 
-    // penCV
+    // openCV
     public Mat imageMat;
     public Mat imageMat2;
-
-    // ARCore
-    private ArFragment arFragment;
-    private ModelRenderable bearRenderable;
-
-    private boolean state=true;
-    int selected=1;
-    Session sharedSession;
-    SharedCamera sharedCamera;
-    String cameraId;
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -267,24 +258,6 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
         FragmentManager fm = getSupportFragmentManager();
 
-        arFragment = (ArFragment)getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
-
-
-        //setupModel();
-
-        arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
-            @Override
-            public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
-                if(selected == 1 )
-                {
-                    Anchor anchor = hitResult.createAnchor();
-                    AnchorNode anchorNode = new AnchorNode(anchor);
-                    anchorNode.setParent(arFragment.getArSceneView().getScene());
-                    createModel(anchorNode,selected);
-                }
-            }
-        });
-
         viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
         cameraButtonView = findViewById(R.id.camera_button_view);
         resultView = findViewById(R.id.result_view);
@@ -326,41 +299,41 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         }
 
 
-        ArCoreApk.Availability availability =
-                ArCoreApk.getInstance().checkAvailability(this);
-
-// Request ARCore installation or update if needed.
-        switch (availability) {
-            case SUPPORTED_INSTALLED:
-                break;
-            case SUPPORTED_APK_TOO_OLD:
-            case SUPPORTED_NOT_INSTALLED:
-                try {
-                    ArCoreApk.InstallStatus installStatus =
-                            ArCoreApk.getInstance().requestInstall(this,true);
-                } catch (UnavailableDeviceNotCompatibleException e) {
-                    e.printStackTrace();
-                } catch (UnavailableUserDeclinedInstallationException e) {
-                    e.printStackTrace();
-                }
-                break;
-        }
-
-        try {
-            sharedSession = new Session(this, EnumSet.of(Session.Feature.SHARED_CAMERA));
-        } catch (UnavailableArcoreNotInstalledException e) {
-            e.printStackTrace();
-        } catch (UnavailableApkTooOldException e) {
-            e.printStackTrace();
-        } catch (UnavailableSdkTooOldException e) {
-            e.printStackTrace();
-        } catch (UnavailableDeviceNotCompatibleException e) {
-            e.printStackTrace();
-        }
-
-        sharedCamera = sharedSession.getSharedCamera();
-
-        cameraId = sharedSession.getCameraConfig().getCameraId();
+//        ArCoreApk.Availability availability =
+//                ArCoreApk.getInstance().checkAvailability(this);
+//
+//// Request ARCore installation or update if needed.
+//        switch (availability) {
+//            case SUPPORTED_INSTALLED:
+//                break;
+//            case SUPPORTED_APK_TOO_OLD:
+//            case SUPPORTED_NOT_INSTALLED:
+//                try {
+//                    ArCoreApk.InstallStatus installStatus =
+//                            ArCoreApk.getInstance().requestInstall(this,true);
+//                } catch (UnavailableDeviceNotCompatibleException e) {
+//                    e.printStackTrace();
+//                } catch (UnavailableUserDeclinedInstallationException e) {
+//                    e.printStackTrace();
+//                }
+//                break;
+//        }
+//
+//        try {
+//            sharedSession = new Session(this, EnumSet.of(Session.Feature.SHARED_CAMERA));
+//        } catch (UnavailableArcoreNotInstalledException e) {
+//            e.printStackTrace();
+//        } catch (UnavailableApkTooOldException e) {
+//            e.printStackTrace();
+//        } catch (UnavailableSdkTooOldException e) {
+//            e.printStackTrace();
+//        } catch (UnavailableDeviceNotCompatibleException e) {
+//            e.printStackTrace();
+//        }
+//
+//        sharedCamera = sharedSession.getSharedCamera();
+//
+//        cameraId = sharedSession.getCameraConfig().getCameraId();
         //cameraManager = (CameraManager) this.getSystemService(Context.CAMERA_SERVICE);
         //cameraManager.openCamera(cameraId, wrappedCallback, backgroundHandler);
         cameraManager = new CameraManager(getApplication());
@@ -448,17 +421,6 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 //        });
 
         isEngineReady = false;
-
-
-    }
-
-    private void createModel(AnchorNode anchorNode, int selected) {
-        if(selected==1) {
-            TransformableNode bearTransform = new TransformableNode(arFragment.getTransformationSystem());
-            bearTransform.setParent(anchorNode);
-            bearTransform.setRenderable(bearRenderable);
-            bearTransform.select();
-        }
     }
 
     @Override
@@ -466,10 +428,10 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         super.onResume();
 
         if(!OpenCVLoader.initDebug()){
-            Log.d(TAG,"OpenCv problem");
+            Log.d(TAG,"openCV problem");
             OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION, this, mLoaderCallback);
         }else{
-            Log.d(TAG, "OpenCV initiated success");
+            Log.d(TAG, "openCV initiated success");
             mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         }
 
@@ -582,8 +544,8 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     /** Initializes the camera and starts the handler to begin previewing. */
     private void initCamera(SurfaceHolder surfaceHolder) {
         Log.d(TAG, "initCamera()");
-        if(state==true)
-            return;
+//        if(state==true)
+//            return;
         if (surfaceHolder == null) {
             throw new IllegalStateException("No SurfaceHolder provided");
         }
@@ -920,6 +882,15 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
             statusViewTop.setBackgroundResource(R.color.status_top_text_background);
 
             statusViewTop.getBackground().setAlpha(meanConfidence * (255 / 100));
+
+            // Intent ARActivity\
+            String nameAnimal = ocrResult.getText().toLowerCase();
+            AnimalEnum animalEnum = AnimalEnum.getAnimalEnum(nameAnimal);
+            if (animalEnum != null) {
+                Intent intent = new Intent(getApplicationContext(), ARActivity.class);
+                intent.putExtra("ANIMAL_NAME", nameAnimal);
+                startActivity(intent);
+            }
         }
 
         if (CONTINUOUS_DISPLAY_METADATA) {

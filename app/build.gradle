@@ -31,9 +31,70 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(path: ':tesseract4android')
-    implementation group: 'org.xeustechnologies', name: 'jtar', version: '1.0.4'
+    implementation group: 'org.xeustechnologies', name: 'jtar', version: '1.1'
     implementation project(path: ':openCVLibrary346')
-    implementation 'de.javagl:obj:0.2.1'
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.8.0'
+    implementation 'de.javagl:obj:0.3.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.12.0'
     implementation 'com.android.support:design:28.0.0'
 }
+
+sceneform.asset('sampledata/models/bear.fbx',
+        'default',
+        'sampledata/models/bear.sfa',
+        'src/main/res/raw/bear')
+
+sceneform.asset('sampledata/models/cat.fbx',
+        'default',
+        'sampledata/models/cat.sfa',
+        'src/main/res/raw/cat')
+
+
+sceneform.asset('sampledata/models/cow.fbx',
+        'default',
+        'sampledata/models/cow.sfa',
+        'src/main/res/raw/cow')
+
+sceneform.asset('sampledata/models/dog.fbx',
+        'default',
+        'sampledata/models/dog.sfa',
+        'src/main/res/raw/dog')
+
+sceneform.asset('sampledata/models/elephant.fbx',
+        'default',
+        'sampledata/models/elephant.sfa',
+        'src/main/res/raw/elephant')
+
+sceneform.asset('sampledata/models/ferret.fbx',
+        'default',
+        'sampledata/models/ferret.sfa',
+        'src/main/res/raw/ferret')
+
+sceneform.asset('sampledata/models/hippopotamus.fbx',
+        'default',
+        'sampledata/models/hippopotamus.sfa',
+        'src/main/res/raw/hippopotamus')
+
+sceneform.asset('sampledata/models/horse.fbx',
+        'default',
+        'sampledata/models/horse.sfa',
+        'src/main/res/raw/horse')
+
+sceneform.asset('sampledata/models/koala_bear.fbx',
+        'default',
+        'sampledata/models/koala_bear.sfa',
+        'src/main/res/raw/koala_bear')
+
+sceneform.asset('sampledata/models/lion.fbx',
+        'default',
+        'sampledata/models/lion.sfa',
+        'src/main/res/raw/lion')
+
+sceneform.asset('sampledata/models/reindeer.fbx',
+        'default',
+        'sampledata/models/reindeer.sfa',
+        'src/main/res/raw/reindeer')
+
+sceneform.asset('sampledata/models/wolverine.fbx',
+        'default',
+        'sampledata/models/wolverine.sfa',
+        'src/main/res/raw/wolverine')
