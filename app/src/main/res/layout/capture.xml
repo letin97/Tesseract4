@@ -15,7 +15,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#0000"
-        android:visibility="gone"/>
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đặt chữ ở trung tâm vùng sáng để quét tự động"
+        android:textColor="@color/status_text"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:paddingVertical="15dp"/>
 
     <LinearLayout
         android:id="@+id/result_view"
@@ -173,11 +184,11 @@
 
         <ImageView
             android:id="@+id/preferences_button"
-            android:src="@android:drawable/ic_menu_preferences"
+            android:src="@android:drawable/ic_menu_manage"
             android:layout_width="40dp"
             android:layout_height="50dp"
             android:layout_margin="8dp"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentEnd="true"/>
 
         <com.example.letrongtin.tesseract4.camera.ShutterButton
             android:id="@+id/shutter_button"
@@ -186,9 +197,9 @@
             android:background="@drawable/ic_launcher_background"
             android:clickable="true"
             android:focusable="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:gravity="center_vertical"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:scaleType="center"
             android:visibility="gone" />

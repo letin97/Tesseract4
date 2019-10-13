@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.letrongtin.tesseract4.R;
@@ -22,6 +23,7 @@ import com.google.ar.sceneform.Scene;
 import com.google.ar.sceneform.math.Quaternion;
 import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.ModelRenderable;
+import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.BaseArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
@@ -31,6 +33,7 @@ public class ARActivity extends AppCompatActivity {
     // ARCore
     private ArFragment arFragment;
     private ModelRenderable modelRenderable;
+    String nameAnimal;
     AnchorNode anchorNode = null;
 
     @Override
@@ -42,7 +45,7 @@ public class ARActivity extends AppCompatActivity {
         //arFragment.getPlaneDiscoveryController().hide();
         //arFragment.getPlaneDiscoveryController().setInstructionView(null);
 
-        String nameAnimal;
+
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
@@ -257,15 +260,7 @@ public class ARActivity extends AppCompatActivity {
                 break;
 
             default:
-                ModelRenderable.builder()
-                        .setSource(this, R.raw.bear)
-                        .build().thenAccept(renderable -> modelRenderable = renderable)
-                        .exceptionally(
-                                throwable -> {
-                                    Toast.makeText(this, "Không thể load model", Toast.LENGTH_SHORT).show();
-                                    return null;
-                                }
-                        );
+
         }
     }
 
@@ -273,8 +268,28 @@ public class ARActivity extends AppCompatActivity {
         TransformableNode node = new TransformableNode(arFragment.getTransformationSystem());
         node.setParent(anchorNode);
         node.setRenderable(modelRenderable);
-        node.setLocalRotation(Quaternion.axisAngle(new Vector3(0, -1, 1f), 0));
+        //node.setLocalScale(new Vector3(2f, 2f, 2f));
+        node.setLookDirection(new Vector3(0, 0, 1));
         node.select();
+        
+        addName(anchorNode, node, nameAnimal);
+    }
+
+    private void addName(AnchorNode anchorNode, TransformableNode node, String name) {
+
+        ViewRenderable.builder()
+                .setView(this, R.layout.name_animal)
+                .build()
+                .thenAccept(viewRenderable -> {
+                    TransformableNode nameView = new TransformableNode(arFragment.getTransformationSystem());
+                    nameView.setLocalPosition(new Vector3(0f, node.getLocalPosition().y + 0.1f, 0));
+                    nameView.setParent(anchorNode);
+                    nameView.setRenderable(viewRenderable);
+
+                    TextView txt_name = (TextView) viewRenderable.getView();
+                    txt_name.setText(name);
+                });
+
     }
 
 }

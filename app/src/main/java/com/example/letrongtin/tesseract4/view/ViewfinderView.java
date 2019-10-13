@@ -2,6 +2,8 @@ package com.example.letrongtin.tesseract4.view;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -61,6 +63,10 @@ public class ViewfinderView extends View {
     private Rect previewFrame;
     private Rect rect;
 
+    int transferLeft = 0;
+    int transferRight = 0;
+    int vectorX = 1;
+    int vectorY = 1;
 
     // This constructor is used when the class is built from an XML resource.
     public ViewfinderView(Context context, @Nullable AttributeSet attrs) {
@@ -76,6 +82,9 @@ public class ViewfinderView extends View {
         //    bounds = new Rect();
         previewFrame = new Rect();
         rect = new Rect();
+        transferLeft = transferRight = 0;
+        vectorX = 1;
+        vectorY = -1;
     }
 
     public void setCameraManager(CameraManager cameraManager) {
@@ -88,8 +97,8 @@ public class ViewfinderView extends View {
         if (frame == null) {
             return;
         }
-        int width = canvas.getWidth();
-        int height = canvas.getHeight();
+        int width = getWidth();
+        int height = getHeight();
 
         // Draw the exterior (i.e. outside the framing rect) darkened
         paint.setColor(maskColor);
@@ -339,18 +348,19 @@ public class ViewfinderView extends View {
 
         // Draw the framing rect corner UI elements
         paint.setColor(cornerColor);
-        canvas.drawRect(frame.left - 15, frame.top - 15, frame.left + 15, frame.top, paint);
-        canvas.drawRect(frame.left - 15, frame.top, frame.left, frame.top + 15, paint);
-        canvas.drawRect(frame.right - 15, frame.top - 15, frame.right + 15, frame.top, paint);
-        canvas.drawRect(frame.right, frame.top - 15, frame.right + 15, frame.top + 15, paint);
-        canvas.drawRect(frame.left - 15, frame.bottom, frame.left + 15, frame.bottom + 15, paint);
-        canvas.drawRect(frame.left - 15, frame.bottom - 15, frame.left, frame.bottom, paint);
-        canvas.drawRect(frame.right - 15, frame.bottom, frame.right + 15, frame.bottom + 15, paint);
-        canvas.drawRect(frame.right, frame.bottom - 15, frame.right + 15, frame.bottom + 15, paint);
+        motion();
 
-
+        canvas.drawRect(frame.left - 15 + transferLeft, frame.top - 15 + transferLeft, frame.left + 15 + transferLeft, frame.top + transferLeft, paint);
+        canvas.drawRect(frame.left - 15 + transferLeft, frame.top + transferLeft, frame.left + transferLeft, frame.top + 15 + transferLeft, paint);
+        canvas.drawRect(frame.right - 15 + transferRight, frame.top - 15 - transferRight, frame.right + 15 + transferRight, frame.top - transferRight, paint);
+        canvas.drawRect(frame.right + transferRight, frame.top - 15 - transferRight, frame.right + 15 + transferRight, frame.top + 15 - transferRight, paint);
+        canvas.drawRect(frame.left - 15 + transferLeft, frame.bottom - transferLeft, frame.left + 15 + transferLeft, frame.bottom + 15 - transferLeft, paint);
+        canvas.drawRect(frame.left - 15 + transferLeft, frame.bottom - 15 - transferLeft, frame.left + transferLeft, frame.bottom - transferLeft, paint);
+        canvas.drawRect(frame.right - 15 + transferRight, frame.bottom + transferRight, frame.right + 15 + transferRight, frame.bottom + 15 + transferRight, paint);
+        canvas.drawRect(frame.right + transferRight, frame.bottom - 15 + transferRight, frame.right + 15 + transferRight, frame.bottom + 15 + transferRight, paint);
         // Request another update at the animation interval, but don't repaint the entire viewfinder mask.
         //postInvalidateDelayed(ANIMATION_DELAY, frame.left, frame.top, frame.right, frame.bottom);
+        invalidate();
     }
 
     public void drawViewfinder() {
@@ -371,5 +381,16 @@ public class ViewfinderView extends View {
      */
     public void removeResultText() {
         resultText = null;
+    }
+
+    public void motion() {
+        if (transferLeft < -10 || transferLeft > 0) {
+            vectorX = -vectorX;
+        }
+        transferLeft += vectorX;
+        if (transferRight > 10 || transferRight < 0) {
+            vectorY = -vectorY;
+        }
+        transferRight += vectorY;
     }
 }

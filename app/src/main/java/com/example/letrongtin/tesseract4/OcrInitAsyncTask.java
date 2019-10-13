@@ -238,9 +238,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
             }
         }
         fileOutputStream.close();
-        if (urlConnection != null) {
-            urlConnection.disconnect();
-        }
+        urlConnection.disconnect();
 
         return true;
     }
