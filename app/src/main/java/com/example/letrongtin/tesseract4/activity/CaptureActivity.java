@@ -17,7 +17,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.ClipboardManager;
 import android.text.SpannableStringBuilder;
@@ -53,7 +52,6 @@ import com.example.letrongtin.tesseract4.OcrResultText;
 import com.example.letrongtin.tesseract4.R;
 import com.example.letrongtin.tesseract4.camera.CameraManager;
 import com.example.letrongtin.tesseract4.camera.ShutterButton;
-import com.example.letrongtin.tesseract4.common.helpers.CameraPermissionHelper;
 import com.example.letrongtin.tesseract4.enums.AnimalEnum;
 import com.example.letrongtin.tesseract4.language.LanguageCodeHelper;
 import com.example.letrongtin.tesseract4.view.ViewfinderView;
@@ -66,7 +64,6 @@ import org.opencv.core.Mat;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.EnumSet;
 
 public final class CaptureActivity extends AppCompatActivity implements SurfaceHolder.Callback,
         ShutterButton.OnShutterButtonListener {
@@ -236,8 +233,6 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.capture);
 
-        FragmentManager fm = getSupportFragmentManager();
-
         viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
         cameraButtonView = findViewById(R.id.camera_button_view);
         resultView = findViewById(R.id.result_view);
@@ -273,10 +268,6 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         registerForContextMenu(translationView);
 
         progressView = (View) findViewById(R.id.indeterminate_progress_indicator_view);
-
-        if (!CameraPermissionHelper.hasCameraPermission(this)) {
-            CameraPermissionHelper.requestCameraPermission(this);
-        }
 
         cameraManager = new CameraManager(getApplication());
         viewfinderView.setCameraManager(cameraManager);
@@ -366,6 +357,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     protected void onResume() {
         super.onResume();
 
+        // Set up openCV
         if(!OpenCVLoader.initDebug()){
             Log.d(TAG,"openCV problem");
             OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION, this, mLoaderCallback);
@@ -483,8 +475,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     /** Initializes the camera and starts the handler to begin previewing. */
     private void initCamera(SurfaceHolder surfaceHolder) {
         Log.d(TAG, "initCamera()");
-//        if(state==true)
-//            return;
+
         if (surfaceHolder == null) {
             throw new IllegalStateException("No SurfaceHolder provided");
         }
@@ -583,18 +574,16 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     }
 
     /** Sets the necessary language code values for the given OCR language. */
-    private boolean setSourceLanguage(String languageCode) {
+    private void setSourceLanguage(String languageCode) {
         sourceLanguageCodeOcr = languageCode;
         sourceLanguageCodeTranslation = LanguageCodeHelper.mapLanguageCode(languageCode);
         sourceLanguageReadable = LanguageCodeHelper.getOcrLanguageName(this, languageCode);
-        return true;
     }
 
     /** Sets the necessary language code values for the translation target language. */
-    private boolean setTargetLanguage(String languageCode) {
+    private void setTargetLanguage(String languageCode) {
         targetLanguageCodeTranslation = languageCode;
         targetLanguageReadable = LanguageCodeHelper.getTranslationLanguageName(this, languageCode);
-        return true;
     }
 
     /** Finds the proper location on the SD card where we can save files. */
@@ -704,7 +693,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
         // Disable continuous mode if we're using Cube. This will prevent bad states for devices
         // with low memory that crash when running OCR with Cube, and prevent unwanted delays.
-        if (ocrEngineMode == TessBaseAPI.OEM_LSTM_ONLY || ocrEngineMode == TessBaseAPI.OEM_TESSERACT_LSTM_COMBINED) {
+        if (ocrEngineMode == TessBaseAPI.OEM_DEFAULT) {
             Log.d(TAG, "Disabling continuous preview");
             isContinuousModeActive = false;
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -721,9 +710,8 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
      * Displays information relating to the result of OCR, and requests a translation if necessary.
      *
      * @param ocrResult Object representing successful OCR results
-     * @return True if a non-null result was received for OCR
      */
-    public boolean handleOcrDecode(OcrResult ocrResult) {
+    public void handleOcrDecode(OcrResult ocrResult) {
         lastResult = ocrResult;
 
         // Test whether the result is null
@@ -731,7 +719,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
             Toast toast = Toast.makeText(this, "OCR failed. Please try again.", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.TOP, 0, 0);
             toast.show();
-            return false;
+            return;
         }
 
         // Turn off capture-related UI elements
@@ -785,7 +773,6 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 //      progressView.setVisibility(View.GONE);
 //      setProgressBarVisibility(false);
 //    }
-        return true;
     }
 
     /**
@@ -1043,7 +1030,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
      * run. The easiest way to do this is to check android:versionCode from the manifest, and compare
      * it to a value stored as a preference.
      */
-    private boolean checkFirstLaunch() {
+    private void checkFirstLaunch() {
         try {
             PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), 0);
             int currentVersion = info.versionCode;
@@ -1065,12 +1052,10 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 //                String page = lastVersion == 0 ? HelpActivity.DEFAULT_PAGE : HelpActivity.WHATS_NEW_PAGE;
 //                intent.putExtra(HelpActivity.REQUESTED_PAGE_KEY, page);
 //                startActivity(intent);
-                return true;
             }
         } catch (PackageManager.NameNotFoundException e) {
             Log.w(TAG, e);
         }
-        return false;
     }
 
     /**
@@ -1078,7 +1063,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
      *
      * @return OCR engine mode
      */
-    String getOcrEngineModeName() {
+    public String getOcrEngineModeName() {
         String ocrEngineModeName = "";
         String[] ocrEngineModes = getResources().getStringArray(R.array.ocrenginemodes);
         if (ocrEngineMode == TessBaseAPI.OEM_TESSERACT_ONLY) {
@@ -1135,7 +1120,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
         // Retrieve from preferences, and set in this Activity, the OCR engine mode
         String[] ocrEngineModes = getResources().getStringArray(R.array.ocrenginemodes);
-        String ocrEngineModeName = prefs.getString(PreferencesActivity.KEY_OCR_ENGINE_MODE, ocrEngineModes[0]);
+        String ocrEngineModeName = prefs.getString(PreferencesActivity.KEY_OCR_ENGINE_MODE, ocrEngineModes[1]);
         if (ocrEngineModeName.equals(ocrEngineModes[0])) {
             ocrEngineMode = TessBaseAPI.OEM_TESSERACT_ONLY;
         } else if (ocrEngineModeName.equals(ocrEngineModes[1])) {
