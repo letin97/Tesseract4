@@ -13,6 +13,7 @@
     <color name="viewfinder_mask">#60000000</color>  <!-- viewfinder exterior darkened area -->
 
     <!-- Screens background color-->
+    <color name="bg_screen">#ffffffff</color>
     <color name="bg_screen1">#f64c73</color>
     <color name="bg_screen2">#20d2bb</color>
     <color name="bg_screen3">#3395ff</color>

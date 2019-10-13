@@ -32,8 +32,8 @@
         <meta-data
             android:name="com.google.ar.core"
             android:value="required" />
-        <activity
-            android:name=".activity.WelcomeActivity"
+        <activity android:name=".activity.SplashScreen"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,20 +41,22 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.WelcomeActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+        </activity>
+        <activity
             android:name=".activity.CaptureActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden">
-        </activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".activity.PreferencesActivity" />
         <activity
             android:name=".activity.ARActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden">
-        </activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>
