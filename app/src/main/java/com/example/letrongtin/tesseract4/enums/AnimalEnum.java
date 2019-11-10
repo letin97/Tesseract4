@@ -13,7 +13,8 @@ public enum AnimalEnum {
     KOALA("koala"),
     LION("lion"),
     REINDEER("reindeer"),
-    WOLVERINE("wolverine");
+    WOLVERINE("wolverine"),
+    GIRAFFE("giraffe");
 
     public String name;
 

@@ -1,0 +1,186 @@
+{
+  animations: [
+    {
+      clips: [
+        {
+          name: 'picotear.005',
+        },
+        {
+          name: 'EsqueletoAction',
+        },
+        {
+          name: 'idle',
+        },
+        {
+          name: 'idle2',
+        },
+        {
+          name: 'Esqueleto|caminar',
+        },
+        {
+          name: 'Esqueleto|EsqueletoAction',
+        },
+        {
+          name: 'Esqueleto|idle',
+        },
+        {
+          name: 'Esqueleto|idle2',
+        },
+        {
+          name: 'Esqueleto|picotear',
+        },
+        {
+          name: 'Esqueleto|PoseLib',
+        },
+      ],
+      path: 'sampledata/models/chicken/gallina.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'Material',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'CUERPO',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Material.003',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pata2',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Material.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pata1',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/chicken/gallina.fbx',
+    name: 'gallina',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/chicken/pata1.png',
+      name: 'pata1',
+      pipeline_name: 'pata1.png',
+    },
+    {
+      file: 'sampledata/models/chicken/pata2.png',
+      name: 'pata2',
+      pipeline_name: 'pata2.png',
+    },
+    {
+      file: 'sampledata/models/chicken/CUERPO.png',
+      name: 'CUERPO',
+      pipeline_name: 'CUERPO.png',
+    },
+  ],
+  version: '0.54:2',
+}

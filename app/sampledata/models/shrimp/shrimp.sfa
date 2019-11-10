@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/shrimp/shrimp.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '10048_Shrimp',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '10048_Shrimp_v1',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/shrimp/shrimp.fbx',
+    name: 'shrimp',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/shrimp/10048_Shrimp_v1.jpg',
+      name: '10048_Shrimp_v1',
+      pipeline_name: '10048_Shrimp_v1.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

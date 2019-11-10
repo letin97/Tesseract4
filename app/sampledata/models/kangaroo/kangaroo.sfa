@@ -1,0 +1,106 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/kangaroo/kangaroo.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'Eyes',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Kangaroo_diff',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Kangaroo',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Kangaroo_diff',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/kangaroo/kangaroo.fbx',
+    name: 'kangaroo',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/kangaroo/Kangaroo_diff.jpg',
+      name: 'Kangaroo_diff',
+      pipeline_name: 'Kangaroo_diff.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/otter/otter.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '10031_Otter_v03',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '10031_Otter_v03',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/otter/otter.fbx',
+    name: 'otter',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/otter/10031_Otter_v03.jpg',
+      name: '10031_Otter_v03',
+      pipeline_name: '10031_Otter_v03.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/duck/duck.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '12249_Bird_v1.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12249_Bird_v1_diff',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/duck/duck.fbx',
+    name: 'duck',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/duck/12249_Bird_v1_diff.jpg',
+      name: '12249_Bird_v1_diff',
+      pipeline_name: '12249_Bird_v1_diff.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

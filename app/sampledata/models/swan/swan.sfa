@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/swan/swan.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '12255_Mute_Swan',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12255_Mute_Swan_diff',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/swan/swan.fbx',
+    name: 'swan',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/swan/12255_Mute_Swan_diff.jpg',
+      name: '12255_Mute_Swan_diff',
+      pipeline_name: '12255_Mute_Swan_diff.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

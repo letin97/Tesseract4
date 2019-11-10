@@ -56,6 +56,7 @@ public class PreferencesActivity extends PreferenceActivity implements SharedPre
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
+        setTheme(R.style.PreferenceStyle);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 

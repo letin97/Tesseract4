@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/bison/bison.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'BisonTexture.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Bison',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/bison/bison.fbx',
+    name: 'bison',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/bison/Bison.png',
+      name: 'Bison',
+      pipeline_name: 'Bison.png',
+    },
+  ],
+  version: '0.54:2',
+}

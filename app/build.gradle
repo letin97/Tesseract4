@@ -36,6 +36,7 @@ dependencies {
     implementation 'de.javagl:obj:0.3.0'
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.12.0'
     implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
 }
 
 sceneform.asset('sampledata/models/bear.fbx',
@@ -98,3 +99,235 @@ sceneform.asset('sampledata/models/wolverine.fbx',
         'default',
         'sampledata/models/wolverine.sfa',
         'src/main/res/raw/wolverine')
+
+
+sceneform.asset('sampledata/models/chicken/gallina.fbx',
+        'default',
+        'sampledata/models/chicken/gallina.sfa',
+        'src/main/res/raw/chicken')
+
+sceneform.asset('sampledata/models/shark/shark.fbx',
+        'default',
+        'sampledata/models/shark/shark.sfa',
+        'src/main/res/raw/shark')
+
+sceneform.asset('sampledata/models/duck/duck.fbx',
+        'default',
+        'sampledata/models/duck/duck.sfa',
+        'src/main/res/raw/duck')
+
+sceneform.asset('sampledata/models/dolphin/dolphin.fbx',
+        'default',
+        'sampledata/models/dolphin/dolphin.sfa',
+        'src/main/res/raw/dolphin')
+
+sceneform.asset('sampledata/models/penguin/penguin.fbx',
+        'default',
+        'sampledata/models/penguin/penguin.sfa',
+        'src/main/res/raw/penguin')
+
+sceneform.asset('sampledata/models/giraffe/giraffe.fbx',
+        'default',
+        'sampledata/models/giraffe/giraffe.sfa',
+        'src/main/res/raw/giraffe')
+
+sceneform.asset('sampledata/models/butterfly/butterfly.fbx',
+        'default',
+        'sampledata/models/butterfly/butterfly.sfa',
+        'src/main/res/raw/butterfly')
+
+sceneform.asset('sampledata/models/bird/bird.fbx',
+        'default',
+        'sampledata/models/bird/bird.sfa',
+        'src/main/res/raw/bird')
+
+sceneform.asset('sampledata/models/turtle/turtle.fbx',
+        'default',
+        'sampledata/models/turtle/turtle.sfa',
+        'src/main/res/raw/turtle')
+
+sceneform.asset('sampledata/models/whale/whale.fbx',
+        'default',
+        'sampledata/models/whale/whale.sfa',
+        'src/main/res/raw/whale')
+
+sceneform.asset('sampledata/models/deer/deer.fbx',
+        'default',
+        'sampledata/models/deer/deer.sfa',
+        'src/main/res/raw/deer')
+
+sceneform.asset('sampledata/models/worf/worf.fbx',
+        'default',
+        'sampledata/models/worf/worf.sfa',
+        'src/main/res/raw/worf')
+
+sceneform.asset('sampledata/models/parrot/parrot.fbx',
+        'default',
+        'sampledata/models/parrot/parrot.sfa',
+        'src/main/res/raw/parrot')
+
+sceneform.asset('sampledata/models/rabbit/rabbit.fbx',
+        'default',
+        'sampledata/models/rabbit/rabbit.sfa',
+        'src/main/res/raw/rabbit')
+
+sceneform.asset('sampledata/models/frog/frog.fbx',
+        'default',
+        'sampledata/models/frog/frog.sfa',
+        'src/main/res/raw/frog')
+
+sceneform.asset('sampledata/models/bison/bison.fbx',
+        'default',
+        'sampledata/models/bison/bison.sfa',
+        'src/main/res/raw/bison')
+
+sceneform.asset('sampledata/models/kangaroo/kangaroo.fbx',
+        'default',
+        'sampledata/models/kangaroo/kangaroo.sfa',
+        'src/main/res/raw/kangaroo')
+
+sceneform.asset('sampledata/models/sealion/sealion.fbx',
+        'default',
+        'sampledata/models/sealion/sealion.sfa',
+        'src/main/res/raw/sealion')
+
+sceneform.asset('sampledata/models/lizard/lizard.fbx',
+        'default',
+        'sampledata/models/lizard/lizard.sfa',
+        'src/main/res/raw/lizard')
+
+sceneform.asset('sampledata/models/snake/snake.fbx',
+        'default',
+        'sampledata/models/snake/snake.sfa',
+        'src/main/res/raw/snake')
+
+sceneform.asset('sampledata/models/crab/crab.fbx',
+        'default',
+        'sampledata/models/crab/crab.sfa',
+        'src/main/res/raw/crab')
+
+sceneform.asset('sampledata/models/fox/fox.fbx',
+        'default',
+        'sampledata/models/fox/fox.sfa',
+        'src/main/res/raw/fox')
+
+sceneform.asset('sampledata/models/racoon/racoon.fbx',
+        'default',
+        'sampledata/models/racoon/racoon.sfa',
+        'src/main/res/raw/racoon')
+
+sceneform.asset('sampledata/models/crocodile/crocodile.fbx',
+        'default',
+        'sampledata/models/crocodile/crocodile.sfa',
+        'src/main/res/raw/crocodile')
+
+sceneform.asset('sampledata/models/goose/goose.fbx',
+        'default',
+        'sampledata/models/goose/goose.sfa',
+        'src/main/res/raw/goose')
+
+sceneform.asset('sampledata/models/swan/swan.fbx',
+        'default',
+        'sampledata/models/swan/swan.sfa',
+        'src/main/res/raw/swan')
+
+sceneform.asset('sampledata/models/gull/gull.fbx',
+        'default',
+        'sampledata/models/gull/gull.sfa',
+        'src/main/res/raw/gull')
+
+sceneform.asset('sampledata/models/mammoth/mammoth.fbx',
+        'default',
+        'sampledata/models/mammoth/mammoth.sfa',
+        'src/main/res/raw/mammoth')
+
+sceneform.asset('sampledata/models/shrimp/shrimp.fbx',
+        'default',
+        'sampledata/models/shrimp/shrimp.sfa',
+        'src/main/res/raw/shrimp')
+
+sceneform.asset('sampledata/models/seahorse/seahorse.fbx',
+        'default',
+        'sampledata/models/seahorse/seahorse.sfa',
+        'src/main/res/raw/seahorse')
+
+sceneform.asset('sampledata/models/stork/stork.fbx',
+        'default',
+        'sampledata/models/stork/stork.sfa',
+        'src/main/res/raw/stork')
+
+sceneform.asset('sampledata/models/armadillo/armadillo.fbx',
+        'default',
+        'sampledata/models/armadillo/armadillo.sfa',
+        'src/main/res/raw/armadillo')
+
+sceneform.asset('sampledata/models/hawk/hawk.fbx',
+        'default',
+        'sampledata/models/hawk/hawk.sfa',
+        'src/main/res/raw/hawk')
+
+sceneform.asset('sampledata/models/vulture/vulture.fbx',
+        'default',
+        'sampledata/models/vulture/vulture.sfa',
+        'src/main/res/raw/vulture')
+
+sceneform.asset('sampledata/models/hyena/hyena.fbx',
+        'default',
+        'sampledata/models/hyena/hyena.sfa',
+        'src/main/res/raw/hyena')
+
+sceneform.asset('sampledata/models/beaver/beaver.fbx',
+        'default',
+        'sampledata/models/beaver/beaver.sfa',
+        'src/main/res/raw/beaver')
+
+sceneform.asset('sampledata/models/manatee/manatee.fbx',
+        'default',
+        'sampledata/models/manatee/manatee.sfa',
+        'src/main/res/raw/manatee')
+
+sceneform.asset('sampledata/models/tapir/tapir.fbx',
+        'default',
+        'sampledata/models/tapir/tapir.sfa',
+        'src/main/res/raw/tapir')
+
+sceneform.asset('sampledata/models/walrus/walrus.fbx',
+        'default',
+        'sampledata/models/walrus/walrus.sfa',
+        'src/main/res/raw/walrus')
+
+sceneform.asset('sampledata/models/otter/otter.fbx',
+        'default',
+        'sampledata/models/otter/otter.sfa',
+        'src/main/res/raw/otter')
+
+sceneform.asset('sampledata/models/camel/camel.fbx',
+        'default',
+        'sampledata/models/camel/camel.sfa',
+        'src/main/res/raw/camel')
+
+sceneform.asset('sampledata/models/gibbon/gibbon.fbx',
+        'default',
+        'sampledata/models/gibbon/gibbon.sfa',
+        'src/main/res/raw/gibbon')
+
+sceneform.asset('sampledata/models/kingfisher/kingfisher.fbx',
+        'default',
+        'sampledata/models/kingfisher/kingfisher.sfa',
+        'src/main/res/raw/kingfisher')
+
+
+sceneform.asset('sampledata/models/bee/bee.fbx',
+        'default',
+        'sampledata/models/bee/bee.sfa',
+        'src/main/res/raw/bee')
+
+sceneform.asset('sampledata/models/pig/pig.fbx',
+        'default',
+        'sampledata/models/pig/pig.sfa',
+        'src/main/res/raw/pig')
+
+sceneform.asset('sampledata/models/panda/panda.fbx',
+        'default',
+        'sampledata/models/panda/panda.sfa',
+        'src/main/res/raw/panda')

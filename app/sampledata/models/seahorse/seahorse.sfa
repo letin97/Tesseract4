@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/seahorse/seahorse.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '_10044_SeaHorse_v1_iterations_210044_SeaHorse_v1',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '10044_SeaHorse_v1_Diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/seahorse/seahorse.fbx',
+    name: 'seahorse',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/seahorse/10044_SeaHorse_v1_Diffuse.jpg',
+      name: '10044_SeaHorse_v1_Diffuse',
+      pipeline_name: '10044_SeaHorse_v1_Diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

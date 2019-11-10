@@ -6,6 +6,9 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import com.example.letrongtin.tesseract4.R;
 import com.example.letrongtin.tesseract4.utils.PermissionUtils;
@@ -14,11 +17,17 @@ public class SplashActivity extends AppCompatActivity {
 
     // Splash screen timer
     private static int SPLASH_TIME_OUT = 2000;
+    private ImageView imgLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        imgLogo = findViewById(R.id.img_logo);
+
+        Animation anim = AnimationUtils.loadAnimation(this,R.anim.splashanimation);
+        imgLogo.startAnimation(anim);
 
         if (!PermissionUtils.checkIsSupportedDeviceOrFinish(this)) {
             finish();

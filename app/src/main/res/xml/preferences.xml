@@ -19,11 +19,16 @@
 	<!-- GENERAL SETTINGS -->
 	<PreferenceCategory android:title="General settings">
 
-		<CheckBoxPreference android:key="preference_capture_continuous"
+		<CheckBoxPreference
+			android:key="preference_capture_continuous"
+			android:defaultValue="true"
+			android:icon="@drawable/type"
 			android:title="Continuous preview"
 			android:entries="@array/capturemodes" />
 
-		<ListPreference android:title="Recognize"
+		<ListPreference
+			android:title="Recognize"
+			android:icon="@drawable/worlwide"
 			android:key="sourceLanguageCodeOcrPref"
 			android:entries="@array/languagenames"
 			android:entryValues="@array/iso6393" />
@@ -36,14 +41,18 @@
 
 		<CheckBoxPreference
 			android:key="preferences_auto_focus"
+			android:defaultValue="true"
+			android:icon="@drawable/auto_focus"
 			android:title="Autofocus"/>
 
 		<CheckBoxPreference
 			android:key="preferences_disable_continuous_focus"
 			android:defaultValue="true"
+			android:icon="@drawable/mode"
 			android:title="Standard focus mode" />
 
 		<CheckBoxPreference
+			android:icon="@drawable/speakers"
 			android:key="preferences_play_beep"
 			android:title="Beep"/>
 

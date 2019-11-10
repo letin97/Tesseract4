@@ -118,7 +118,6 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
         //File incomplete = new File(tessdataDir, destinationFilenameBase + ".download");
         File tesseractTestFile = new File(tessdataDir, languageCode + ".traineddata");
 
-
         // If language data files are not present, install them
         boolean installSuccess;
         if (!tesseractTestFile.exists()) {

@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/kingfisher/kingfisher.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '12241_Amazon_Kingfisher',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12241_Amazon_Kingfisher',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/kingfisher/kingfisher.fbx',
+    name: 'kingfisher',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/kingfisher/12241_Amazon_Kingfisher.jpg',
+      name: '12241_Amazon_Kingfisher',
+      pipeline_name: '12241_Amazon_Kingfisher.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

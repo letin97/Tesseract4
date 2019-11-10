@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/frog/frog.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '12268_banjofrog_',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12268_banjofrog_diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/frog/frog.fbx',
+    name: 'frog',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/frog/12268_banjofrog_diffuse.jpg',
+      name: '12268_banjofrog_diffuse',
+      pipeline_name: '12268_banjofrog_diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

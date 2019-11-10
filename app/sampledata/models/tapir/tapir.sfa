@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/tapir/tapir.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'tapir',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'tapir_diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/tapir/tapir.fbx',
+    name: 'tapir',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/tapir/tapir_diffuse.jpg',
+      name: 'tapir_diffuse',
+      pipeline_name: 'tapir_diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

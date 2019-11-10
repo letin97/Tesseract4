@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/parrot/parrot.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '_10032_Parrot_V1_L3wire_143224087',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '10032_Parrot_V1_Diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/parrot/parrot.fbx',
+    name: 'parrot',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/parrot/10032_Parrot_V1_Diffuse.jpg',
+      name: '10032_Parrot_V1_Diffuse',
+      pipeline_name: '10032_Parrot_V1_Diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

@@ -21,7 +21,7 @@
         android:id="@+id/notification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Đặt chữ ở trung tâm vùng sáng để quét tự động"
+        android:text="Please place the text in the center of the bright area for automatic scanning!"
         android:textColor="@color/status_text"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
@@ -182,13 +182,13 @@
             android:autoLink="web"
             android:clickable="true" />
 
-        <ImageView
-            android:id="@+id/preferences_button"
-            android:src="@android:drawable/ic_menu_manage"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_margin="8dp"
-            android:layout_alignParentEnd="true"/>
+        <Button
+            android:id="@+id/close_button"
+            android:background="@drawable/left"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:layout_alignParentStart="true"/>
 
         <com.example.letrongtin.tesseract4.camera.ShutterButton
             android:id="@+id/shutter_button"

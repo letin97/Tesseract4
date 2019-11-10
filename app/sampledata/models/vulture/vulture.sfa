@@ -1,0 +1,76 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/vulture/vulture.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '13582_GoldenVulture',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '13582_GoldenVulture_diffuse',
+        },
+        {
+          normalMap: '13582_GoldenVulture_bump',
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/vulture/vulture.fbx',
+    name: 'vulture',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/vulture/13582_GoldenVulture_diffuse.jpg',
+      name: '13582_GoldenVulture_diffuse',
+      pipeline_name: '13582_GoldenVulture_diffuse.jpg',
+    },
+    {
+      file: 'sampledata/models/vulture/13582_GoldenVulture_bump.jpg',
+      name: '13582_GoldenVulture_bump',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: '13582_GoldenVulture_bump.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

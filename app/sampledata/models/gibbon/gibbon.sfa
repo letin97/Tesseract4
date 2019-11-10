@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/gibbon/gibbon.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '13566_Silvery_Gibbon',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Silvery_Gibbon_diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/gibbon/gibbon.fbx',
+    name: 'gibbon',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/gibbon/Silvery_Gibbon_diffuse.jpg',
+      name: 'Silvery_Gibbon_diffuse',
+      pipeline_name: 'Silvery_Gibbon_diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

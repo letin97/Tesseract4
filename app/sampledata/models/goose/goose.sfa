@@ -1,0 +1,127 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/goose/goose.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '02___Default',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12256_canadiangoos_goos_diffuse',
+        },
+        {
+          normalMap: 'Map__4_Normal Bump',
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: '04___Default',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12256_canadiangoos_feet_diffuse',
+        },
+        {
+          normalMap: 'Map__12_Normal Bump',
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/goose/goose.fbx',
+    name: 'goose',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/goose/Map__12_Normal Bump.jpg',
+      name: 'Map__12_Normal Bump',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'Map__12_Normal Bump.jpg',
+    },
+    {
+      file: 'sampledata/models/goose/12256_canadiangoos_goos_diffuse.jpg',
+      name: '12256_canadiangoos_goos_diffuse',
+      pipeline_name: '12256_canadiangoos_goos_diffuse.jpg',
+    },
+    {
+      file: 'sampledata/models/goose/Map__4_Normal Bump.jpg',
+      name: 'Map__4_Normal Bump',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'Map__4_Normal Bump.jpg',
+    },
+    {
+      file: 'sampledata/models/goose/12256_canadiangoos_goos_spec.jpg',
+      name: '12256_canadiangoos_goos_spec',
+      pipeline_name: '12256_canadiangoos_goos_spec.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

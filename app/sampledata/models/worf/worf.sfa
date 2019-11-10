@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/worf/worf.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '_0055_Gray_Wolf',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '10055_Gray_Wolf_Diffuse_v1',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/worf/worf.fbx',
+    name: 'worf',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/worf/10055_Gray_Wolf_Diffuse_v1.jpg',
+      name: '10055_Gray_Wolf_Diffuse_v1',
+      pipeline_name: '10055_Gray_Wolf_Diffuse_v1.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

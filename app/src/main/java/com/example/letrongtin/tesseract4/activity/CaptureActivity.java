@@ -36,6 +36,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -177,7 +178,6 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     private int ocrEngineMode = TessBaseAPI.OEM_LSTM_ONLY;
     private String characterBlacklist;
     private String characterWhitelist;
-    private ImageView preferenceButton;
     private ShutterButton shutterButton;
     private boolean isTranslationActive; // Whether we want to show translations
     private boolean isContinuousModeActive; // Whether we are doing OCR in continuous mode
@@ -188,6 +188,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     private boolean isEngineReady;
     private boolean isPaused;
     private static boolean isFirstLaunch; // True if this is the first time the app is being run
+    private Button closeBtn;
 
     // openCV
     public Mat imageMat;
@@ -247,15 +248,6 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         hasSurface = false;
         beepManager = new BeepManager(this);
 
-        preferenceButton = (ImageView) findViewById(R.id.preferences_button);
-
-        preferenceButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent().setClass(getApplicationContext(), PreferencesActivity.class);
-                startActivity(intent);
-            }
-        });
         // Camera shutter button
 //    if (DISPLAY_SHUTTER_BUTTON) {
 //      shutterButton = (ShutterButton) findViewById(R.id.shutter_button);
@@ -351,6 +343,14 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         });
 
         isEngineReady = false;
+
+        closeBtn = findViewById(R.id.close_button);
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override
@@ -647,7 +647,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         if (dialog != null) {
             dialog.dismiss();
         }
-        dialog = new ProgressDialog(this);
+        dialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
 
         // If we have a language that only runs using Cube, then set the ocrEngineMode to Cube
         if (ocrEngineMode != TessBaseAPI.OEM_LSTM_ONLY) {
@@ -676,7 +676,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         }
 
         // Display the name of the OCR engine we're initializing in the indeterminate progress dialog box
-        indeterminateDialog = new ProgressDialog(this);
+        indeterminateDialog = new ProgressDialog(this, R.style.MyProgressDialogStyle);
         indeterminateDialog.setTitle("Please wait");
         String ocrEngineModeName = getOcrEngineModeName();
         if (ocrEngineModeName.equals("Both")) {
@@ -686,6 +686,16 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         }
         indeterminateDialog.setCancelable(false);
         indeterminateDialog.show();
+
+        File tessdataDir = new File(storageRoot.toString() + File.separator + "tessdata");
+        if (tessdataDir.exists()) {
+            File tesseractTestFile = new File(tessdataDir, languageCode + ".traineddata");
+            if (!tesseractTestFile.exists()) {
+                indeterminateDialog.dismiss();
+            }
+        } else {
+            indeterminateDialog.dismiss();
+        }
 
         if (handler != null) {
             handler.quitSynchronously();
@@ -821,7 +831,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
             // Display recognition-related metadata at the bottom of the screen
             long recognitionTimeRequired = ocrResult.getRecognitionTimeRequired();
             statusViewBottom.setTextSize(14);
-            statusViewBottom.setText("OCR: " + sourceLanguageReadable + " - Mean confidence: " +
+            statusViewBottom.setText("Language: " + sourceLanguageReadable + " - Mean confidence: " +
                     meanConfidence + " - Time required: " + recognitionTimeRequired + " ms");
         }
     }
@@ -841,7 +851,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         if (CONTINUOUS_DISPLAY_METADATA) {
             // Color text delimited by '-' as red.
             statusViewBottom.setTextSize(14);
-            CharSequence cs = setSpanBetweenTokens("OCR: " + sourceLanguageReadable + " - OCR failed - Time required: "
+            CharSequence cs = setSpanBetweenTokens("Language: " + sourceLanguageReadable + " - OCR failed - Time required: "
                     + obj.getTimeRequired() + " ms", "-", new ForegroundColorSpan(0xFFFF0000));
             statusViewBottom.setText(cs);
         }
@@ -955,7 +965,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
     /** Displays a pop-up message showing the name of the current OCR source language. */
     public void showLanguageName() {
-        Toast toast = Toast.makeText(this, "OCR: " + sourceLanguageReadable, Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(this, "Language: " + sourceLanguageReadable, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.TOP, 0, 0);
         toast.show();
     }
@@ -967,7 +977,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     public void setStatusViewForContinuous() {
         viewfinderView.removeResultText();
         if (CONTINUOUS_DISPLAY_METADATA) {
-            statusViewBottom.setText("OCR: " + sourceLanguageReadable + " - waiting for OCR...");
+            statusViewBottom.setText("Language: " + sourceLanguageReadable + " - waiting for OCR...");
         }
     }
 
@@ -1191,7 +1201,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
     public void displayProgressDialog() {
         // Set up the indeterminate progress dialog box
-        indeterminateDialog = new ProgressDialog(this);
+        indeterminateDialog = new ProgressDialog(this, R.style.MyProgressDialogStyle);
         indeterminateDialog.setTitle("Please wait");
         String ocrEngineModeName = getOcrEngineModeName();
         if (ocrEngineModeName.equals("Both")) {
@@ -1214,7 +1224,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
      * @param message The error message to be displayed
      */
     public void showErrorMessage(String title, String message) {
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
                 .setTitle(title)
                 .setMessage(message)
                 .setOnCancelListener(new FinishListener(this))

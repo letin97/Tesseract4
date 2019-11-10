@@ -44,4 +44,15 @@
         <item>@color/dot_dark_screen3</item>
         <item>@color/dot_dark_screen4</item>
     </array>
+
+    <color name="lightgray">#ededed</color>
+    <color name="deeppurple">#7c4dff</color>
+    <color name="yello">#80FFB300</color>
+    <color name="green">#801AD800</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="blue">#8003A9F4</color>
+    <color name="black">#575C5E</color>
+    <color name="pink">#fe104d</color>
+    <color name="orange">#FFC107</color>
+    <color name="black_overlay">#80969696</color>
 </resources>

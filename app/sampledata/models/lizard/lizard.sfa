@@ -1,0 +1,76 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/lizard/lizard.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '12275_Lizard',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12275_Lizars_Diffuse',
+        },
+        {
+          normalMap: '12275_Lizars_Bump',
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/lizard/lizard.fbx',
+    name: 'lizard',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/lizard/12275_Lizars_Diffuse.jpg',
+      name: '12275_Lizars_Diffuse',
+      pipeline_name: '12275_Lizars_Diffuse.jpg',
+    },
+    {
+      file: 'sampledata/models/lizard/12275_Lizars_Bump.jpg',
+      name: '12275_Lizars_Bump',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: '12275_Lizars_Bump.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

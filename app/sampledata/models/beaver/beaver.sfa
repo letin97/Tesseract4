@@ -1,0 +1,106 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/beaver/beaver.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '13098_NorthAmericanBeaver',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '13098_NorthAmericanBeaver_diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'MountedLionHead_mustache',
+      parameters: [
+        {
+          baseColor: [
+            0.30980000000000002,
+            0.2157,
+            0.1176,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/beaver/beaver.fbx',
+    name: 'beaver',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/beaver/13098_NorthAmericanBeaver_diffuse.jpg',
+      name: '13098_NorthAmericanBeaver_diffuse',
+      pipeline_name: '13098_NorthAmericanBeaver_diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

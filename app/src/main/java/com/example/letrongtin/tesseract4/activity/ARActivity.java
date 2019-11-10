@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +37,7 @@ public class ARActivity extends AppCompatActivity {
     private ModelRenderable modelRenderable;
     String nameAnimal;
     AnchorNode anchorNode = null;
+    private Button closeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,6 +120,14 @@ public class ARActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
+
+        closeBtn = findViewById(R.id.close_button);
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 
@@ -250,6 +261,18 @@ public class ARActivity extends AppCompatActivity {
             case WOLVERINE:
                 ModelRenderable.builder()
                         .setSource(this, R.raw.wolverine)
+                        .build().thenAccept(renderable -> modelRenderable = renderable)
+                        .exceptionally(
+                                throwable -> {
+                                    Toast.makeText(this, "Không thể load model", Toast.LENGTH_SHORT).show();
+                                    return null;
+                                }
+                        );
+                break;
+
+            case GIRAFFE:
+                ModelRenderable.builder()
+                        .setSource(this, R.raw.giraffe)
                         .build().thenAccept(renderable -> modelRenderable = renderable)
                         .exceptionally(
                                 throwable -> {

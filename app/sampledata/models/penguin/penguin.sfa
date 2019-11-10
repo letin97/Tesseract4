@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/penguin/penguin.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '01___Default.003',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '10033_Penguin_v1_Diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/penguin/penguin.fbx',
+    name: 'penguin',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/penguin/10033_Penguin_v1_Diffuse.jpg',
+      name: '10033_Penguin_v1_Diffuse',
+      pipeline_name: '10033_Penguin_v1_Diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

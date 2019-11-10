@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/dolphin/dolphin.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '01___Default.002',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '10014_dolphin_v1_Diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/dolphin/dolphin.fbx',
+    name: 'dolphin',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/dolphin/10014_dolphin_v1_Diffuse.jpg',
+      name: '10014_dolphin_v1_Diffuse',
+      pipeline_name: '10014_dolphin_v1_Diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

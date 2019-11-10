@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/sealion/sealion.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '10041_SeaLion_v1',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '10041_sealion_v1_Diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/sealion/sealion.fbx',
+    name: 'sealion',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/sealion/10041_sealion_v1_Diffuse.jpg',
+      name: '10041_sealion_v1_Diffuse',
+      pipeline_name: '10041_sealion_v1_Diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

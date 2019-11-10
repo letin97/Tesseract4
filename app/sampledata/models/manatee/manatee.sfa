@@ -1,0 +1,69 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/manatee/manatee.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '12957_Manatee',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12957_Manatee_diff',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/manatee/manatee.fbx',
+    name: 'manatee',
+    recenter: 'root',
+    scale: 0.64317599999999997,
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/manatee/12957_Manatee_diff.jpg',
+      name: '12957_Manatee_diff',
+      pipeline_name: '12957_Manatee_diff.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

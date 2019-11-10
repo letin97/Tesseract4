@@ -25,26 +25,28 @@
         android:layout_height="1dp"
         android:alpha=".5"
         android:layout_above="@id/layoutDots"
-        android:background="@android:color/white" />
+        android:background="@android:color/black" />
 
     <Button
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:background="@null"
+        android:fontFamily="@font/salsa"
         android:text="@string/next"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/btn_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
         android:background="@null"
+        android:fontFamily="@font/salsa"
         android:text="@string/skip"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/background_dark" />
 
 </RelativeLayout>

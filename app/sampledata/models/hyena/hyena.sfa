@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/hyena/hyena.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '_hyenalambert3SG',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'hyena',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/hyena/hyena.fbx',
+    name: 'hyena',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/hyena/hyena.jpg',
+      name: 'hyena',
+      pipeline_name: 'hyena.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

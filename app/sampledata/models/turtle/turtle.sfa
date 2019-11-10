@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/turtle/turtle.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '_10042_Sea_Turtle_V2_iterations_0_10042_Sea_Turtle_V2_iteration',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '10042_Sea_Turtle_V1_Diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/turtle/turtle.fbx',
+    name: 'turtle',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/turtle/10042_Sea_Turtle_V1_Diffuse.jpg',
+      name: '10042_Sea_Turtle_V1_Diffuse',
+      pipeline_name: '10042_Sea_Turtle_V1_Diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

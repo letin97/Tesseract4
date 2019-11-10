@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/giraffe/giraffe.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '10021_Giraffe_v03',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '10021_Giraffe_v05',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/giraffe/giraffe.fbx',
+    name: 'giraffe',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/giraffe/10021_Giraffe_v05.jpg',
+      name: '10021_Giraffe_v05',
+      pipeline_name: '10021_Giraffe_v05.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

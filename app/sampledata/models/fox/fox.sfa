@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/fox/fox.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'Tibetan_Hill_Fox',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Tibetan_Hill_Fox_dif',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/fox/fox.fbx',
+    name: 'fox',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/fox/Tibetan_Hill_Fox_dif.jpg',
+      name: 'Tibetan_Hill_Fox_dif',
+      pipeline_name: 'Tibetan_Hill_Fox_dif.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

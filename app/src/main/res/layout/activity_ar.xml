@@ -11,4 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <Button
+        android:id="@+id/close_button"
+        android:background="@drawable/left"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_margin="10dp" />
+
 </FrameLayout>
