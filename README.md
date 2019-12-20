@@ -4,13 +4,13 @@
 xoay vòng, phóng to hay thu nhỏ kích cỡ của những "người bạn thú ảo" theo ý thích.
 
 ## Hình ảnh
-### Nhận dạng tên động vật
+Nhận dạng tên động vật
 
    <p align="center">
    	<img src="screenshots/nhan_dang_ky_tu.png" height="210" width="420"> <img src="screenshots/danh_sach_dong_vat.png" height="210" width="420">
    </p>
    
-### Biểu diễn mô hình AR
+Biểu diễn mô hình AR
 
    <p align="center">
 	<img src="screenshots/do_mat_phang.png" height="210" width="420"> <img src="screenshots/mo_hinh_ar.png" height="210" width="420">

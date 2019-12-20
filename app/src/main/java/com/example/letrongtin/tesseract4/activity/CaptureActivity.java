@@ -420,11 +420,20 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
                 if (nameAnimals.get(currentPage * NUM_ITEMS_PAGE + position).trim().contains(text)) {
                     dialogAnimal.dismiss();
                     notification.setVisibility(View.VISIBLE);
-                    beepManager.playBeepSoundAndVibrate();
-                    Intent intent = new Intent(getApplicationContext(), ARActivity.class);
-                    intent.putExtra("RESULT_TEXT", nameAnimals.get(currentPage * NUM_ITEMS_PAGE + position));
-                    intent.putExtra("ANIMAL_NAME", nameAnimals.get(currentPage * NUM_ITEMS_PAGE + position));
-                    startActivity(intent);
+
+                    String nameAnimal = "";
+                    nameAnimal = animalEnglish.get(currentPage * NUM_ITEMS_PAGE + position);
+
+                    if (!nameAnimal.isEmpty()) {
+                        beepManager.playBeepSoundAndVibrate();
+                        Intent intent = new Intent(getApplicationContext(), ARActivity.class);
+                        intent.putExtra("RESULT_TEXT", nameAnimals.get(currentPage * NUM_ITEMS_PAGE + position));
+                        intent.putExtra("ANIMAL_NAME", nameAnimal);
+                        startActivity(intent);
+                    } else {
+                        validate.setText("Unrecognized error!!!");
+                    }
+
                 } else {
                     validate.setText("The answer is not correct!!!");
                 }
@@ -928,7 +937,6 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         imageAnimals.add(R.drawable.animal_whale);
         imageAnimals.add(R.drawable.animal_wolf);
         imageAnimals.add(R.drawable.animal_wolverine);
-        imageAnimals.add(R.drawable.language);
 
         loadList(0);
         checkBtnBackGroud(0);
@@ -969,15 +977,14 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        if(currentApiVersion >= Build.VERSION_CODES.KITKAT && hasFocus)
-        {
+        if(currentApiVersion >= Build.VERSION_CODES.KITKAT && hasFocus) {
             getWindow().getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
     }
 
