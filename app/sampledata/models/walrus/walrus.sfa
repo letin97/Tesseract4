@@ -56,7 +56,7 @@
     file: 'sampledata/models/walrus/walrus.fbx',
     name: 'walrus',
     recenter: 'root',
-    scale: 0.96055500000000005,
+    scale: 0.1,
   },
   samplers: [
     {

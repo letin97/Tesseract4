@@ -56,6 +56,7 @@
     file: 'sampledata/models/penguin/penguin.fbx',
     name: 'penguin',
     recenter: 'root',
+    scale: 0.5,
   },
   samplers: [
     {

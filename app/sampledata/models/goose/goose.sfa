@@ -94,6 +94,7 @@
     file: 'sampledata/models/goose/goose.fbx',
     name: 'goose',
     recenter: 'root',
+    scale: 0.5,
   },
   samplers: [
     {

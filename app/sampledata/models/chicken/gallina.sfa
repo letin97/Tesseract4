@@ -164,6 +164,7 @@
     file: 'sampledata/models/chicken/gallina.fbx',
     name: 'gallina',
     recenter: 'root',
+    scale: 0.1,
   },
   samplers: [
     {

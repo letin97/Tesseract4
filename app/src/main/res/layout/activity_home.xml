@@ -27,35 +27,37 @@
             android:background="@drawable/logo">
         </ImageView>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/btn_start"
-            android:clickable="true"
-            app:cardBackgroundColor="#A6FFC107"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="3dp"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+        <FrameLayout
+            android:layout_marginBottom="5dp"
+            android:layout_width="176dp"
+            android:layout_height="46dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button"
+                android:alpha="0.8" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btn_start"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:orientation="horizontal"
-                android:padding="8dp"
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_gravity="center"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="40dp"
                     android:src="@drawable/play" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:fontFamily="@font/coiny"
                     android:text="Start"
@@ -65,37 +67,40 @@
 
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </FrameLayout>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/btn_setting"
-            android:clickable="true"
-            app:cardBackgroundColor="#A6FFC107"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="3dp"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+
+        <FrameLayout
+            android:layout_marginBottom="5dp"
+            android:layout_width="176dp"
+            android:layout_height="46dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button"
+                android:alpha="0.8" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btn_setting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:orientation="horizontal"
-                android:padding="8dp"
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_gravity="center"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="40dp"
                     android:src="@drawable/setting" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:fontFamily="@font/coiny"
                     android:text="Setting"
@@ -105,47 +110,48 @@
 
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </FrameLayout>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/btn_exit"
-            android:clickable="true"
-            app:cardBackgroundColor="#A6FFC107"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="3dp"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+        <FrameLayout
+            android:layout_width="176dp"
+            android:layout_height="46dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button"
+                android:alpha="0.8" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btn_exit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:orientation="horizontal"
-                android:padding="8dp"
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_gravity="center"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="40dp"
                     android:src="@drawable/power" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:fontFamily="@font/coiny"
                     android:text="Quit"
                     android:textAllCaps="true"
                     android:textColor="#fff"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </FrameLayout>
 
     </LinearLayout>
 

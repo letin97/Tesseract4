@@ -1,0 +1,206 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/smilodon/smilodon.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '12230_smilodon_body',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12230_smilodon_body_diffuse',
+        },
+        {
+          normalMap: 'Map__5_Normal Bump',
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: '12230_smilodon_eyes',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12230_smilodon_eyes_diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: '12230_smilodon_teeth',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12230_smilodon_teeth_diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: '12230_smilodon_whisker',
+      parameters: [
+        {
+          baseColor: [
+            0.90200000000000002,
+            0.83919999999999995,
+            0.75290000000000001,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/smilodon/smilodon.fbx',
+    name: 'smilodon',
+    recenter: 'root',
+    scale: 0.1,
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/smilodon/12230_smilodon_teeth_diffuse.jpg',
+      name: '12230_smilodon_teeth_diffuse',
+      pipeline_name: '12230_smilodon_teeth_diffuse.jpg',
+    },
+    {
+      file: 'sampledata/models/smilodon/12230_smilodon_body_diffuse.jpg',
+      name: '12230_smilodon_body_diffuse',
+      pipeline_name: '12230_smilodon_body_diffuse.jpg',
+    },
+    {
+      file: 'sampledata/models/smilodon/12230_smilodon_eyes_diffuse.jpg',
+      name: '12230_smilodon_eyes_diffuse',
+      pipeline_name: '12230_smilodon_eyes_diffuse.jpg',
+    },
+    {
+      file: 'sampledata/models/smilodon/Map__5_Normal Bump.jpg',
+      name: 'Map__5_Normal Bump',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'Map__5_Normal Bump.jpg',
+    },
+    {
+      file: 'sampledata/models/smilodon/12230_smilodon_body_speccolor.jpg',
+      name: '12230_smilodon_body_speccolor',
+      pipeline_name: '12230_smilodon_body_speccolor.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

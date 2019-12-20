@@ -15,6 +15,7 @@ public class PrefManager {
     private static final String PREF_NAME = "welcome";
 
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
+    private static final String IS_FIRST_TIME_LAUNCH_AR = "IsFirstTimeLaunchAR";
 
     public PrefManager(Context context) {
         this._context = context;
@@ -30,4 +31,14 @@ public class PrefManager {
     public boolean isFirstTimeLaunch() {
         return pref.getBoolean(IS_FIRST_TIME_LAUNCH, true);
     }
+
+    public boolean isFirstTimeLaunchAR() {
+        return pref.getBoolean(IS_FIRST_TIME_LAUNCH_AR, true);
+    }
+
+    public void setFirstTimeLaunchAR(boolean isFirstTime) {
+        editor.putBoolean(IS_FIRST_TIME_LAUNCH_AR, isFirstTime);
+        editor.commit();
+    }
+
 }

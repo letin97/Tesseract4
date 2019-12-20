@@ -180,15 +180,25 @@
             android:textColor="@color/status_text"
             android:textSize="14sp"
             android:autoLink="web"
-            android:clickable="true" />
+            android:clickable="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="10dp"/>
 
         <Button
             android:id="@+id/close_button"
             android:background="@drawable/left"
-            android:layout_width="30dp"
+            android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_margin="10dp"
             android:layout_alignParentStart="true"/>
+
+        <Button
+            android:id="@+id/info_button"
+            android:background="@drawable/information"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"/>
 
         <com.example.letrongtin.tesseract4.camera.ShutterButton
             android:id="@+id/shutter_button"
@@ -214,7 +224,9 @@
             android:textColor="@color/status_text"
             android:textSize="14sp"
             android:autoLink="web"
-            android:clickable="true" />
+            android:clickable="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <!--
         <ToggleButton android:id="@+id/torch_button"

@@ -20,11 +20,10 @@
 	<PreferenceCategory android:title="General settings">
 
 		<CheckBoxPreference
-			android:key="preference_capture_continuous"
-			android:defaultValue="true"
+			android:key="preferences_continuous_display_meta_data"
+			android:defaultValue="false"
 			android:icon="@drawable/type"
-			android:title="Continuous preview"
-			android:entries="@array/capturemodes" />
+			android:title="Show result"/>
 
 		<ListPreference
 			android:title="Recognize"
@@ -54,7 +53,14 @@
 		<CheckBoxPreference
 			android:icon="@drawable/speakers"
 			android:key="preferences_play_beep"
+			android:defaultValue="true"
 			android:title="Beep"/>
+
+		<CheckBoxPreference
+			android:icon="@drawable/music"
+			android:key="preferences_play_music"
+			android:defaultValue="true"
+			android:title="Music"/>
 
 	</PreferenceCategory>
 

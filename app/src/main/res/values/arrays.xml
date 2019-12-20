@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  Copyright 2011 Robert Theis
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -443,4 +442,3913 @@
         <item>Urdu</item>
         <item>Vietnamese</item>
     </string-array>
+
+    <!-- Animal name -->
+    <string-array name="animal_Afrikaans">
+        <item> gordeldier </item>
+                <item> beer </item>
+                <item> bever </item>
+                <item> bee </item>
+                <item> voël </item>
+                <item> bison </item>
+                <item> vlinder </item>
+                <item> kameel </item>
+                <item> kat </item>
+                <item> hoender </item>
+                <item> koei </item>
+                <item> krap </item>
+                <item> krokodil </item>
+                <item> takbokke </item>
+                <item> dinosourus </item>
+                <item> hond </item>
+                <item> dolfyn </item>
+                <item> eend </item>
+                <item> olifant </item>
+                <item> krimpvarkie </item>
+                <item> vis </item>
+                <item> jakkals </item>
+                <item> kikker </item>
+                <item> gibbon </item>
+                <item> kameelperd </item>
+                <item> bok </item>
+                <item> gans </item>
+                <item> meeu </item>
+                <item> smous </item>
+                <item> seekoei </item>
+                <item> perd </item>
+                <item> hiëna </item>
+                <item> kangaroo </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> lam </item>
+                <item> leeu </item>
+                <item> akkedis </item>
+                <item> reuse </item>
+                <item> manatee </item>
+                <item> aap </item>
+                <item> otter </item>
+                <item> panda </item>
+                <item> papegaai </item>
+                <item> pou </item>
+                <item> pikkewyn </item>
+                <item> vark </item>
+                <item> haas </item>
+                <item> racoon </item>
+                <item> rendier </item>
+                <item> seemeeu </item>
+                <item> seahorse </item>
+                <item> haai </item>
+                <item> skape </item>
+                <item> garnale </item>
+                <item> slak </item>
+                <item> slang </item>
+                <item> eekhoring </item>
+                <item> ooievaar </item>
+                <item> swan </item>
+                <item> tapir </item>
+                <item> tier </item>
+                <item> skilpad </item>
+                <item> muis </item>
+                <item> aasvoël </item>
+                <item> walrus </item>
+                <item> walvis </item>
+                <item> wolf </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Albanian">
+        <item> armadillo </item>
+                <item> ariu </item>
+                <item> kastor </item>
+                <item> bee </item>
+                <item> zog </item>
+                <item> bizon </item>
+                <item> flutur </item>
+                <item> deve </item>
+                <item> cat </item>
+                <item> pule </item>
+                <item> lopë </item>
+                <item> gaforre </item>
+                <item> crocodile </item>
+                <item> dre </item>
+                <item> dinosaur </item>
+                <item> dog </item>
+                <item> delfin </item>
+                <item> duck </item>
+                <item> elephant </item>
+                <item> zbuloj </item>
+                <item> peshk </item>
+                <item> fox </item>
+                <item> bretkocë </item>
+                <item> gibbon </item>
+                <item> giraffe </item>
+                <item> dhi </item>
+                <item> patë </item>
+                <item> gull </item>
+                <item> hawk </item>
+                <item> hipopotam </item>
+                <item> kalë </item>
+                <item> hyena </item>
+                <item> kangur </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> qengji </item>
+                <item> lion </item>
+                <item> hardhucë ​​</item>
+                <item> mammoth </item>
+                <item> manatee </item>
+                <item> majmun </item>
+                <item> vidër </item>
+                <item> panda </item>
+                <item> papagall </item>
+                <item> pallua </item>
+                <item> penguin </item>
+                <item> derr </item>
+                <item> lepuri </item>
+                <item> racoon </item>
+                <item> renë </item>
+                <item> luani i detit </item>
+                <item> balkanwebs </item>
+                <item> peshkaqen </item>
+                <item> dele </item>
+                <item> karkaleca </item>
+                <item> kërmill </item>
+                <item> gjarpër </item>
+                <item> ketri </item>
+                <item> lejlekun </item>
+                <item> swan </item>
+                <item> tapir </item>
+                <item> tiger </item>
+                <item> turtle </item>
+                <item> miut </item>
+                <item> shkaba </item>
+                <item> lopë deti </item>
+                <item> whale </item>
+                <item> ujku </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Arabic">
+        <item> أرماديلو </item>
+                <item> الدب </item>
+                <item> سمور </item>
+                <item> النحل </item>
+                <item> الطيور </item>
+                <item> البيسون </item>
+                <item> الفراشة </item>
+                <item> الجمال </item>
+                <item> القط </item>
+                <item> الدجاج </item>
+                <item> بقرة </item>
+                <item> السلطعون </item>
+                <item> التمساح </item>
+                <item> الغزلان </item>
+                <item> ديناصور </item>
+                <item> الكلب </item>
+                <item> الدلفين </item>
+                <item> بطة </item>
+                <item> الفيل </item>
+                <item> النمس </item>
+                <item> الأسماك </item>
+                <item> الثعلب </item>
+                <item> ضفدع </item>
+                <item> غيبون </item>
+                <item> زرافة </item>
+                <item> الماعز </item>
+                <item> أوزة </item>
+                <item> نورس </item>
+                <item> الصقر </item>
+                <item> فرس النهر </item>
+                <item> الحصان </item>
+                <item> الضبع </item>
+                <item> الكنغر </item>
+                <item> الرفراف </item>
+                <item> كوال </item>
+                <item> الحمل </item>
+                <item> الأسد </item>
+                <item> سحلية </item>
+                <item> العملاقة </item>
+                <item> خروف البحر </item>
+                <item> قرد </item>
+                <item> قضاعة </item>
+                <item> الباندا </item>
+                <item> الببغاء </item>
+                <item> الطاووس </item>
+                <item> البطريق </item>
+                <item> خنزير </item>
+                <item> أرنب </item>
+                <item> الراكون </item>
+                <item> الرنة </item>
+                <item> أسد البحر </item>
+                <item> فرس البحر </item>
+                <item> القرش </item>
+                <item> الأغنام </item>
+                <item> الروبيان </item>
+                <item> الحلزون </item>
+                <item> ثعبان </item>
+                <item> السنجاب </item>
+                <item> اللقلق </item>
+                <item> بجعة </item>
+                <item> التابير </item>
+                <item> نمر </item>
+                <item> سلحفاة </item>
+                <item> الماوس </item>
+                <item> نسر </item>
+                <item> الفظ </item>
+                <item> الحوت </item>
+                <item> الذئب </item>
+                <item> ولفيرين </item>
+    </string-array>
+    <string-array name="animal_Azeri">
+        <item> armadillo </item>
+                <item> ayı </item>
+                <item> qunduz </item>
+                <item> arı </item>
+                <item> quş </item>
+                <item> bizon </item>
+                <item> kəpənək </item>
+                <item> dəvə </item>
+                <item> pişik </item>
+                <item> toyuq </item>
+                <item> inək </item>
+                <item> cır </item>
+                <item> timsah </item>
+                <item> maral </item>
+                <item> dinozavr </item>
+                <item> it </item>
+                <item> delfin </item>
+                <item> ördək </item>
+                <item> fil </item>
+                <item> ferret </item>
+                <item> balıq </item>
+                <item> tülkü </item>
+                <item> qurbağa </item>
+                <item> gibbon </item>
+                <item> zürafə </item>
+                <item> keçi </item>
+                <item> qaz </item>
+                <item> gull </item>
+                <item> şahin </item>
+                <item> hippopotamus </item>
+                <item> at </item>
+                <item> hena </item>
+                <item> kenquru </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> quzu </item>
+                <item> aslan </item>
+                <item> kərtənkələ </item>
+                <item> mamont </item>
+                <item> manatee </item>
+                <item> meymun </item>
+                <item> otter </item>
+                <item> panda </item>
+                <item> tutuquşu </item>
+                <item> tovuz </item>
+                <item> pinqvin </item>
+                <item> donuz </item>
+                <item> dovşan </item>
+                <item> racoon </item>
+                <item> maralı </item>
+                <item> dəniz aslanı </item>
+                <item> dənizçilik </item>
+                <item> köpəkbalığı </item>
+                <item> qoyun </item>
+                <item> karides </item>
+                <item> salyangoz </item>
+                <item> ilan </item>
+                <item> dələ </item>
+                <item> leylək </item>
+                <item> qaran </item>
+                <item> tapir </item>
+                <item> pələng </item>
+                <item> tısbağa </item>
+                <item> siçan </item>
+                <item> qarmaq </item>
+                <item> morus </item>
+                <item> balina </item>
+                <item> qurd </item>
+                <item> canavar </item>
+    </string-array>
+    <string-array name="animal_Basque">
+        <item> armadillo </item>
+                <item> bear </item>
+                <item> beaver </item>
+                <item> erlea </item>
+                <item> txoria </item>
+                <item> bison </item>
+                <item> tximeleta </item>
+                <item> gamelua </item>
+                <item> katu </item>
+                <item> oilasko </item>
+                <item> behi </item>
+                <item> crab </item>
+                <item> krokodiloa </item>
+                <item> oreinak </item>
+                <item> dinosauro </item>
+                <item> txakurra </item>
+                <item> izurde </item>
+                <item> ahate </item>
+                <item> elefante </item>
+                <item> ferret </item>
+                <item> arraina </item>
+                <item> azeria </item>
+                <item> igel </item>
+                <item> gibbon </item>
+                <item> jirafa </item>
+                <item> ahuntz </item>
+                <item> antzara </item>
+                <item> kaio </item>
+                <item> hawk </item>
+                <item> hippopotamus </item>
+                <item> zaldi </item>
+                <item> hiena </item>
+                <item> kanguru </item>
+                <item> martin arrantzalea </item>
+                <item> koala </item>
+                <item> arkumea </item>
+                <item> lehoia </item>
+                <item> musker </item>
+                <item> mamut </item>
+                <item> manatee </item>
+                <item> tximinoa </item>
+                <item> igaraba </item>
+                <item> panda </item>
+                <item> loro </item>
+                <item> peacock </item>
+                <item> pinguino </item>
+                <item> txerri </item>
+                <item> untxi </item>
+                <item> racoon </item>
+                <item> elur-orein </item>
+                <item> itsas lehoia </item>
+                <item> seahorse </item>
+                <item> marrazo </item>
+                <item> ardiak </item>
+                <item> ganba </item>
+                <item> caracol </item>
+                <item> suge </item>
+                <item> urtxintxa </item>
+                <item> amiamoko </item>
+                <item> swan </item>
+                <item> tapir </item>
+                <item> tigre </item>
+                <item> dortoka </item>
+                <item> sagua </item>
+                <item> putre </item>
+                <item> walrus </item>
+                <item> balea </item>
+                <item> otso </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Belarusian">
+        <item> armadillo </item>
+                <item> мядзведзь </item>
+                <item> бабра </item>
+                <item> пчала </item>
+                <item> птушка </item>
+                <item> зубр </item>
+                <item> матыль </item>
+                <item> вярблюд </item>
+                <item> котка </item>
+                <item> курыца </item>
+                <item> карова </item>
+                <item> краб </item>
+                <item> кракадзіл </item>
+                <item> алень </item>
+                <item> дыназаўр </item>
+                <item> сабака </item>
+                <item> дэльфін </item>
+                <item> качка </item>
+                <item> слон </item>
+                <item> тхар </item>
+                <item> рыба </item>
+                <item> ліса </item>
+                <item> жаба </item>
+                <item> гібон </item>
+                <item> жырафа </item>
+                <item> каза </item>
+                <item> гусь </item>
+                <item> чайка </item>
+                <item> ястраб </item>
+                <item> гіпапотам </item>
+                <item> конь </item>
+                <item> гіена </item>
+                <item> кенгуру </item>
+                <item> зімародак </item>
+                <item> каала </item>
+                <item> ягня </item>
+                <item> леў </item>
+                <item> яшчарка </item>
+                <item> мамант </item>
+                <item> кіраўнік </item>
+                <item> малпа </item>
+                <item> выдра </item>
+                <item> панда </item>
+                <item> папугай </item>
+                <item> паўліна </item>
+                <item> пінгвін </item>
+                <item> свіння </item>
+                <item> трус </item>
+                <item> енот </item>
+                <item> паўночны алень </item>
+                <item> марскі леў </item>
+                <item> марскі конь </item>
+                <item> акула </item>
+                <item> авечка </item>
+                <item> крэветкі </item>
+                <item> слімак </item>
+                <item> змяя </item>
+                <item> вавёрка </item>
+                <item> бусел </item>
+                <item> лебедзь </item>
+                <item> тапір </item>
+                <item> тыгр </item>
+                <item> чарапаха </item>
+                <item> мыш </item>
+                <item> грыф </item>
+                <item> марж </item>
+                <item> кіт </item>
+                <item> воўк </item>
+                <item> расамаха </item>
+    </string-array>
+    <string-array name="animal_Bengali">
+        <item> armadillo </item>
+                <item> ভালুক </item>
+                <item> বীবর </item>
+                <item> মৌমাছি </item>
+                <item> পাখি </item>
+                <item> বাইসন </item>
+                <item> প্রজাপতি </item>
+                <item> উট </item>
+                <item> বিড়াল </item>
+                <item> মুরগির </item>
+                <item> গাভী </item>
+                <item> কাঁকড়া </item>
+                <item> কুমির </item>
+                <item> হরিণ </item>
+                <item> ডাইনোসর </item>
+                <item> কুকুর </item>
+                <item> শুশুক </item>
+                <item> হাঁস </item>
+                <item> হাতি </item>
+                <item> সন্ধানী </item>
+                <item> মাছ </item>
+                <item> শিয়াল </item>
+                <item> ব্যাঙের </item>
+                <item> গিবন </item>
+                <item> জিরাফ </item>
+                <item> ছাগল </item>
+                <item> হংসী </item>
+                <item> gull </item>
+                <item> বাজপাখি </item>
+                <item> জলহস্তী </item>
+                <item> ঘোড়া </item>
+                <item> হায়না </item>
+                <item> ক্যাঙ্গারু </item>
+                <item> কিংফিশার </item>
+                <item> কোয়ালা </item>
+                <item> মেষশাবক </item>
+                <item> সিংহ </item>
+                <item> টিকটিকি </item>
+                <item> সুবৃহৎ </item>
+                <item> manatee </item>
+                <item> বানর </item>
+                <item> ভোঁদড় </item>
+                <item> পান্ডা </item>
+                <item> তোতাপাখি </item>
+                <item> ময়ুর </item>
+                <item> পেংগুইন </item>
+                <item> শূকর </item>
+                <item> খরগোশ </item>
+                <item> র্যাকুন </item>
+                <item> বল্গাহরিণ </item>
+                <item> সমুদ্র সিংহ </item>
+                <item> সিন্ধুঘোটক </item>
+                <item> হাঙ্গর </item>
+                <item> মেষ </item>
+                <item> চিংড়ি </item>
+                <item> শামুক </item>
+                <item> সাপ </item>
+                <item> কাঠবিড়াল </item>
+                <item> সারস </item>
+                <item> রাজহাঁস </item>
+                <item> শূকরের মতো জন্তুবিশেষ </item>
+                <item> বাঘ </item>
+                <item> কচ্ছপ </item>
+                <item> মাউস </item>
+                <item> শকুনি </item>
+                <item> walrus </item>
+                <item> তিমি </item>
+                <item> নেকড়ে </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Bulgarian">
+        <item>броненосец</item>
+                <item>мечка</item>
+                <item>бобър</item>
+                <item>пчелен</item>
+                <item>птица</item>
+                <item>бизони</item>
+                <item>пеперуда</item>
+                <item>камила</item>
+                <item>котка</item>
+                <item>пиле</item>
+                <item>крава</item>
+                <item>раци</item>
+                <item>крокодил</item>
+                <item>елен</item>
+                <item>динозавър</item>
+                <item>куче</item>
+                <item>делфини</item>
+                <item>патица</item>
+                <item>слон</item>
+                <item>пор</item>
+                <item>риба</item>
+                <item>лисица</item>
+                <item>жаба</item>
+                <item>гибон</item>
+                <item>жираф</item>
+                <item>кози</item>
+                <item>гъска</item>
+                <item>чайка</item>
+                <item>Hawk</item>
+                <item>хипопотам</item>
+                <item>кон</item>
+                <item>хиена</item>
+                <item>кенгуру</item>
+                <item>рибарче</item>
+                <item>коала</item>
+                <item>агнешко</item>
+                <item>лъв</item>
+                <item>гущер</item>
+                <item>мамут</item>
+                <item>морска крава</item>
+                <item>маймуна</item>
+                <item>видрата</item>
+                <item>панда</item>
+                <item>папагал</item>
+                <item>паун</item>
+                <item>Penguin</item>
+                <item>прасе</item>
+                <item>заешки</item>
+                <item>миеща мечка</item>
+                <item>елени</item>
+                <item> морски лъв </item>
+                <item>морско конче</item>
+                <item>акула</item>
+                <item>овце</item>
+                <item>скариди</item>
+                <item>охлюв</item>
+                <item>змия</item>
+                <item>катерица</item>
+                <item>Stork</item>
+                <item>лебедова</item>
+                <item>тапир</item>
+                <item>тигър</item>
+                <item>костенурки</item>
+                <item>мишката</item>
+                <item>лешояд</item>
+                <item>морж</item>
+                <item>кит</item>
+                <item>вълк</item>
+                <item>Мичиган</item>
+    </string-array>
+    <string-array name="animal_Catalan">
+        <item> armadillo </item>
+                <item> bear </item>
+                <item> castor </item>
+                <item> abella </item>
+                <item> ocell </item>
+                <item> bisons </item>
+                <item> papallona </item>
+                <item> camell </item>
+                <item> gat </item>
+                <item> pollastre </item>
+                <item> vaca </item>
+                <item> cranc </item>
+                <item> cocodril </item>
+                <item> cérvols </item>
+                <item> dinosaure </item>
+                <item> gos </item>
+                <item> dofí </item>
+                <item> ànec </item>
+                <item> elefant </item>
+                <item> fura </item>
+                <item> peixos </item>
+                <item> guineu </item>
+                <item> granota </item>
+                <item> gibbon </item>
+                <item> girafa </item>
+                <item> cabra </item>
+                <item> oca </item>
+                <item> gavina </item>
+                <item> falc </item>
+                <item> hipopòtam </item>
+                <item> cavall </item>
+                <item> hyena </item>
+                <item> cangur </item>
+                <item> pescador </item>
+                <item> koala </item>
+                <item> corder </item>
+                <item> lleó </item>
+                <item> sargantana </item>
+                <item> mamut </item>
+                <item> manatee </item>
+                <item> mico </item>
+                <item> otter </item>
+                <item> panda </item>
+                <item> loro </item>
+                <item> paó </item>
+                <item> pingüí </item>
+                <item> porc </item>
+                <item> conill </item>
+                <item> racoon </item>
+                <item> rens </item>
+                <item> lleó marí </item>
+                <item> seahorse </item>
+                <item> tauró </item>
+                <item> ovelles </item>
+                <item> gambetes </item>
+                <item> caragol </item>
+                <item> serp </item>
+                <item> esquirol </item>
+                <item> cigonya </item>
+                <item> cigne </item>
+                <item> tapir </item>
+                <item> tigre </item>
+                <item> tortuga </item>
+                <item> mouse </item>
+                <item> voltor </item>
+                <item> morsa </item>
+                <item> balena </item>
+                <item> llop </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Chinese_sim">
+        <item> armadillo </item>
+                <item>熊</item>
+                <item>海狸</item>
+                <item>蜜蜂</item>
+                <item> bird </item>
+                <item>野牛</item>
+                <item>蝴蝶</item>
+                <item>骆驼</item>
+                <item>猫</item>
+                <item>鸡肉</item>
+                <item>牛</item>
+                <item> crab </item>
+                <item>鳄鱼</item>
+                <item>鹿</item>
+                <item>恐龙</item>
+                <item> dog </item>
+                <item>海豚</item>
+                <item>鸭子</item>
+                <item>大象</item>
+                <item>雪貂</item>
+                <item>鱼</item>
+                <item> fox </item>
+                <item>青蛙</item>
+                <item>长臂猿</item>
+                <item>长颈鹿</item>
+                <item>山羊</item>
+                <item>鹅</item>
+                <item> gull </item>
+                <item> hawk </item>
+                <item>河马</item>
+                <item>马</item>
+                <item>鬣狗</item>
+                <item>袋鼠</item>
+                <item> kingfisher </item>
+                <item>考拉</item>
+                <item>羊羔</item>
+                <item>狮子</item>
+                <item>蜥蜴</item>
+                <item>猛mm </item>
+                <item>海牛</item>
+                <item>猴子</item>
+                <item>水獭</item>
+                <item> panda </item>
+                <item> parrot </item>
+                <item>孔雀</item>
+                <item>企鹅</item>
+                <item>猪</item>
+                <item>兔子</item>
+                <item>浣熊</item>
+                <item>驯鹿</item>
+                <item>海狮</item>
+                <item>海马</item>
+                <item>鲨鱼</item>
+                <item>绵羊</item>
+                <item>虾</item>
+                <item>蜗牛</item>
+                <item> snake </item>
+                <item>松鼠</item>
+                <item>鹳</item>
+                <item>天鹅</item>
+                <item>塔皮尔</item>
+                <item>老虎</item>
+                <item>乌龟</item>
+                <item>鼠标</item>
+                <item>秃鹰</item>
+                <item>海象</item>
+                <item>鲸鱼</item>
+                <item>狼</item>
+                <item>金刚狼</item>
+    </string-array>
+    <string-array name="animal_Chinese_tra">
+        <item> armadillo </item>
+                <item>熊</item>
+                <item>海狸</item>
+                <item>蜜蜂</item>
+                <item> bird </item>
+                <item>野牛</item>
+                <item>蝴蝶</item>
+                <item>駱駝</item>
+                <item>貓</item>
+                <item>雞肉</item>
+                <item>牛</item>
+                <item> crab </item>
+                <item>鱷魚</item>
+                <item>鹿</item>
+                <item>恐龍</item>
+                <item>狗</item>
+                <item>海豚</item>
+                <item>鴨子</item>
+                <item>大象</item>
+                <item>雪貂</item>
+                <item>魚</item>
+                <item> fox </item>
+                <item>青蛙</item>
+                <item>長臂猿</item>
+                <item>長頸鹿</item>
+                <item>山羊</item>
+                <item>鵝</item>
+                <item> gull </item>
+                <item> hawk </item>
+                <item>河馬</item>
+                <item>馬</item>
+                <item>鬣狗</item>
+                <item>袋鼠</item>
+                <item> kingfisher </item>
+                <item>考拉</item>
+                <item>羊羔</item>
+                <item>獅子</item>
+                <item>蜥蜴</item>
+                <item>猛mm </item>
+                <item>海牛</item>
+                <item>猴子</item>
+                <item>水獺</item>
+                <item> panda </item>
+                <item>鸚鵡</item>
+                <item>孔雀</item>
+                <item>企鵝</item>
+                <item>豬</item>
+                <item>兔子</item>
+                <item>浣熊</item>
+                <item>馴鹿</item>
+                <item>海獅</item>
+                <item>海馬</item>
+                <item>鯊魚</item>
+                <item>綿羊</item>
+                <item>蝦</item>
+                <item>蝸牛</item>
+                <item> snake </item>
+                <item>松鼠</item>
+                <item>鸛</item>
+                <item>天鵝</item>
+                <item>塔皮爾</item>
+                <item>老虎</item>
+                <item>烏龜</item>
+                <item>鼠標</item>
+                <item>禿鷹</item>
+                <item>海象</item>
+                <item>鯨魚</item>
+                <item>狼</item>
+                <item>金剛狼</item>
+    </string-array>
+    <string-array name="animal_Croatian">
+        <item> armadillo </item>
+                <item> medvjed </item>
+                <item> dabar </item>
+                <item> pčela </item>
+                <item> ptica </item>
+                <item> bizon </item>
+                <item> leptir </item>
+                <item> deva </item>
+                <item> mačka </item>
+                <item> piletine </item>
+                <item> krava </item>
+                <item> rakova </item>
+                <item> krokodil </item>
+                <item> jelena </item>
+                <item> dinosaurus </item>
+                <item> pas </item>
+                <item> delfin </item>
+                <item> patka </item>
+                <item> slon </item>
+                <item> tvor </item>
+                <item> riba </item>
+                <item> lisica </item>
+                <item> žaba </item>
+                <item> gibona </item>
+                <item> žirafa </item>
+                <item> koza </item>
+                <item> guska </item>
+                <item> galeb </item>
+                <item> sokol </item>
+                <item> nilski konj </item>
+                <item> konj </item>
+                <item> hijena </item>
+                <item> klokan </item>
+                <item> vodomar </item>
+                <item> koala </item>
+                <item> janjetina </item>
+                <item> lav </item>
+                <item> gušter </item>
+                <item> mamut </item>
+                <item> tropski </item>
+                <item> majmun </item>
+                <item> vidra </item>
+                <item> panda </item>
+                <item> papiga </item>
+                <item> paun </item>
+                <item> pingvin </item>
+                <item> svinja </item>
+                <item> zec </item>
+                <item> rakun </item>
+                <item> sob </item>
+                <item> morski lav </item>
+                <item> morski konjic </item>
+                <item> morski pas </item>
+                <item> ovce </item>
+                <item> škampi </item>
+                <item> puž </item>
+                <item> zmija </item>
+                <item> vjeverica </item>
+                <item> roda </item>
+                <item> labud </item>
+                <item> tapir </item>
+                <item> tigar </item>
+                <item> kornjača </item>
+                <item> miša </item>
+                <item> sup </item>
+                <item> morž </item>
+                <item> kitova </item>
+                <item> vuk </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Czech">
+        <item> armadillo </item>
+                <item> nést </item>
+                <item> bobr </item>
+                <item> včela </item>
+                <item> pták </item>
+                <item> bizon </item>
+                <item> motýl </item>
+                <item> velbloud </item>
+                <item> kočka </item>
+                <item> kuře </item>
+                <item> kráva </item>
+                <item> krab </item>
+                <item> krokodýl </item>
+                <item> jelen </item>
+                <item> dinosaurus </item>
+                <item> pes </item>
+                <item> delfín </item>
+                <item> kachna </item>
+                <item> slon </item>
+                <item> fretka </item>
+                <item> ryba </item>
+                <item> liška </item>
+                <item> žába </item>
+                <item> gibbon </item>
+                <item> žirafa </item>
+                <item> koza </item>
+                <item> husí </item>
+                <item> racek </item>
+                <item> jestřáb </item>
+                <item> hroch </item>
+                <item> kůň </item>
+                <item> hyena </item>
+                <item> klokan </item>
+                <item> ledňáček </item>
+                <item> koala </item>
+                <item> jehněčí </item>
+                <item> lev </item>
+                <item> ještěrka </item>
+                <item> mamut </item>
+                <item> manatee </item>
+                <item> opice </item>
+                <item> vydra </item>
+                <item> panda </item>
+                <item> papoušek </item>
+                <item> páv </item>
+                <item> tučňák </item>
+                <item> prase </item>
+                <item> králík </item>
+                <item> racoon </item>
+                <item> sobů </item>
+                <item> lachtan </item>
+                <item> mořský koník </item>
+                <item> žralok </item>
+                <item> ovce </item>
+                <item> krevety </item>
+                <item> šnek </item>
+                <item> had </item>
+                <item> veverka </item>
+                <item> čáp </item>
+                <item> labuť </item>
+                <item> tapír </item>
+                <item> tygr </item>
+                <item> želva </item>
+                <item> myš </item>
+                <item> sup </item>
+                <item> mrož </item>
+                <item> velryba </item>
+                <item> vlk </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Danish">
+        <item> bæltedyr </item>
+                <item> bjørn </item>
+                <item> bæver </item>
+                <item> bi </item>
+                <item> fugl </item>
+                <item> bison </item>
+                <item> sommerfugl </item>
+                <item> kamel </item>
+                <item> kat </item>
+                <item> kylling </item>
+                <item> ko </item>
+                <item> krabber </item>
+                <item> krokodille </item>
+                <item> rådyr </item>
+                <item> dinosaur </item>
+                <item> hund </item>
+                <item> delfin </item>
+                <item> ænder </item>
+                <item> elefant </item>
+                <item> ilder </item>
+                <item> fisk </item>
+                <item> ræv </item>
+                <item> frøen </item>
+                <item> gibbon </item>
+                <item> giraf </item>
+                <item> ged </item>
+                <item> gås </item>
+                <item> måge </item>
+                <item> høg </item>
+                <item> flodhest </item>
+                <item> hest </item>
+                <item> hyæne </item>
+                <item> kænguru </item>
+                <item> isfugl </item>
+                <item> koala </item>
+                <item> lam </item>
+                <item> løve </item>
+                <item> firben </item>
+                <item> mammut </item>
+                <item> manatee </item>
+                <item> abe </item>
+                <item> odder </item>
+                <item> panda </item>
+                <item> papegøje </item>
+                <item> påfugl </item>
+                <item> pingvin </item>
+                <item> gris </item>
+                <item> kanin </item>
+                <item> racoon </item>
+                <item> rensdyr </item>
+                <item> søløve </item>
+                <item> søhest </item>
+                <item> haj </item>
+                <item> får </item>
+                <item> rejer </item>
+                <item> snegl </item>
+                <item> slange </item>
+                <item> egern </item>
+                <item> stork </item>
+                <item> svane </item>
+                <item> tapir </item>
+                <item> tiger </item>
+                <item> skildpadde </item>
+                <item> mus </item>
+                <item> grib </item>
+                <item> hvalros </item>
+                <item> hval </item>
+                <item> ulv </item>
+                <item> jærv </item>
+    </string-array>
+    <string-array name="animal_Dutch">
+        <item> armadillo </item>
+                <item> bear </item>
+                <item> bever </item>
+                <item> bee </item>
+                <item> vogel </item>
+                <item> bison </item>
+                <item> vlinder </item>
+                <item> kameel </item>
+                <item> cat </item>
+                <item> kip </item>
+                <item> koe </item>
+                <item> krab </item>
+                <item> krokodil </item>
+                <item> herten </item>
+                <item> dinosaurus </item>
+                <item> hond </item>
+                <item> dolfijn </item>
+                <item> eend </item>
+                <item> olifant </item>
+                <item> fret </item>
+                <item> vis </item>
+                <item> vos </item>
+                <item> kikker </item>
+                <item> gibbon </item>
+                <item> giraffe </item>
+                <item> geit </item>
+                <item> gans </item>
+                <item> meeuw </item>
+                <item> havik </item>
+                <item> nijlpaard </item>
+                <item> paard </item>
+                <item> hyena </item>
+                <item> kangoeroe </item>
+                <item> ijsvogel </item>
+                <item> koala </item>
+                <item> lam </item>
+                <item> leeuw </item>
+                <item> hagedis </item>
+                <item> mammoet </item>
+                <item> zeekoe </item>
+                <item> aap </item>
+                <item> otter </item>
+                <item> panda </item>
+                <item> papegaai </item>
+                <item> pauw </item>
+                <item> pinguïn </item>
+                <item> varken </item>
+                <item> konijn </item>
+                <item> wasbeer </item>
+                <item> rendier </item>
+                <item> zeeleeuw </item>
+                <item> zeepaardje </item>
+                <item> haai </item>
+                <item> schapen </item>
+                <item> garnalen </item>
+                <item> slak </item>
+                <item> slang </item>
+                <item> eekhoorn </item>
+                <item> ooievaar </item>
+                <item> zwaan </item>
+                <item> tapir </item>
+                <item> tijger </item>
+                <item> schildpad </item>
+                <item> muis </item>
+                <item> gier </item>
+                <item> walrus </item>
+                <item> walvis </item>
+                <item> wolf </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_English">
+        <item>armadillo</item>
+        <item>bear</item>
+        <item>beaver</item>
+        <item>bee</item>
+        <item>bird</item>
+        <item>bison</item>
+        <item>butterfly</item>
+        <item>camel</item>
+        <item>cat</item>
+        <item>chicken</item>
+        <item>cow</item>
+        <item>crab</item>
+        <item>crocodile</item>
+        <item>deer</item>
+        <item>dinosaur</item>
+        <item>dog</item>
+        <item>dolphin</item>
+        <item>duck</item>
+        <item>elephant</item>
+        <item>ferret</item>
+        <item>fish</item>
+        <item>fox</item>
+        <item>frog</item>
+        <item>gibbon</item>
+        <item>giraffe</item>
+        <item>goat</item>
+        <item>goose</item>
+        <item>gull</item>
+        <item>hawk</item>
+        <item>hippopotamus</item>
+        <item>horse</item>
+        <item>hyena</item>
+        <item>kangaroo</item>
+        <item>kingfisher</item>
+        <item>koala</item>
+        <item>lamb</item>
+        <item>lion</item>
+        <item>lizard</item>
+        <item>mammoth</item>
+        <item>manatee</item>
+        <item>monkey</item>
+        <item>otter</item>
+        <item>panda</item>
+        <item>parrot</item>
+        <item>peacock</item>
+        <item>penguin</item>
+        <item>pig</item>
+        <item>rabbit</item>
+        <item>racoon</item>
+        <item>reindeer</item>
+        <item>sea lion</item>
+        <item>seahorse</item>
+        <item>shark</item>
+        <item>sheep</item>
+        <item>shrimp</item>
+        <item>snail</item>
+        <item>snake</item>
+        <item>squirrel</item>
+        <item>stork</item>
+        <item>swan</item>
+        <item>tapir</item>
+        <item>tiger</item>
+        <item>turtle</item>
+        <item>mouse</item>
+        <item>vulture</item>
+        <item>walrus</item>
+        <item>whale</item>
+        <item>wolf</item>
+        <item>wolverine</item>
+    </string-array>
+    <string-array name="animal_Estonian">
+        <item> armadillo </item>
+                <item> karu </item>
+                <item> kobras </item>
+                <item> mesilane </item>
+                <item> lind </item>
+                <item> piisonid </item>
+                <item> liblikas </item>
+                <item> kaamel </item>
+                <item> kass </item>
+                <item> kana </item>
+                <item> lehm </item>
+                <item> krabi </item>
+                <item> krokodill </item>
+                <item> hirved </item>
+                <item> dinosaurus </item>
+                <item> koer </item>
+                <item> delfiin </item>
+                <item> part </item>
+                <item> elevant </item>
+                <item> tuhkur </item>
+                <item> kala </item>
+                <item> rebane </item>
+                <item> konn </item>
+                <item> gibbon </item>
+                <item> kaelkirjak </item>
+                <item> kits </item>
+                <item> hani </item>
+                <item> kajakas </item>
+                <item> kull </item>
+                <item> jõehobu </item>
+                <item> hobune </item>
+                <item> hüään </item>
+                <item> känguru </item>
+                <item> kuningaskala </item>
+                <item> koala </item>
+                <item> lammas </item>
+                <item> lõvi </item>
+                <item> sisalik </item>
+                <item> mammut </item>
+                <item> manatee </item>
+                <item> ahv </item>
+                <item> saarmas </item>
+                <item> panda </item>
+                <item> papagoi </item>
+                <item> paabulinn </item>
+                <item> pingviin </item>
+                <item> siga </item>
+                <item> küülik </item>
+                <item> kährik </item>
+                <item> põhjapõder </item>
+                <item> merilõvi </item>
+                <item> merihobu </item>
+                <item> hai </item>
+                <item> lambad </item>
+                <item> krevetid </item>
+                <item> tigu </item>
+                <item> madu </item>
+                <item> orav </item>
+                <item> toonekurg </item>
+                <item> luik </item>
+                <item> tapir </item>
+                <item> tiiger </item>
+                <item> kilpkonn </item>
+                <item> hiir </item>
+                <item> raisakotkas </item>
+                <item> mähis </item>
+                <item> vaal </item>
+                <item> hunt </item>
+                <item> ahm </item>
+    </string-array>
+    <string-array name="animal_Finnish">
+        <item> armadillo </item>
+                <item> bear </item>
+                <item> beaver </item>
+                <item> bee </item>
+                <item> lintu </item>
+                <item> bison </item>
+                <item> perhonen </item>
+                <item> kameli </item>
+                <item> cat </item>
+                <item> kana </item>
+                <item> cow </item>
+                <item> rapu </item>
+                <item> krokotiili </item>
+                <item> hirvi </item>
+                <item> dinosaurus </item>
+                <item> koira </item>
+                <item> delfiini </item>
+                <item> ankka </item>
+                <item> norsu </item>
+                <item> fretti </item>
+                <item> kala </item>
+                <item> fox </item>
+                <item> sammakko </item>
+                <item> gibbon </item>
+                <item> kirahvi </item>
+                <item> vuohi </item>
+                <item> hanhi </item>
+                <item> lokki </item>
+                <item> haukka </item>
+                <item> virtahepo </item>
+                <item> hevonen </item>
+                <item> hyeena </item>
+                <item> kenguru </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> lammas </item>
+                <item> leijona </item>
+                <item> lisko </item>
+                <item> mammutin </item>
+                <item> manatee </item>
+                <item> apina </item>
+                <item> saukko </item>
+                <item> panda </item>
+                <item> papukaija </item>
+                <item> riikinkukko </item>
+                <item> pingviini </item>
+                <item> sika </item>
+                <item> kani </item>
+                <item> supi </item>
+                <item> poro </item>
+                <item> merileijona </item>
+                <item> merihevosia </item>
+                <item> hai </item>
+                <item> lampaat </item>
+                <item> katkarapu </item>
+                <item> etana </item>
+                <item> käärme </item>
+                <item> orava </item>
+                <item> kattohaikara </item>
+                <item> joutsen </item>
+                <item> tapiiri </item>
+                <item> tiikeri </item>
+                <item> kilpikonna </item>
+                <item> hiiri </item>
+                <item> korppikotka </item>
+                <item> mursu </item>
+                <item> valas </item>
+                <item> susi </item>
+                <item> ahma </item>
+    </string-array>
+    <string-array name="animal_French">
+        <item> tatou </item>
+                <item> ours </item>
+                <item> castor </item>
+                <item> abeille </item>
+                <item> oiseau </item>
+                <item> bison </item>
+                <item> papillon </item>
+                <item> chameau </item>
+                <item> chat </item>
+                <item> poulet </item>
+                <item> vache </item>
+                <item> crabe </item>
+                <item> crocodile </item>
+                <item> cerf </item>
+                <item> dinosaure </item>
+                <item> chien </item>
+                <item> dauphin </item>
+                <item> canard </item>
+                <item> éléphant </item>
+                <item> furet </item>
+                <item> poisson </item>
+                <item> renard </item>
+                <item> grenouille </item>
+                <item> gibbon </item>
+                <item> girafe </item>
+                <item> chèvre </item>
+                <item> oie </item>
+                <item> mouette </item>
+                <item> faucon </item>
+                <item> hippopotame </item>
+                <item> cheval </item>
+                <item> hyène </item>
+                <item> kangourou </item>
+                <item> martin-pêcheur </item>
+                <item> koala </item>
+                <item> agneau </item>
+                <item> lion </item>
+                <item> lézard </item>
+                <item> mammouth </item>
+                <item> lamantin </item>
+                <item> singe </item>
+                <item> loutre </item>
+                <item> panda </item>
+                <item> perroquet </item>
+                <item> paon </item>
+                <item> pingouin </item>
+                <item> porc </item>
+                <item> lapin </item>
+                <item> racoon </item>
+                <item> renne </item>
+                <item> otarie </item>
+                <item> hippocampe </item>
+                <item> requin </item>
+                <item> mouton </item>
+                <item> crevette </item>
+                <item> escargot </item>
+                <item> serpent </item>
+                <item> écureuil </item>
+                <item> cigogne </item>
+                <item> cygne </item>
+                <item> tapir </item>
+                <item> tigre </item>
+                <item> tortue </item>
+                <item> souris </item>
+                <item> vautour </item>
+                <item> morse </item>
+                <item> baleine </item>
+                <item> loup </item>
+                <item> carcajou </item>
+    </string-array>
+    <string-array name="animal_Galician">
+        <item> armadillo </item>
+                <item> oso </item>
+                <item> castor </item>
+                <item> abeja </item>
+                <item> ave </item>
+                <item> bisonte </item>
+                <item> bolboreta </item>
+                <item> camelo </item>
+                <item> gato </item>
+                <item> galiña </item>
+                <item> vaca </item>
+                <item> cangrejo </item>
+                <item> crocodilo </item>
+                <item> venado </item>
+                <item> dinosauro </item>
+                <item> can </item>
+                <item> delfín </item>
+                <item> pato </item>
+                <item> elefante </item>
+                <item> hurón </item>
+                <item> peixes </item>
+                <item> raposa </item>
+                <item> sapo </item>
+                <item> gibbon </item>
+                <item> xirafa </item>
+                <item> cabra </item>
+                <item> ganso </item>
+                <item> gaivota </item>
+                <item> falcón </item>
+                <item> hipopótamo </item>
+                <item> cabalo </item>
+                <item> hyena </item>
+                <item> canguro </item>
+                <item> pescador </item>
+                <item> koala </item>
+                <item> cordero </item>
+                <item> león </item>
+                <item> lagarto </item>
+                <item> mamut </item>
+                <item> manatee </item>
+                <item> mono </item>
+                <item> nutria </item>
+                <item> panda </item>
+                <item> loro </item>
+                <item> pavo real </item>
+                <item> pingüín </item>
+                <item> porco </item>
+                <item> coello </item>
+                <item> racoon </item>
+                <item> renos </item>
+                <item> león de mar </item>
+                <item> seahorse </item>
+                <item> tiburón </item>
+                <item> ovellas </item>
+                <item> camaróns </item>
+                <item> caracol </item>
+                <item> serpe </item>
+                <item> ardilla </item>
+                <item> cegoña </item>
+                <item> cisne </item>
+                <item> tapir </item>
+                <item> tigre </item>
+                <item> tartaruga </item>
+                <item> mouse </item>
+                <item> voitre </item>
+                <item> morsa </item>
+                <item> balea </item>
+                <item> lobo </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_German">
+        <item> gürteltier </item>
+                <item> bear </item>
+                <item> biber </item>
+                <item> bee </item>
+                <item> vogel </item>
+                <item> bison </item>
+                <item> schmetterling </item>
+                <item> kamel </item>
+                <item> katze </item>
+                <item> huhn </item>
+                <item> kuh </item>
+                <item> krabbe </item>
+                <item> krokodil </item>
+                <item> hirsch </item>
+                <item> dinosaurier </item>
+                <item> hund </item>
+                <item> delphin </item>
+                <item> duck </item>
+                <item> elefant </item>
+                <item> frettchen </item>
+                <item> fisch </item>
+                <item> fuchs </item>
+                <item> frosch </item>
+                <item> gibbon </item>
+                <item> giraffe </item>
+                <item> ziege </item>
+                <item> gans </item>
+                <item> möwe </item>
+                <item> habicht </item>
+                <item> nilpferd </item>
+                <item> pferd </item>
+                <item> hyäne </item>
+                <item> känguru </item>
+                <item> eisvogel </item>
+                <item> koala </item>
+                <item> lamm </item>
+                <item> lion </item>
+                <item> eidechse </item>
+                <item> mammut </item>
+                <item> seekuh </item>
+                <item> affe </item>
+                <item> otter </item>
+                <item> panda </item>
+                <item> papagei </item>
+                <item> pfau </item>
+                <item> pinguin </item>
+                <item> schwein </item>
+                <item> kaninchen </item>
+                <item> waschbär </item>
+                <item> rentier </item>
+                <item> seelöwe </item>
+                <item> seepferdchen </item>
+                <item> hai </item>
+                <item> schaf </item>
+                <item> garnele </item>
+                <item> schnecke </item>
+                <item> schlange </item>
+                <item> eichhörnchen </item>
+                <item> storch </item>
+                <item> schwan </item>
+                <item> tapir </item>
+                <item> tiger </item>
+                <item> schildkröte </item>
+                <item> maus </item>
+                <item> geier </item>
+                <item> walross </item>
+                <item> wal </item>
+                <item> wolf </item>
+                <item> vielfraß </item>
+    </string-array>
+    <string-array name="animal_Greek">
+        <item> armadillo </item>
+                <item> bear </item>
+                <item> κάστορας </item>
+                <item> μέλισσα </item>
+                <item> πουλί </item>
+                <item> bison </item>
+                <item> πεταλούδα </item>
+                <item> καμήλα </item>
+                <item> cat </item>
+                <item> κοτόπουλο </item>
+                <item> αγελάδα </item>
+                <item> καβούρι </item>
+                <item> κροκόδειλος </item>
+                <item> ελαφιών </item>
+                <item> δεινοσαύρων </item>
+                <item> σκύλος </item>
+                <item> δελφίνι </item>
+                <item> πάπια </item>
+                <item> ελέφαντας </item>
+                <item> κουνάβι </item>
+                <item> ψάρια </item>
+                <item> αλεπού </item>
+                <item> βάτραχος </item>
+                <item> gibbon </item>
+                <item> καμηλοπάρδαλη </item>
+                <item> κατσίκι </item>
+                <item> χήνα </item>
+                <item> γλάρος </item>
+                <item> γεράκι </item>
+                <item> ιπποπόταμος </item>
+                <item> άλογο </item>
+                <item> υένα </item>
+                <item> καγκουρό </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> αρνί </item>
+                <item> λιοντάρι </item>
+                <item> σαύρα </item>
+                <item> μαμούθ </item>
+                <item> manatee </item>
+                <item> μαϊμού </item>
+                <item> έντονα </item>
+                <item> panda </item>
+                <item> παπαγάλος </item>
+                <item> παγώνι </item>
+                <item> πιγκουίνος </item>
+                <item> χοίρος </item>
+                <item> κουνέλι </item>
+                <item> racoon </item>
+                <item> ταράνδων </item>
+                <item> λιοντάρι </item>
+                <item> seahorse </item>
+                <item> καρχαρίας </item>
+                <item> πρόβατα </item>
+                <item> γαρίδες </item>
+                <item> σαλιγκάρι </item>
+                <item> φίδι </item>
+                <item> σκίουρος </item>
+                <item> stork </item>
+                <item> κύκνος </item>
+                <item> tapir </item>
+                <item> τίγρης </item>
+                <item> χελώνα </item>
+                <item> ποντίκι </item>
+                <item> όρνιο </item>
+                <item> walrus </item>
+                <item> φάλαινα </item>
+                <item> λύκος </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Hebrew">
+        <item> वर्मी </item>
+                <item> भालू </item>
+                <item> बीवर </item>
+                <item> मधुमक्खी </item>
+                <item> पक्षी </item>
+                <item> जंगली भैंसों </item>
+                <item> तितली </item>
+                <item> ऊंट </item>
+                <item> बिल्ली </item>
+                <item> चिकन </item>
+                <item> गाय </item>
+                <item> केकड़ा </item>
+                <item> मगरमच्छ </item>
+                <item> हिरण </item>
+                <item> डायनासोर </item>
+                <item> कुत्ता </item>
+                <item> डॉल्फिन </item>
+                <item> बतख </item>
+                <item> हाथी </item>
+                <item> भाल </item>
+                <item> मछली </item>
+                <item> लोमड़ी </item>
+                <item> मेंढक </item>
+                <item> गिब्बन </item>
+                <item> जिराफ </item>
+                <item> बकरी </item>
+                <item> हंस </item>
+                <item> मूर्ख मनुष्य </item>
+                <item> बाज़ </item>
+                <item> दरियाई घोड़ा </item>
+                <item> घोड़ा </item>
+                <item> लकड़बग्घा </item>
+                <item> कंगारू </item>
+                <item> किंगफिशर </item>
+                <item> कोअला </item>
+                <item> भेड़ का बच्चा </item>
+                <item> शेर </item>
+                <item> छिपकली </item>
+                <item> विशाल </item>
+                <item> मानाती </item>
+                <item> बंदर </item>
+                <item> ऊद </item>
+                <item> पांडा </item>
+                <item> तोता </item>
+                <item> मोर </item>
+                <item> पेंगुइन </item>
+                <item> सुअर </item>
+                <item> खरगोश </item>
+                <item> एक प्रकार का जानवर </item>
+                <item> हिरन </item>
+                <item> समुद्री शेर </item>
+                <item> समुद्री घोड़े </item>
+                <item> शार्क </item>
+                <item> भेड़ </item>
+                <item> झींगा </item>
+                <item> घोंघा </item>
+                <item> साँप </item>
+                <item> गिलहरी </item>
+                <item> सारस </item>
+                <item> हंस </item>
+                <item> टपीर </item>
+                <item> बाघ </item>
+                <item> कछुआ </item>
+                <item> माउस </item>
+                <item> गिद्ध </item>
+                <item> वालरस </item>
+                <item> व्हेल </item>
+                <item> भेड़िया </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Hindi">
+        <item> वर्मी </item>
+                <item> भालू </item>
+                <item> बीवर </item>
+                <item> मधुमक्खी </item>
+                <item> पक्षी </item>
+                <item> जंगली भैंसों </item>
+                <item> तितली </item>
+                <item> ऊंट </item>
+                <item> बिल्ली </item>
+                <item> चिकन </item>
+                <item> गाय </item>
+                <item> केकड़ा </item>
+                <item> मगरमच्छ </item>
+                <item> हिरण </item>
+                <item> डायनासोर </item>
+                <item> कुत्ता </item>
+                <item> डॉल्फिन </item>
+                <item> बतख </item>
+                <item> हाथी </item>
+                <item> भाल </item>
+                <item> मछली </item>
+                <item> लोमड़ी </item>
+                <item> मेंढक </item>
+                <item> गिब्बन </item>
+                <item> जिराफ </item>
+                <item> बकरी </item>
+                <item> हंस </item>
+                <item> मूर्ख मनुष्य </item>
+                <item> बाज़ </item>
+                <item> दरियाई घोड़ा </item>
+                <item> घोड़ा </item>
+                <item> लकड़बग्घा </item>
+                <item> कंगारू </item>
+                <item> किंगफिशर </item>
+                <item> कोअला </item>
+                <item> भेड़ का बच्चा </item>
+                <item> शेर </item>
+                <item> छिपकली </item>
+                <item> विशाल </item>
+                <item> मानाती </item>
+                <item> बंदर </item>
+                <item> ऊद </item>
+                <item> पांडा </item>
+                <item> तोता </item>
+                <item> मोर </item>
+                <item> पेंगुइन </item>
+                <item> सुअर </item>
+                <item> खरगोश </item>
+                <item> एक प्रकार का जानवर </item>
+                <item> हिरन </item>
+                <item> समुद्री शेर </item>
+                <item> समुद्री घोड़े </item>
+                <item> शार्क </item>
+                <item> भेड़ </item>
+                <item> झींगा </item>
+                <item> घोंघा </item>
+                <item> साँप </item>
+                <item> गिलहरी </item>
+                <item> सारस </item>
+                <item> हंस </item>
+                <item> टपीर </item>
+                <item> बाघ </item>
+                <item> कछुआ </item>
+                <item> माउस </item>
+                <item> गिद्ध </item>
+                <item> वालरस </item>
+                <item> व्हेल </item>
+                <item> भेड़िया </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Hungarian">
+        <item> tatu </item>
+                <item> medve </item>
+                <item> hód </item>
+                <item> méh </item>
+                <item> madár </item>
+                <item> bölény </item>
+                <item> pillangó </item>
+                <item> teve </item>
+                <item> macska </item>
+                <item> csirke </item>
+                <item> tehén </item>
+                <item> rák </item>
+                <item> krokodil </item>
+                <item> szarvas </item>
+                <item> dinoszaurusz </item>
+                <item> kutya </item>
+                <item> delfin </item>
+                <item> kacsa </item>
+                <item> elefánt </item>
+                <item> vadászgörény </item>
+                <item> halak </item>
+                <item> fox </item>
+                <item> béka </item>
+                <item> gibbon </item>
+                <item> zsiráf </item>
+                <item> kecske </item>
+                <item> liba </item>
+                <item> sirály </item>
+                <item> héja </item>
+                <item> víziló </item>
+                <item> ló </item>
+                <item> hiéna </item>
+                <item> kenguru </item>
+                <item> jégmadár </item>
+                <item> koala </item>
+                <item> bárány </item>
+                <item> oroszlán </item>
+                <item> gyík </item>
+                <item> mamut </item>
+                <item> lamantin </item>
+                <item> majom </item>
+                <item> vidra </item>
+                <item> panda </item>
+                <item> papagáj </item>
+                <item> páva </item>
+                <item> pingvin </item>
+                <item> sertés </item>
+                <item> nyúl </item>
+                <item> mosómedve </item>
+                <item> rénszarvas </item>
+                <item> oroszlánfóka </item>
+                <item> csikóhal </item>
+                <item> cápa </item>
+                <item> juh </item>
+                <item> garnéla </item>
+                <item> csiga </item>
+                <item> kígyó </item>
+                <item> mókus </item>
+                <item> gólya </item>
+                <item> hattyú </item>
+                <item> tapír </item>
+                <item> tigris </item>
+                <item> teknős </item>
+                <item> egér </item>
+                <item> keselyű </item>
+                <item> rozmár </item>
+                <item> bálna </item>
+                <item> farkas </item>
+                <item> rozsomák </item>
+    </string-array>
+    <string-array name="animal_Icelandic">
+        <item> armadillo </item>
+                <item> bera </item>
+                <item> bever </item>
+                <item> bý </item>
+                <item> fugl </item>
+                <item> bison </item>
+                <item> fiðrildi </item>
+                <item> úlfalda </item>
+                <item> köttur </item>
+                <item> kjúklingur </item>
+                <item> kýr </item>
+                <item> krabbi </item>
+                <item> krókódíll </item>
+                <item> dádýr </item>
+                <item> risaeðla </item>
+                <item> hundur </item>
+                <item> höfrungur </item>
+                <item> önd </item>
+                <item> fíll </item>
+                <item> frett </item>
+                <item> fiskur </item>
+                <item> refur </item>
+                <item> froskur </item>
+                <item> gibbon </item>
+                <item> gíraffi </item>
+                <item> geit </item>
+                <item> gæs </item>
+                <item> mág </item>
+                <item> hauk </item>
+                <item> flóðhestur </item>
+                <item> hestur </item>
+                <item> hyena </item>
+                <item> kenguru </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> lamb </item>
+                <item> ljón </item>
+                <item> eðla </item>
+                <item> mammútur </item>
+                <item> manatee </item>
+                <item> api </item>
+                <item> oter </item>
+                <item> panda </item>
+                <item> páfagaukur </item>
+                <item> páfugl </item>
+                <item> mörgæs </item>
+                <item> svín </item>
+                <item> kanína </item>
+                <item> racoon </item>
+                <item> hreindýr </item>
+                <item> sjóljón </item>
+                <item> sjóhestur </item>
+                <item> hákarl </item>
+                <item> kindur </item>
+                <item> rækjur </item>
+                <item> snigill </item>
+                <item> snákur </item>
+                <item> íkorna </item>
+                <item> stork </item>
+                <item> svan </item>
+                <item> tapir </item>
+                <item> tiger </item>
+                <item> skjaldbaka </item>
+                <item> mús </item>
+                <item> grib </item>
+                <item> rostungur </item>
+                <item> hval </item>
+                <item> úlfur </item>
+                <item> jerv </item>
+    </string-array>
+    <string-array name="animal_Indonesian">
+        <item> armadillo </item>
+                <item> beruang </item>
+                <item> berang-berang </item>
+                <item> lebah </item>
+                <item> burung </item>
+                <item> bison </item>
+                <item> butterfly </item>
+                <item> unta </item>
+                <item> kucing </item>
+                <item> ayam </item>
+                <item> sapi </item>
+                <item> kepiting </item>
+                <item> buaya </item>
+                <item> rusa </item>
+                <item> dinosaurus </item>
+                <item> anjing </item>
+                <item> lumba-lumba </item>
+                <item> bebek </item>
+                <item> gajah </item>
+                <item> musang </item>
+                <item> ikan </item>
+                <item> fox </item>
+                <item> katak </item>
+                <item> owa </item>
+                <item> jerapah </item>
+                <item> kambing </item>
+                <item> angsa </item>
+                <item> camar </item>
+                <item> elang </item>
+                <item> hippopotamus </item>
+                <item> kuda </item>
+                <item> hyena </item>
+                <item> kanguru </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> domba </item>
+                <item> singa </item>
+                <item> kadal </item>
+                <item> mammoth </item>
+                <item> manatee </item>
+                <item> monyet </item>
+                <item> berang-berang </item>
+                <item> panda </item>
+                <item> parrot </item>
+                <item> merak </item>
+                <item> penguin </item>
+                <item> babi </item>
+                <item> kelinci </item>
+                <item> racoon </item>
+                <item> rusa kutub </item>
+                <item> singa laut </item>
+                <item> kuda laut </item>
+                <item> hiu </item>
+                <item> domba </item>
+                <item> udang </item>
+                <item> siput </item>
+                <item> ular </item>
+                <item> tupai </item>
+                <item> bangau </item>
+                <item> swan </item>
+                <item> tapir </item>
+                <item> harimau </item>
+                <item> kura-kura </item>
+                <item> mouse </item>
+                <item> vulture </item>
+                <item> walrus </item>
+                <item> paus </item>
+                <item> serigala </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Italian">
+        <item> armadillo </item>
+                <item> orso </item>
+                <item> beaver </item>
+                <item> api </item>
+                <item> uccello </item>
+                <item> bisonte </item>
+                <item> farfalla </item>
+                <item> cammello </item>
+                <item> cat </item>
+                <item> pollo </item>
+                <item> mucca </item>
+                <item> granchio </item>
+                <item> coccodrillo </item>
+                <item> cervo </item>
+                <item> dinosauro </item>
+                <item> cane </item>
+                <item> delfino </item>
+                <item> anatra </item>
+                <item> elefante </item>
+                <item> furetto </item>
+                <item> pesce </item>
+                <item> fox </item>
+                <item> rana </item>
+                <item> gibbon </item>
+                <item> giraffa </item>
+                <item> capra </item>
+                <item> oca </item>
+                <item> gabbiano </item>
+                <item> falco </item>
+                <item> ippopotamo </item>
+                <item> cavallo </item>
+                <item> iena </item>
+                <item> canguro </item>
+                <item> martin pescatore </item>
+                <item> koala </item>
+                <item> agnello </item>
+                <item> leone </item>
+                <item> lucertola </item>
+                <item> mammut </item>
+                <item> manatee </item>
+                <item> scimmia </item>
+                <item> lontra </item>
+                <item> panda </item>
+                <item> pappagallo </item>
+                <item> pavone </item>
+                <item> pinguino </item>
+                <item> maiale </item>
+                <item> coniglio </item>
+                <item> racoon </item>
+                <item> renne </item>
+                <item> leone marino </item>
+                <item> cavalluccio </item>
+                <item> squalo </item>
+                <item> pecore </item>
+                <item> gamberetti </item>
+                <item> lumaca </item>
+                <item> serpente </item>
+                <item> scoiattolo </item>
+                <item> cicogna </item>
+                <item> cigno </item>
+                <item> tapiro </item>
+                <item> tigre </item>
+                <item> tartaruga </item>
+                <item> del mouse </item>
+                <item> avvoltoio </item>
+                <item> tricheco </item>
+                <item> balena </item>
+                <item> lupo </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Japanese">
+        <item> armadillo </item>
+                <item>熊</item>
+                <item>ビーバー</item>
+                <item>蜂</item>
+                <item>鳥</item>
+                <item>バイソン</item>
+                <item>バタフライ</item>
+                <item>ラクダ</item>
+                <item> cat </item>
+                <item>チキン</item>
+                <item>牛</item>
+                <item>カニ</item>
+                <item>ワニ</item>
+                <item>鹿</item>
+                <item>恐竜</item>
+                <item>犬</item>
+                <item>イルカ</item>
+                <item>アヒル</item>
+                <item>象</item>
+                <item>フェレット</item>
+                <item>魚</item>
+                <item> fox </item>
+                <item> frog </item>
+                <item>ギボン</item>
+                <item>キリン</item>
+                <item>ヤギ</item>
+                <item> goose </item>
+                <item>カモメ</item>
+                <item>タカ</item>
+                <item>カバ</item>
+                <item>馬</item>
+                <item>ハイエナ</item>
+                <item>カンガルー</item>
+                <item> kingfisher </item>
+                <item>コアラ</item>
+                <item>子羊</item>
+                <item>ライオン</item>
+                <item>トカゲ</item>
+                <item>マンモス</item>
+                <item>マナティー</item>
+                <item> monkey </item>
+                <item> otter </item>
+                <item> panda </item>
+                <item>オウム</item>
+                <item>孔雀</item>
+                <item>ペンギン</item>
+                <item>豚</item>
+                <item>ウサギ</item>
+                <item>アライグマ</item>
+                <item>トナカイ</item>
+                <item>アシカ</item>
+                <item>タツノオトシゴ</item>
+                <item>サメ</item>
+                <item>羊</item>
+                <item>エビ</item>
+                <item>カタツムリ</item>
+                <item> snake </item>
+                <item>リス</item>
+                <item>コウノトリ</item>
+                <item>白鳥</item>
+                <item> tapir </item>
+                <item> tiger </item>
+                <item>カメ</item>
+                <item>マウス</item>
+                <item>ハゲタカ</item>
+                <item>セイウチ</item>
+                <item>クジラ</item>
+                <item>オオカミ</item>
+                <item>ウルヴァリン</item>
+    </string-array>
+    <string-array name="animal_Kannada">
+        <item>armadillo</item>
+        <item>bear</item>
+        <item>beaver</item>
+        <item>bee</item>
+        <item>bird</item>
+        <item>bison</item>
+        <item>butterfly</item>
+        <item>camel</item>
+        <item>cat</item>
+        <item>chicken</item>
+        <item>cow</item>
+        <item>crab</item>
+        <item>crocodile</item>
+        <item>deer</item>
+        <item>dinosaur</item>
+        <item>dog</item>
+        <item>dolphin</item>
+        <item>duck</item>
+        <item>elephant</item>
+        <item>ferret</item>
+        <item>fish</item>
+        <item>fox</item>
+        <item>frog</item>
+        <item>gibbon</item>
+        <item>giraffe</item>
+        <item>goat</item>
+        <item>goose</item>
+        <item>gull</item>
+        <item>hawk</item>
+        <item>hippopotamus</item>
+        <item>horse</item>
+        <item>hyena</item>
+        <item>kangaroo</item>
+        <item>kingfisher</item>
+        <item>koala</item>
+        <item>lamb</item>
+        <item>lion</item>
+        <item>lizard</item>
+        <item>mammoth</item>
+        <item>manatee</item>
+        <item>monkey</item>
+        <item>otter</item>
+        <item>panda</item>
+        <item>parrot</item>
+        <item>peacock</item>
+        <item>penguin</item>
+        <item>pig</item>
+        <item>rabbit</item>
+        <item>racoon</item>
+        <item>reindeer</item>
+        <item>sea lion</item>
+        <item>seahorse</item>
+        <item>shark</item>
+        <item>sheep</item>
+        <item>shrimp</item>
+        <item>snail</item>
+        <item>snake</item>
+        <item>squirrel</item>
+        <item>stork</item>
+        <item>swan</item>
+        <item>tapir</item>
+        <item>tiger</item>
+        <item>turtle</item>
+        <item>mouse</item>
+        <item>vulture</item>
+        <item>walrus</item>
+        <item>whale</item>
+        <item>wolf</item>
+        <item>wolverine</item>
+    </string-array>
+    <string-array name="animal_Korean">
+        <item> armadillo </item>
+                <item> 곰 </item>
+                <item> 비버 </item>
+                <item> 꿀벌 </item>
+                <item> 새 </item>
+                <item> 들소 </item>
+                <item> 나비 </item>
+                <item> 낙타 </item>
+                <item> 고양이 </item>
+                <item> 닭고기 </item>
+                <item> 암소 </item>
+                <item> 크랩 </item>
+                <item> 악어 </item>
+                <item> 사슴 </item>
+                <item> 공룡 </item>
+                <item> 개 </item>
+                <item> 돌고래 </item>
+                <item> 오리 </item>
+                <item> 코끼리 </item>
+                <item> 페레 </item>
+                <item> 물고기 </item>
+                <item> 여우 </item>
+                <item> 개구리 </item>
+                <item> 긴팔 </item>
+                <item> 기린 </item>
+                <item> 염소 </item>
+                <item> 거위 </item>
+                <item> gull </item>
+                <item> 호크 </item>
+                <item> hippopotamus </item>
+                <item> 말 </item>
+                <item> 혜나 </item>
+                <item> 캥거루 </item>
+                <item> 킹 피셔 </item>
+                <item> 코알라 </item>
+                <item> 양고기 </item>
+                <item> 사자 </item>
+                <item> 도마뱀 </item>
+                <item> 매머드 </item>
+                <item> 해우 </item>
+                <item> 원숭이 </item>
+                <item> 수달 </item>
+                <item> 팬더 </item>
+                <item> 앵무새 </item>
+                <item> 공작 </item>
+                <item> 펭귄 </item>
+                <item> 돼지 </item>
+                <item> 토끼 </item>
+                <item> 너구리 </item>
+                <item> 순록 </item>
+                <item> 바다 사자 </item>
+                <item> 해마 </item>
+                <item> 상어 </item>
+                <item> 양 </item>
+                <item> 새우 </item>
+                <item> 달팽이 </item>
+                <item> 뱀 </item>
+                <item> 다람쥐 </item>
+                <item> 황새 </item>
+                <item> 백조 </item>
+                <item> tapir </item>
+                <item> 타이거 </item>
+                <item> 거북이 </item>
+                <item> 마우스 </item>
+                <item> 독수리 </item>
+                <item> 해마 </item>
+                <item> 고래 </item>
+                <item> 늑대 </item>
+                <item> 울버린 </item>
+    </string-array>
+    <string-array name="animal_Latvian">
+        <item> armadillo </item>
+                <item> lācis </item>
+                <item> bebrs </item>
+                <item> bite </item>
+                <item> putns </item>
+                <item> bizons </item>
+                <item> tauriņš </item>
+                <item> kamielis </item>
+                <item> kaķis </item>
+                <item> vistas gaļa </item>
+                <item> govs </item>
+                <item> krabis </item>
+                <item> krokodils </item>
+                <item> briedis </item>
+                <item> dinozaurs </item>
+                <item> suns </item>
+                <item> delfīns </item>
+                <item> pīle </item>
+                <item> zilonis </item>
+                <item> sesks </item>
+                <item> zivis </item>
+                <item> lapsa </item>
+                <item> varde </item>
+                <item> gibbon </item>
+                <item> žirafe </item>
+                <item> kaza </item>
+                <item> zoss </item>
+                <item> kaija </item>
+                <item> vanags </item>
+                <item> nīlzirgs </item>
+                <item> zirgs </item>
+                <item> hiēna </item>
+                <item> ķengurs </item>
+                <item> karaliene </item>
+                <item> koala </item>
+                <item> jērs </item>
+                <item> lauva </item>
+                <item> ķirzaka </item>
+                <item> mamuts </item>
+                <item> lamantīns </item>
+                <item> pērtiķis </item>
+                <item> ūdrs </item>
+                <item> panda </item>
+                <item> papagailis </item>
+                <item> pāvs </item>
+                <item> pingvīns </item>
+                <item> cūka </item>
+                <item> trusis </item>
+                <item> jenots </item>
+                <item> ziemeļbriedis </item>
+                <item> jūras lauva </item>
+                <item> jūras zirdziņš </item>
+                <item> haizivs </item>
+                <item> aitas </item>
+                <item> garneles </item>
+                <item> gliemezis </item>
+                <item> čūska </item>
+                <item> vāvere </item>
+                <item> stārķis </item>
+                <item> gulbis </item>
+                <item> tapir </item>
+                <item> tīģeris </item>
+                <item> bruņurupucis </item>
+                <item> pele </item>
+                <item> plēsoņa </item>
+                <item> valzirgs </item>
+                <item> valis </item>
+                <item> vilks </item>
+                <item> āmrijs </item>
+    </string-array>
+    <string-array name="animal_Lithuanian">
+        <item> šarvuotis </item>
+                <item> lokys </item>
+                <item> bebras </item>
+                <item> bitė </item>
+                <item> paukštis </item>
+                <item> bizonas </item>
+                <item> drugelis </item>
+                <item> kupranugaris </item>
+                <item> katė </item>
+                <item> vištiena </item>
+                <item> karvė </item>
+                <item> krabas </item>
+                <item> krokodilas </item>
+                <item> elnias </item>
+                <item> dinozauras </item>
+                <item> šuo </item>
+                <item> delfinas </item>
+                <item> antis </item>
+                <item> dramblys </item>
+                <item> šeškas </item>
+                <item> žuvis </item>
+                <item> lapė </item>
+                <item> varlė </item>
+                <item> gibbon </item>
+                <item> žirafa </item>
+                <item> ožka </item>
+                <item> žąsis </item>
+                <item> bulė </item>
+                <item> vanagas </item>
+                <item> hipopotamas </item>
+                <item> arklys </item>
+                <item> hiena </item>
+                <item> kengūra </item>
+                <item> karalienė </item>
+                <item> koala </item>
+                <item> ėriukas </item>
+                <item> liūtas </item>
+                <item> driežas </item>
+                <item> mamutas </item>
+                <item> lamantinas </item>
+                <item> beždžionė </item>
+                <item> ūdra </item>
+                <item> panda </item>
+                <item> papūga </item>
+                <item> povas </item>
+                <item> pingvinas </item>
+                <item> kiaulė </item>
+                <item> triušis </item>
+                <item> meškėnas </item>
+                <item> elnias </item>
+                <item> jūrų liūtas </item>
+                <item> jūrų arkliukas </item>
+                <item> ryklys </item>
+                <item> avys </item>
+                <item> krevetės </item>
+                <item> sraigė </item>
+                <item> gyvatė </item>
+                <item> voverė </item>
+                <item> gandras </item>
+                <item> gulbė </item>
+                <item> tapyras </item>
+                <item> tigras </item>
+                <item> vėžlys </item>
+                <item> pelė </item>
+                <item> grifas </item>
+                <item> medetkos </item>
+                <item> banginis </item>
+                <item> vilkas </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Macedonian">
+        <item> армадило </item>
+                <item> мечка </item>
+                <item> брада </item>
+                <item> пчела </item>
+                <item> птица </item>
+                <item> бизон </item>
+                <item> пеперутка </item>
+                <item> камила </item>
+                <item> мачка </item>
+                <item> пилешко </item>
+                <item> крава </item>
+                <item> рак </item>
+                <item> крокодил </item>
+                <item> елен </item>
+                <item> диносаурус </item>
+                <item> куче </item>
+                <item> делфин </item>
+                <item> патка </item>
+                <item> слон </item>
+                <item> ферет </item>
+                <item> риба </item>
+                <item> лисица </item>
+                <item> жаба </item>
+                <item> гибон </item>
+                <item> жирафа </item>
+                <item> коза </item>
+                <item> гуска </item>
+                <item> галеб </item>
+                <item> јастреб </item>
+                <item> хипопотамус </item>
+                <item> коњ </item>
+                <item> хиена </item>
+                <item> кенгур </item>
+                <item> рибар </item>
+                <item> коала </item>
+                <item> јагне </item>
+                <item> лав </item>
+                <item> гуштер </item>
+                <item> мамут </item>
+                <item> manatee </item>
+                <item> мајмун </item>
+                <item> видра </item>
+                <item> панда </item>
+                <item> папагал </item>
+                <item> паун </item>
+                <item> пингвин </item>
+                <item> свиња </item>
+                <item> зајак </item>
+                <item> ракун </item>
+                <item> ирваси </item>
+                <item> морски лав </item>
+                <item> морски коњи </item>
+                <item> ајкула </item>
+                <item> овци </item>
+                <item> ракчиња </item>
+                <item> полжав </item>
+                <item> змија </item>
+                <item> верверица </item>
+                <item> штрк </item>
+                <item> лебед </item>
+                <item> тапир </item>
+                <item> тигар </item>
+                <item> желка </item>
+                <item> глувче </item>
+                <item> мршојадец </item>
+                <item> морж </item>
+                <item> кит </item>
+                <item> волк </item>
+                <item> волверин </item>
+    </string-array>
+    <string-array name="animal_Malay">
+        <item> armadillo </item>
+                <item> bear </item>
+                <item> beaver </item>
+                <item> lebah </item>
+                <item> burung </item>
+                <item> bison </item>
+                <item> rama-rama </item>
+                <item> unta </item>
+                <item> kucing </item>
+                <item> ayam </item>
+                <item> lembu </item>
+                <item> ketam </item>
+                <item> buaya </item>
+                <item> rusa </item>
+                <item> dinosaur </item>
+                <item> anjing </item>
+                <item> lumba-lumba </item>
+                <item> itik </item>
+                <item> gajah </item>
+                <item> ferret </item>
+                <item> ikan </item>
+                <item> fox </item>
+                <item> katak </item>
+                <item> gibbon </item>
+                <item> zirafah </item>
+                <item> kambing </item>
+                <item> angsa </item>
+                <item> gull </item>
+                <item> elang </item>
+                <item> hippopotamus </item>
+                <item> kuda </item>
+                <item> hyena </item>
+                <item> kangaroo </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> kambing </item>
+                <item> singa </item>
+                <item> kadal </item>
+                <item> mammoth </item>
+                <item> manatee </item>
+                <item> monyet </item>
+                <item> otter </item>
+                <item> panda </item>
+                <item> nuri </item>
+                <item> merak </item>
+                <item> penguin </item>
+                <item> babi </item>
+                <item> arnab </item>
+                <item> racoon </item>
+                <item> rusa </item>
+                <item> singa laut </item>
+                <item> kuda laut </item>
+                <item> jerung </item>
+                <item> domba </item>
+                <item> udang </item>
+                <item> siput </item>
+                <item> ular </item>
+                <item> tupai </item>
+                <item> stork </item>
+                <item> swan </item>
+                <item> tapir </item>
+                <item> harimau </item>
+                <item> penyu </item>
+                <item> tetikus </item>
+                <item> burung hantu </item>
+                <item> walrus </item>
+                <item> paus </item>
+                <item> serigala </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Malayalam">
+        <item> അർമാഡില്ലോ </item>
+                <item> കരടി </item>
+                <item> ബീവർ </item>
+                <item> bee </item>
+                <item> പക്ഷി </item>
+                <item> കാട്ടുപോത്ത് </item>
+                <item> ബട്ടർഫ്ലൈ </item>
+                <item> ഒട്ടകം </item>
+                <item> പൂച്ച </item>
+                <item> ചിക്കൻ </item>
+                <item> പശു </item>
+                <item> ക്രാബ് </item>
+                <item> മുതല </item>
+                <item> മാൻ </item>
+                <item> ദിനോസർ </item>
+                <item> നായ </item>
+                <item> ഡോൾഫിൻ </item>
+                <item> താറാവ് </item>
+                <item> ആന </item>
+                <item> ferret </item>
+                <item> മത്സ്യം </item>
+                <item> കുറുക്കൻ </item>
+                <item> തവള </item>
+                <item> ഗിബ്ബൺ </item>
+                <item> ജിറാഫ് </item>
+                <item> ആട് </item>
+                <item> goose </item>
+                <item> gull </item>
+                <item> പരുന്ത് </item>
+                <item> ഹിപ്പോപ്പൊട്ടാമസ് </item>
+                <item> കുതിര </item>
+                <item> hyena </item>
+                <item> കംഗാരു </item>
+                <item> കിംഗ്ഫിഷർ </item>
+                <item> കോല </item>
+                <item> ആട്ടിൻ </item>
+                <item> സിംഹം </item>
+                <item> പല്ലി </item>
+                <item> മാമോത്ത് </item>
+                <item> manatee </item>
+                <item> കുരങ്ങൻ </item>
+                <item> otter </item>
+                <item> പാണ്ട </item>
+                <item> തത്ത </item>
+                <item> മയിൽ </item>
+                <item> പെൻ‌ഗ്വിൻ </item>
+                <item> പന്നി </item>
+                <item> മുയൽ </item>
+                <item> racoon </item>
+                <item> റെയിൻ‌ഡിയർ </item>
+                <item> കടൽ സിംഹം </item>
+                <item> കടൽ കുതിര </item>
+                <item> സ്രാവ് </item>
+                <item> ആടുകൾ </item>
+                <item> ചെമ്മീൻ </item>
+                <item> ഒച്ച </item>
+                <item> പാമ്പ് </item>
+                <item> അണ്ണാൻ </item>
+                <item> stork </item>
+                <item> സ്വാൻ </item>
+                <item> ടാപിർ </item>
+                <item> കടുവ </item>
+                <item> ആമ </item>
+                <item> മൗസ് </item>
+                <item> കഴുകൻ </item>
+                <item> വാൽറസ് </item>
+                <item> തിമിംഗലം </item>
+                <item> ചെന്നായ </item>
+                <item> വോൾവറിൻ </item>
+    </string-array>
+    <string-array name="animal_Maltese">
+        <item> armadillo </item>
+                <item> bear </item>
+                <item> castor </item>
+                <item> naħla </item>
+                <item> għasfur </item>
+                <item> bison </item>
+                <item> farfett </item>
+                <item> ġemel </item>
+                <item> qattus </item>
+                <item> tiġieġ </item>
+                <item> baqra </item>
+                <item> granċ </item>
+                <item> kukkudrill </item>
+                <item> ċriev </item>
+                <item> dinosawru </item>
+                <item> kelb </item>
+                <item> delfini </item>
+                <item> papra </item>
+                <item> iljunfant </item>
+                <item> inalit </item>
+                <item> ħut </item>
+                <item> volpi </item>
+                <item> żrinġ </item>
+                <item> gibbon </item>
+                <item> giraffe </item>
+                <item> mogħża </item>
+                <item> wiżż </item>
+                <item> gawwija </item>
+                <item> hawk </item>
+                <item> hippopotamus </item>
+                <item> żiemel </item>
+                <item> hyena </item>
+                <item> kanguru </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> ħaruf </item>
+                <item> iljun </item>
+                <item> gremxula </item>
+                <item> mammoth </item>
+                <item> manatee </item>
+                <item> xadina </item>
+                <item> lontra </item>
+                <item> panda </item>
+                <item> pappagall </item>
+                <item> peacock </item>
+                <item> pingwin </item>
+                <item> majjal </item>
+                <item> fenek </item>
+                <item> racoon </item>
+                <item> renna </item>
+                <item> iljun tal-baħar </item>
+                <item> seahorse </item>
+                <item> shark </item>
+                <item> nagħaġ </item>
+                <item> gambli </item>
+                <item> bebbuxu </item>
+                <item> serp </item>
+                <item> squirill </item>
+                <item> ċikonja </item>
+                <item> swan </item>
+                <item> tapir </item>
+                <item> tiger </item>
+                <item> fekruna </item>
+                <item> ġurdien </item>
+                <item> vulture </item>
+                <item> walrus </item>
+                <item> balieni </item>
+                <item> lupu </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Norwegian">
+        <item> beltedyret </item>
+                <item> bear </item>
+                <item> bever </item>
+                <item> bie </item>
+                <item> fugl </item>
+                <item> bison </item>
+                <item> sommerfugl </item>
+                <item> kamel </item>
+                <item> katt </item>
+                <item> kylling </item>
+                <item> ku </item>
+                <item> krabbe </item>
+                <item> krokodille </item>
+                <item> hjort </item>
+                <item> dinosaur </item>
+                <item> hund </item>
+                <item> delfin </item>
+                <item> ande </item>
+                <item> elefant </item>
+                <item> ilder </item>
+                <item> fisk </item>
+                <item> rev </item>
+                <item> frosk </item>
+                <item> gibbon </item>
+                <item> giraffer </item>
+                <item> geit </item>
+                <item> gås </item>
+                <item> gull </item>
+                <item> hawk </item>
+                <item> flodhesten </item>
+                <item> hest </item>
+                <item> hyene </item>
+                <item> kenguru </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> lam </item>
+                <item> lion </item>
+                <item> øgle </item>
+                <item> mammut </item>
+                <item> manatee </item>
+                <item> ape </item>
+                <item> oter </item>
+                <item> panda </item>
+                <item> papegøye </item>
+                <item> peacock </item>
+                <item> pingvin </item>
+                <item> pig </item>
+                <item> kanin </item>
+                <item> vaskebjørn </item>
+                <item> rein </item>
+                <item> sjøløve </item>
+                <item> seahorse </item>
+                <item> hai </item>
+                <item> sau </item>
+                <item> reke </item>
+                <item> snegle </item>
+                <item> slange </item>
+                <item> ekorn </item>
+                <item> stork </item>
+                <item> svane </item>
+                <item> tapiren </item>
+                <item> tiger </item>
+                <item> skilpadde </item>
+                <item> mus </item>
+                <item> gribbens </item>
+                <item> hvalross </item>
+                <item> hval </item>
+                <item> ulv </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Polish">
+        <item> pancernik </item>
+                <item> niedźwiedź </item>
+                <item> bóbr </item>
+                <item> pszczoła </item>
+                <item> ptak </item>
+                <item> żubr </item>
+                <item> motyl </item>
+                <item> wielbłąd </item>
+                <item> kot </item>
+                <item> kurczak </item>
+                <item> krowa </item>
+                <item> krab </item>
+                <item> krokodyl </item>
+                <item> jeleń </item>
+                <item> dinozaur </item>
+                <item> pies </item>
+                <item> delfin </item>
+                <item> kaczka </item>
+                <item> słoń </item>
+                <item> fretka </item>
+                <item> ryba </item>
+                <item> lis </item>
+                <item> żaba </item>
+                <item> gibbon </item>
+                <item> żyrafa </item>
+                <item> koza </item>
+                <item> gęś </item>
+                <item> frajer </item>
+                <item> jastrząb </item>
+                <item> hipopotam </item>
+                <item> koń </item>
+                <item> hiena </item>
+                <item> kangur </item>
+                <item> zimorodek </item>
+                <item> koala </item>
+                <item> jagnięcina </item>
+                <item> lew </item>
+                <item> jaszczurka </item>
+                <item> mamut </item>
+                <item> manatee </item>
+                <item> małpa </item>
+                <item> wydra </item>
+                <item> panda </item>
+                <item> papuga </item>
+                <item> paw </item>
+                <item> pingwin </item>
+                <item> świnia </item>
+                <item> królik </item>
+                <item> racoon </item>
+                <item> renifer </item>
+                <item> lew morski </item>
+                <item> konik morski </item>
+                <item> rekin </item>
+                <item> owca </item>
+                <item> krewetki </item>
+                <item> ślimak </item>
+                <item> wąż </item>
+                <item> wiewiórka </item>
+                <item> bocian </item>
+                <item> łabędź </item>
+                <item> tapir </item>
+                <item> tygrys </item>
+                <item> żółw </item>
+                <item> mysz </item>
+                <item> sęp </item>
+                <item> mors </item>
+                <item> wieloryb </item>
+                <item> wilk </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Portuguese">
+        <item> tatu </item>
+                <item> urso </item>
+                <item> castor </item>
+                <item> abelha </item>
+                <item> pássaro </item>
+                <item> bisonte </item>
+                <item> borboleta </item>
+                <item> camelo </item>
+                <item> gato </item>
+                <item> frango </item>
+                <item> vaca </item>
+                <item> caranguejo </item>
+                <item> crocodilo </item>
+                <item> cervo </item>
+                <item> dinossauro </item>
+                <item> cachorro </item>
+                <item> golfinho </item>
+                <item> pato </item>
+                <item> elefante </item>
+                <item> furão </item>
+                <item> peixe </item>
+                <item> raposa </item>
+                <item> sapo </item>
+                <item> gibão </item>
+                <item> girafa </item>
+                <item> cabra </item>
+                <item> ganso </item>
+                <item> gaivota </item>
+                <item> falcão </item>
+                <item> hipopótamo </item>
+                <item> cavalo </item>
+                <item> hiena </item>
+                <item> canguru </item>
+                <item> kingfisher </item>
+                <item> coala </item>
+                <item> cordeiro </item>
+                <item> leão </item>
+                <item> lagarto </item>
+                <item> mamute </item>
+                <item> peixe-boi </item>
+                <item> macaco </item>
+                <item> lontra </item>
+                <item> panda </item>
+                <item> papagaio </item>
+                <item> pavão </item>
+                <item> pinguim </item>
+                <item> porco </item>
+                <item> coelho </item>
+                <item> guaxinim </item>
+                <item> rena </item>
+                <item> leão marinho </item>
+                <item> cavalo marinho </item>
+                <item> tubarão </item>
+                <item> ovelha </item>
+                <item> camarão </item>
+                <item> caracol </item>
+                <item> cobra </item>
+                <item> esquilo </item>
+                <item> cegonha </item>
+                <item> cisne </item>
+                <item> anta </item>
+                <item> tigre </item>
+                <item> tartaruga </item>
+                <item> mouse </item>
+                <item> abutre </item>
+                <item> morsa </item>
+                <item> baleia </item>
+                <item> lobo </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Romanian">
+        <item> tatu </item>
+                <item> urs </item>
+                <item> castor </item>
+                <item> albina </item>
+                <item> pasăre </item>
+                <item> bizoni </item>
+                <item> fluture </item>
+                <item> cămilă </item>
+                <item> pisica </item>
+                <item> pui </item>
+                <item> vacă </item>
+                <item> crab </item>
+                <item> crocodil </item>
+                <item> cerb </item>
+                <item> dinozaur </item>
+                <item> câine </item>
+                <item> delfin </item>
+                <item> rață </item>
+                <item> elefant </item>
+                <item> dihor </item>
+                <item> pește </item>
+                <item> fox </item>
+                <item> broasca </item>
+                <item> gibon </item>
+                <item> girafă </item>
+                <item> capră </item>
+                <item> gâscă </item>
+                <item> pescăruș </item>
+                <item> uliu </item>
+                <item> hipopotam </item>
+                <item> cal </item>
+                <item> hienă </item>
+                <item> cangur </item>
+                <item> kingfisher </item>
+                <item> koala </item>
+                <item> miel </item>
+                <item> leu </item>
+                <item> șopârlă </item>
+                <item> mamut </item>
+                <item> manatee </item>
+                <item> maimuță </item>
+                <item> vidră </item>
+                <item> panda </item>
+                <item> papagal </item>
+                <item> păun </item>
+                <item> pinguin </item>
+                <item> porc </item>
+                <item> iepure </item>
+                <item> enot </item>
+                <item> ren </item>
+                <item> leu de mare </item>
+                <item> seahorse </item>
+                <item> rechin </item>
+                <item> oi </item>
+                <item> creveți </item>
+                <item> melc </item>
+                <item> șarpe </item>
+                <item> veveriță </item>
+                <item> stork </item>
+                <item> lebada </item>
+                <item> tapir </item>
+                <item> tigru </item>
+                <item> broască țestoasă </item>
+                <item> șoarece </item>
+                <item> vulture </item>
+                <item> morsă </item>
+                <item> balenă </item>
+                <item> lup </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Russian">
+        <item> броненосец </item>
+                <item> медведь </item>
+                <item> бобра </item>
+                <item> пчела </item>
+                <item> птица </item>
+                <item> зубры </item>
+                <item> бабочка </item>
+                <item> верблюд </item>
+                <item> кошка </item>
+                <item> курица </item>
+                <item> корова </item>
+                <item> краб </item>
+                <item> крокодил </item>
+                <item> олень </item>
+                <item> динозавр </item>
+                <item> собака </item>
+                <item> дельфин </item>
+                <item> утка </item>
+                <item> слон </item>
+                <item> хорек </item>
+                <item> рыба </item>
+                <item> лисица </item>
+                <item> лягушка </item>
+                <item> гиббонов </item>
+                <item> жираф </item>
+                <item> коза </item>
+                <item> гусь </item>
+                <item> чайка </item>
+                <item> ястреб </item>
+                <item> бегемот </item>
+                <item> лошадь </item>
+                <item> гиена </item>
+                <item> кенгуру </item>
+                <item> зимородок </item>
+                <item> коала </item>
+                <item> баранина </item>
+                <item> лев </item>
+                <item> ящерица </item>
+                <item> мамонт </item>
+                <item> ламантиновая </item>
+                <item> обезьяна </item>
+                <item> выдра </item>
+                <item> панда </item>
+                <item> попугай </item>
+                <item> павлин </item>
+                <item> пингвин </item>
+                <item> свинья </item>
+                <item> кролик </item>
+                <item> енот </item>
+                <item> олень </item>
+                <item> морской лев </item>
+                <item> конек </item>
+                <item> акула </item>
+                <item> овцы </item>
+                <item> креветки </item>
+                <item> улитка </item>
+                <item> змея </item>
+                <item> белка </item>
+                <item> аист </item>
+                <item> лебедь </item>
+                <item> тапир </item>
+                <item> тигр </item>
+                <item> черепаха </item>
+                <item> мышь </item>
+                <item> сип </item>
+                <item> морж </item>
+                <item> кит </item>
+                <item> волк </item>
+                <item> росомаха </item>
+    </string-array>
+    <string-array name="animal_Serbian">
+        <item> армадилло </item>
+                <item> медвед </item>
+                <item> дабар </item>
+                <item> пчела </item>
+                <item> птица </item>
+                <item> бисон </item>
+                <item> лептир </item>
+                <item> дева </item>
+                <item> мачка </item>
+                <item> пилетина </item>
+                <item> крава </item>
+                <item> рак </item>
+                <item> крокодил </item>
+                <item> јелен </item>
+                <item> диносаур </item>
+                <item> пас </item>
+                <item> делфин </item>
+                <item> патка </item>
+                <item> слон </item>
+                <item> ферет </item>
+                <item> риба </item>
+                <item> лисица </item>
+                <item> жаба </item>
+                <item> гиббон ​​</item>
+                <item> жирафа </item>
+                <item> коза </item>
+                <item> гуска </item>
+                <item> галеб </item>
+                <item> јастреб </item>
+                <item> коња </item>
+                <item> коњ </item>
+                <item> хијена </item>
+                <item> кенгуру </item>
+                <item> морфир </item>
+                <item> коала </item>
+                <item> јањетина </item>
+                <item> лав </item>
+                <item> гуштер </item>
+                <item> мамут </item>
+                <item> менаџер </item>
+                <item> мајмун </item>
+                <item> вид </item>
+                <item> панда </item>
+                <item> папагај </item>
+                <item> паун </item>
+                <item> пингвин </item>
+                <item> свиња </item>
+                <item> зец </item>
+                <item> ракуна </item>
+                <item> северни јелен </item>
+                <item> морски лав </item>
+                <item> морски коњ </item>
+                <item> ајкула </item>
+                <item> овца </item>
+                <item> шкампи </item>
+                <item> пуж </item>
+                <item> змија </item>
+                <item> веверица </item>
+                <item> рода </item>
+                <item> лабуд </item>
+                <item> тапир </item>
+                <item> тигар </item>
+                <item> корњача </item>
+                <item> миш </item>
+                <item> супа </item>
+                <item> морж </item>
+                <item> кита </item>
+                <item> вук </item>
+                <item> волверине </item>
+    </string-array>
+    <string-array name="animal_Slovak">
+        <item> pásavec </item>
+                <item> medveď </item>
+                <item> bobor </item>
+                <item> bee </item>
+                <item> bird </item>
+                <item> zubor </item>
+                <item> butterfly </item>
+                <item> ťavie </item>
+                <item> cat </item>
+                <item> kurča </item>
+                <item> cow </item>
+                <item> krab </item>
+                <item> krokodíl </item>
+                <item> deer </item>
+                <item> dinosaur </item>
+                <item> pes </item>
+                <item> dolphin </item>
+                <item> kačica </item>
+                <item> slon </item>
+                <item> fretka </item>
+                <item> fish </item>
+                <item> fox </item>
+                <item> frog </item>
+                <item> gibbon </item>
+                <item> žirafa </item>
+                <item> kozie </item>
+                <item> husacie </item>
+                <item> čajka </item>
+                <item> jastrab </item>
+                <item> hroch </item>
+                <item> kôň </item>
+                <item> hyena </item>
+                <item> klokan </item>
+                <item> rybárik </item>
+                <item> koala </item>
+                <item> jahňacie </item>
+                <item> lev </item>
+                <item> jašterica </item>
+                <item> mamutie </item>
+                <item> manatee </item>
+                <item> monkey </item>
+                <item> vydra </item>
+                <item> panda </item>
+                <item> parrot </item>
+                <item> páv </item>
+                <item> tučniak </item>
+                <item> prasa </item>
+                <item> králik </item>
+                <item> mýval </item>
+                <item> sob </item>
+                <item> lachtan </item>
+                <item> koník </item>
+                <item> shark </item>
+                <item> ovce </item>
+                <item> krevety </item>
+                <item> slimák </item>
+                <item> snake </item>
+                <item> veverička </item>
+                <item> bocian </item>
+                <item> swan </item>
+                <item> tapír </item>
+                <item> tiger </item>
+                <item> korytnačka </item>
+                <item> myš </item>
+                <item> sup </item>
+                <item> mrož </item>
+                <item> veľrýb </item>
+                <item> wolf </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Slovenian">
+        <item> armadillo </item>
+                <item> medved </item>
+                <item> bober </item>
+                <item> čebela </item>
+                <item> ptica </item>
+                <item> bizon </item>
+                <item> metulj </item>
+                <item> kamel </item>
+                <item> mačka </item>
+                <item> piščanec </item>
+                <item> krava </item>
+                <item> rakovice </item>
+                <item> krokodil </item>
+                <item> jelen </item>
+                <item> dinozaver </item>
+                <item> pes </item>
+                <item> delfin </item>
+                <item> raca </item>
+                <item> slon </item>
+                <item> dihurja </item>
+                <item> riba </item>
+                <item> lisica </item>
+                <item> žaba </item>
+                <item> gibbon </item>
+                <item> žirafa </item>
+                <item> koza </item>
+                <item> gos </item>
+                <item> galeb </item>
+                <item> jastreb </item>
+                <item> povodni konj </item>
+                <item> konj </item>
+                <item> hyena </item>
+                <item> kenguru </item>
+                <item> morski pes </item>
+                <item> koala </item>
+                <item> jagnje </item>
+                <item> lev </item>
+                <item> kuščar </item>
+                <item> mamut </item>
+                <item> upravnik </item>
+                <item> opica </item>
+                <item> vidra </item>
+                <item> panda </item>
+                <item> papiga </item>
+                <item> pava </item>
+                <item> pingvin </item>
+                <item> prašič </item>
+                <item> zajec </item>
+                <item> rakun </item>
+                <item> severni jelen </item>
+                <item> morski lev </item>
+                <item> morski konj </item>
+                <item> morski pes </item>
+                <item> ovca </item>
+                <item> kozica </item>
+                <item> polž </item>
+                <item> kača </item>
+                <item> veverica </item>
+                <item> štorklja </item>
+                <item> labod </item>
+                <item> tapir </item>
+                <item> tiger </item>
+                <item> želva </item>
+                <item> miška </item>
+                <item> jastreb </item>
+                <item> morž </item>
+                <item> kita </item>
+                <item> volk </item>
+                <item> volkvar </item>
+    </string-array>
+    <string-array name="animal_Spanish">
+        <item> armadillo </item>
+                <item> oso </item>
+                <item> castor </item>
+                <item> abeja </item>
+                <item> pájaro </item>
+                <item> bisonte </item>
+                <item> mariposa </item>
+                <item> camello </item>
+                <item> gato </item>
+                <item> pollo </item>
+                <item> vaca </item>
+                <item> cangrejo </item>
+                <item> cocodrilo </item>
+                <item> ciervo </item>
+                <item> dinosaurio </item>
+                <item> perro </item>
+                <item> delfín </item>
+                <item> pato </item>
+                <item> elefante </item>
+                <item> hurón </item>
+                <item> pescado </item>
+                <item> zorro </item>
+                <item> rana </item>
+                <item> gibbon </item>
+                <item> jirafa </item>
+                <item> cabra </item>
+                <item> ganso </item>
+                <item> gaviota </item>
+                <item> halcón </item>
+                <item> hipopótamo </item>
+                <item> caballo </item>
+                <item> hiena </item>
+                <item> canguro </item>
+                <item> martín pescador </item>
+                <item> koala </item>
+                <item> cordero </item>
+                <item> león </item>
+                <item> lagarto </item>
+                <item> mamut </item>
+                <item> manatí </item>
+                <item> mono </item>
+                <item> nutria </item>
+                <item> panda </item>
+                <item> loro </item>
+                <item> pavo real </item>
+                <item> pingüino </item>
+                <item> cerdo </item>
+                <item> conejo </item>
+                <item> mapache </item>
+                <item> reno </item>
+                <item> león marino </item>
+                <item> caballito de mar </item>
+                <item> tiburón </item>
+                <item> oveja </item>
+                <item> camarones </item>
+                <item> caracol </item>
+                <item> serpiente </item>
+                <item> ardilla </item>
+                <item> cigüeña </item>
+                <item> cisne </item>
+                <item> tapir </item>
+                <item> tigre </item>
+                <item> tortuga </item>
+                <item> mouse </item>
+                <item> buitre </item>
+                <item> morsa </item>
+                <item> ballena </item>
+                <item> lobo </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Swahili">
+        <item>armadillo</item>
+        <item>bear</item>
+        <item>beaver</item>
+        <item>bee</item>
+        <item>bird</item>
+        <item>bison</item>
+        <item>butterfly</item>
+        <item>camel</item>
+        <item>cat</item>
+        <item>chicken</item>
+        <item>cow</item>
+        <item>crab</item>
+        <item>crocodile</item>
+        <item>deer</item>
+        <item>dinosaur</item>
+        <item>dog</item>
+        <item>dolphin</item>
+        <item>duck</item>
+        <item>elephant</item>
+        <item>ferret</item>
+        <item>fish</item>
+        <item>fox</item>
+        <item>frog</item>
+        <item>gibbon</item>
+        <item>giraffe</item>
+        <item>goat</item>
+        <item>goose</item>
+        <item>gull</item>
+        <item>hawk</item>
+        <item>hippopotamus</item>
+        <item>horse</item>
+        <item>hyena</item>
+        <item>kangaroo</item>
+        <item>kingfisher</item>
+        <item>koala</item>
+        <item>lamb</item>
+        <item>lion</item>
+        <item>lizard</item>
+        <item>mammoth</item>
+        <item>manatee</item>
+        <item>monkey</item>
+        <item>otter</item>
+        <item>panda</item>
+        <item>parrot</item>
+        <item>peacock</item>
+        <item>penguin</item>
+        <item>pig</item>
+        <item>rabbit</item>
+        <item>racoon</item>
+        <item>reindeer</item>
+        <item>sea lion</item>
+        <item>seahorse</item>
+        <item>shark</item>
+        <item>sheep</item>
+        <item>shrimp</item>
+        <item>snail</item>
+        <item>snake</item>
+        <item>squirrel</item>
+        <item>stork</item>
+        <item>swan</item>
+        <item>tapir</item>
+        <item>tiger</item>
+        <item>turtle</item>
+        <item>mouse</item>
+        <item>vulture</item>
+        <item>walrus</item>
+        <item>whale</item>
+        <item>wolf</item>
+        <item>wolverine</item>
+    </string-array>
+    <string-array name="animal_Swedish">
+        <item> bältdjur </item>
+                <item> björn </item>
+                <item> bäver </item>
+                <item> bee </item>
+                <item> fågel </item>
+                <item> bison </item>
+                <item> fjäril </item>
+                <item> kamel </item>
+                <item> cat </item>
+                <item> kyckling </item>
+                <item> ko </item>
+                <item> krabba </item>
+                <item> krokodil </item>
+                <item> rådjur </item>
+                <item> dinosaurie </item>
+                <item> hund </item>
+                <item> delfin </item>
+                <item> anka </item>
+                <item> elefant </item>
+                <item> iller </item>
+                <item> fisk </item>
+                <item> fox </item>
+                <item> groda </item>
+                <item> gibbon </item>
+                <item> giraffe </item>
+                <item> get </item>
+                <item> gås </item>
+                <item> mås </item>
+                <item> hök </item>
+                <item> flodhäst </item>
+                <item> häst </item>
+                <item> hyena </item>
+                <item> känguru </item>
+                <item> kungsfiskare </item>
+                <item> koala </item>
+                <item> lamm </item>
+                <item> lejon </item>
+                <item> ödla </item>
+                <item> mammut </item>
+                <item> manatee </item>
+                <item> apa </item>
+                <item> utter </item>
+                <item> panda </item>
+                <item> papegoja </item>
+                <item> påfågel </item>
+                <item> penguin </item>
+                <item> gris </item>
+                <item> kanin </item>
+                <item> raccoon </item>
+                <item> renar </item>
+                <item> sjölejon </item>
+                <item> sjöhäst </item>
+                <item> haj </item>
+                <item> får </item>
+                <item> räkor </item>
+                <item> snigel </item>
+                <item> ormen </item>
+                <item> ekorre </item>
+                <item> stork </item>
+                <item> svan </item>
+                <item> tapirs </item>
+                <item> tiger </item>
+                <item> sköldpadda </item>
+                <item> mus </item>
+                <item> gam </item>
+                <item> valross- </item>
+                <item> whale </item>
+                <item> wolf </item>
+                <item> järv </item>
+    </string-array>
+    <string-array name="animal_Tagalog">
+        <item>armadillo</item>
+        <item>bear</item>
+        <item>beaver</item>
+        <item>bee</item>
+        <item>bird</item>
+        <item>bison</item>
+        <item>butterfly</item>
+        <item>camel</item>
+        <item>cat</item>
+        <item>chicken</item>
+        <item>cow</item>
+        <item>crab</item>
+        <item>crocodile</item>
+        <item>deer</item>
+        <item>dinosaur</item>
+        <item>dog</item>
+        <item>dolphin</item>
+        <item>duck</item>
+        <item>elephant</item>
+        <item>ferret</item>
+        <item>fish</item>
+        <item>fox</item>
+        <item>frog</item>
+        <item>gibbon</item>
+        <item>giraffe</item>
+        <item>goat</item>
+        <item>goose</item>
+        <item>gull</item>
+        <item>hawk</item>
+        <item>hippopotamus</item>
+        <item>horse</item>
+        <item>hyena</item>
+        <item>kangaroo</item>
+        <item>kingfisher</item>
+        <item>koala</item>
+        <item>lamb</item>
+        <item>lion</item>
+        <item>lizard</item>
+        <item>mammoth</item>
+        <item>manatee</item>
+        <item>monkey</item>
+        <item>otter</item>
+        <item>panda</item>
+        <item>parrot</item>
+        <item>peacock</item>
+        <item>penguin</item>
+        <item>pig</item>
+        <item>rabbit</item>
+        <item>racoon</item>
+        <item>reindeer</item>
+        <item>sea lion</item>
+        <item>seahorse</item>
+        <item>shark</item>
+        <item>sheep</item>
+        <item>shrimp</item>
+        <item>snail</item>
+        <item>snake</item>
+        <item>squirrel</item>
+        <item>stork</item>
+        <item>swan</item>
+        <item>tapir</item>
+        <item>tiger</item>
+        <item>turtle</item>
+        <item>mouse</item>
+        <item>vulture</item>
+        <item>walrus</item>
+        <item>whale</item>
+        <item>wolf</item>
+        <item>wolverine</item>
+    </string-array>
+    <string-array name="animal_Tamil">
+        <item> ஆர்மடில்லோ </item>
+                <item> கரடி </item>
+                <item> நீர்நாய் </item>
+                <item> தேனீ </item>
+                <item> பறவை </item>
+                <item> பைசன் </item>
+                <item> பட்டாம்பூச்சி </item>
+                <item> ஒட்டக </item>
+                <item> பூனை </item>
+                <item> கோழி </item>
+                <item> மாடு </item>
+                <item> நண்டு </item>
+                <item> முதலை </item>
+                <item> மான் </item>
+                <item> டைனோசர் </item>
+                <item> நாய் </item>
+                <item> டால்பின் </item>
+                <item> வாத்து </item>
+                <item> யானை </item>
+                <item> மரநாய்களின் </item>
+                <item> மீன் </item>
+                <item> நரி </item>
+                <item> தவளை </item>
+                <item> கிப்பன் </item>
+                <item> ஒட்டகச்சிவிங்கி </item>
+                <item> ஆடு </item>
+                <item> வாத்து </item>
+                <item> புறா </item>
+                <item> பருந்து </item>
+                <item> நீர்யானை </item>
+                <item> குதிரை </item>
+                <item> கழுதை புலி </item>
+                <item> கங்காரு </item>
+                <item> மீன்கொத்தி </item>
+                <item> கோலா </item>
+                <item> ஆட்டுக்குட்டி </item>
+                <item> சிங்கம் </item>
+                <item> பல்லி </item>
+                <item> ஆகப்பெரிய </item>
+                <item> manatee </item>
+                <item> குரங்கு </item>
+                <item> ஒட்டர் </item>
+                <item> பாண்டா </item>
+                <item> கிளி </item>
+                <item> மயில் </item>
+                <item> பென்குவின் </item>
+                <item> பன்றி </item>
+                <item> முயல் </item>
+                <item> ராகூன் </item>
+                <item> கலைமான் </item>
+                <item> கடல் சிங்கம் </item>
+                <item> கடற்குதிரை </item>
+                <item> சுறா </item>
+                <item> ஆடுகள் </item>
+                <item> இறால் </item>
+                <item> நத்தை </item>
+                <item> பாம்பு </item>
+                <item> அணில் </item>
+                <item> நாரை </item>
+                <item> அன்னம் </item>
+                <item> பன்றி </item>
+                <item> புலி </item>
+                <item> ஆமை </item>
+                <item> சுட்டி </item>
+                <item> கழுகு </item>
+                <item> கடற்குதிரை </item>
+                <item> திமிங்கிலம் </item>
+                <item> ஓநாய் </item>
+                <item> வால்வரினானது </item>
+    </string-array>
+    <string-array name="animal_Telugu">
+        <item>armadillo</item>
+        <item>bear</item>
+        <item>beaver</item>
+        <item>bee</item>
+        <item>bird</item>
+        <item>bison</item>
+        <item>butterfly</item>
+        <item>camel</item>
+        <item>cat</item>
+        <item>chicken</item>
+        <item>cow</item>
+        <item>crab</item>
+        <item>crocodile</item>
+        <item>deer</item>
+        <item>dinosaur</item>
+        <item>dog</item>
+        <item>dolphin</item>
+        <item>duck</item>
+        <item>elephant</item>
+        <item>ferret</item>
+        <item>fish</item>
+        <item>fox</item>
+        <item>frog</item>
+        <item>gibbon</item>
+        <item>giraffe</item>
+        <item>goat</item>
+        <item>goose</item>
+        <item>gull</item>
+        <item>hawk</item>
+        <item>hippopotamus</item>
+        <item>horse</item>
+        <item>hyena</item>
+        <item>kangaroo</item>
+        <item>kingfisher</item>
+        <item>koala</item>
+        <item>lamb</item>
+        <item>lion</item>
+        <item>lizard</item>
+        <item>mammoth</item>
+        <item>manatee</item>
+        <item>monkey</item>
+        <item>otter</item>
+        <item>panda</item>
+        <item>parrot</item>
+        <item>peacock</item>
+        <item>penguin</item>
+        <item>pig</item>
+        <item>rabbit</item>
+        <item>racoon</item>
+        <item>reindeer</item>
+        <item>sea lion</item>
+        <item>seahorse</item>
+        <item>shark</item>
+        <item>sheep</item>
+        <item>shrimp</item>
+        <item>snail</item>
+        <item>snake</item>
+        <item>squirrel</item>
+        <item>stork</item>
+        <item>swan</item>
+        <item>tapir</item>
+        <item>tiger</item>
+        <item>turtle</item>
+        <item>mouse</item>
+        <item>vulture</item>
+        <item>walrus</item>
+        <item>whale</item>
+        <item>wolf</item>
+        <item>wolverine</item>
+    </string-array>
+    <string-array name="animal_Thai">
+        <item> นิ่ม </item>
+                <item> หมี </item>
+                <item> ช่องคลอด </item>
+                <item> ผึ้ง </item>
+                <item> นก </item>
+                <item> กระทิง </item>
+                <item> ผีเสื้อ </item>
+                <item> อูฐ </item>
+                <item> แมว </item>
+                <item> ไก่ </item>
+                <item> วัว </item>
+                <item> ปู </item>
+                <item> จระเข้ </item>
+                <item> กวาง </item>
+                <item> ไดโนเสาร์ </item>
+                <item> สุนัข </item>
+                <item> ปลาโลมา </item>
+                <item> เป็ด </item>
+                <item> ช้าง </item>
+                <item> คุ้ยเขี่ย </item>
+                <item> ปลา </item>
+                <item> สุนัขจิ้งจอก </item>
+                <item> กบ </item>
+                <item> ชะนี </item>
+                <item> ยีราฟ </item>
+                <item> แพะ </item>
+                <item> ห่าน </item>
+                <item> นางนวล </item>
+                <item> เหยี่ยว </item>
+                <item> ฮิปโป </item>
+                <item> ม้า </item>
+                <item> หมา </item>
+                <item> จิงโจ้ </item>
+                <item> กระเต็น </item>
+                <item> หมีโคอาล่า </item>
+                <item> แกะ </item>
+                <item> สิงโต </item>
+                <item> จิ้งจก </item>
+                <item> มหึมา </item>
+                <item> พะยูน </item>
+                <item> ลิง </item>
+                <item> นาก </item>
+                <item> แพนด้า </item>
+                <item> นกแก้ว </item>
+                <item> นกยูง </item>
+                <item> เพนกวิน </item>
+                <item> หมู </item>
+                <item> กระต่าย </item>
+                <item> แร็กคูน </item>
+                <item> กวางเรนเดีย </item>
+                <item> สิงโตทะเล </item>
+                <item> ม้าน้ำ </item>
+                <item> ฉลาม </item>
+                <item> แกะ </item>
+                <item> กุ้ง </item>
+                <item> หอยทาก </item>
+                <item> งู </item>
+                <item> กระรอก </item>
+                <item> นกกระสา </item>
+                <item> หงส์ </item>
+                <item> สมเสร็จ </item>
+                <item> เสือ </item>
+                <item> เต่า </item>
+                <item> เมาส์ </item>
+                <item> อีแร้ง </item>
+                <item> วอลรัส </item>
+                <item> วาฬ </item>
+                <item> หมาป่า </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Turkish">
+        <item> armadillo </item>
+                <item> ayı </item>
+                <item> kunduz </item>
+                <item> arı </item>
+                <item> kuş </item>
+                <item> bizon </item>
+                <item> kelebek </item>
+                <item> deve </item>
+                <item> kedi </item>
+                <item> tavuk </item>
+                <item> inek </item>
+                <item> yengeç </item>
+                <item> timsah </item>
+                <item> geyik </item>
+                <item> dinozor </item>
+                <item> köpek </item>
+                <item> yunus </item>
+                <item> ördek </item>
+                <item> fil </item>
+                <item> gelincik </item>
+                <item> balık </item>
+                <item> tilki </item>
+                <item> kurbağa </item>
+                <item> şebek </item>
+                <item> zürafa </item>
+                <item> keçi </item>
+                <item> kaz </item>
+                <item> martı </item>
+                <item> şahin </item>
+                <item> aygırı </item>
+                <item> atı </item>
+                <item> sırtlan </item>
+                <item> kanguru </item>
+                <item> yalıçapkını </item>
+                <item> koala </item>
+                <item> kuzu </item>
+                <item> aslan </item>
+                <item> kertenkele </item>
+                <item> mamut </item>
+                <item> denizayısı </item>
+                <item> maymun </item>
+                <item> samuru </item>
+                <item> panda </item>
+                <item> papağan </item>
+                <item> tavus </item>
+                <item> penguen </item>
+                <item> domuz </item>
+                <item> tavşan </item>
+                <item> rakun </item>
+                <item> ren geyiği </item>
+                <item> deniz aslanı </item>
+                <item> denizatı </item>
+                <item> köpekbalığı </item>
+                <item> koyun </item>
+                <item> karides </item>
+                <item> salyangoz </item>
+                <item> yılan </item>
+                <item> sincap </item>
+                <item> leylek </item>
+                <item> kuğu </item>
+                <item> tapir </item>
+                <item> kaplan </item>
+                <item> kaplumbağa </item>
+                <item> fare </item>
+                <item> akbaba </item>
+                <item> mors </item>
+                <item> balina </item>
+                <item> kurt </item>
+                <item> wolverine </item>
+    </string-array>
+    <string-array name="animal_Ukrainian">
+        <item> броненосець </item>
+                <item> ведмідь </item>
+                <item> бобра </item>
+                <item> бджола </item>
+                <item> птах </item>
+                <item> зубр </item>
+                <item> метелик </item>
+                <item> верблюд </item>
+                <item> кішка </item>
+                <item> курка </item>
+                <item> корова </item>
+                <item> краб </item>
+                <item> крокодил </item>
+                <item> олень </item>
+                <item> динозавр </item>
+                <item> собака </item>
+                <item> дельфін </item>
+                <item> качка </item>
+                <item> слон </item>
+                <item> тхор </item>
+                <item> риба </item>
+                <item> лисиця </item>
+                <item> жаба </item>
+                <item> гібон </item>
+                <item> жирафа </item>
+                <item> коза </item>
+                <item> гусь </item>
+                <item> чайка </item>
+                <item> яструб </item>
+                <item> гіпопотам </item>
+                <item> кінь </item>
+                <item> гієна </item>
+                <item> кенгуру </item>
+                <item> зимородок </item>
+                <item> коала </item>
+                <item> ягня </item>
+                <item> лев </item>
+                <item> ящірка </item>
+                <item> мамонт </item>
+                <item> менеджер </item>
+                <item> мавпа </item>
+                <item> видра </item>
+                <item> панда </item>
+                <item> папуга </item>
+                <item> павич </item>
+                <item> пінгвін </item>
+                <item> свиня </item>
+                <item> кролик </item>
+                <item> єнон </item>
+                <item> олень </item>
+                <item> морський лев </item>
+                <item> морський коник </item>
+                <item> акула </item>
+                <item> овець </item>
+                <item> креветки </item>
+                <item> равлик </item>
+                <item> змія </item>
+                <item> білка </item>
+                <item> лелека </item>
+                <item> лебідь </item>
+                <item> tapir </item>
+                <item> тигр </item>
+                <item> черепаха </item>
+                <item> миша </item>
+                <item> гриф </item>
+                <item> морж </item>
+                <item> кит </item>
+                <item> вовк </item>
+                <item> росомаха </item>
+    </string-array>
+    <string-array name="animal_Vietnamese">
+        <item> tatu </item>
+                <item> gấu </item>
+                <item> hải ly </item>
+                <item> ong ​​</item>
+                <item> chim </item>
+                <item> bò rừng </item>
+                <item> bướm </item>
+                <item> lạc đà </item>
+                <item> mèo </item>
+                <item> gà </item>
+                <item> bò </item>
+                <item> cua </item>
+                <item> cá sấu </item>
+                <item> hươu </item>
+                <item> khủng long </item>
+                <item> chó </item>
+                <item> cá heo </item>
+                <item> vịt </item>
+                <item> voi </item>
+                <item> chồn </item>
+                <item> cá </item>
+                <item> cáo </item>
+                <item> ếch </item>
+                <item> vượn </item>
+                <item> hươu cao cổ </item>
+                <item> dê </item>
+                <item> ngỗng </item>
+                <item> mòng biển </item>
+                <item> chim ưng </item>
+                <item> hà mã </item>
+                <item> ngựa </item>
+                <item> linh cẩu </item>
+                <item> chuột túi </item>
+                <item> bói cá </item>
+                <item> koala </item>
+                <item> cừu </item>
+                <item> sư tử </item>
+                <item> thằn lằn </item>
+                <item> voi ma mút </item>
+                <item> lợn biển </item>
+                <item> khỉ </item>
+                <item> rái cá </item>
+                <item> gấu trúc </item>
+                <item> vẹt </item>
+                <item> con công </item>
+                <item> chim cánh cụt </item>
+                <item> lợn </item>
+                <item> thỏ </item>
+                <item> gấu mèo </item>
+                <item> tuần lộc </item>
+                <item> sư tử biển </item>
+                <item> cá ngựa </item>
+                <item> cá mập </item>
+                <item> cừu </item>
+                <item> tôm </item>
+                <item> ốc </item>
+                <item> rắn </item>
+                <item> sóc </item>
+                <item> cò </item>
+                <item> thiên nga </item>
+                <item> lợn vòi </item>
+                <item> hổ </item>
+                <item> rùa </item>
+                <item> chuột </item>
+                <item> kền kền </item>
+                <item> hải mã </item>
+                <item> cá voi </item>
+                <item> sói </item>
+                <item> chồn sói </item>
+    </string-array>
+
+
 </resources>

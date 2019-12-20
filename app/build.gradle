@@ -34,7 +34,7 @@ dependencies {
     implementation group: 'org.xeustechnologies', name: 'jtar', version: '1.1'
     implementation project(path: ':openCVLibrary346')
     implementation 'de.javagl:obj:0.3.0'
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.12.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.14.0'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
 }
@@ -155,11 +155,6 @@ sceneform.asset('sampledata/models/deer/deer.fbx',
         'default',
         'sampledata/models/deer/deer.sfa',
         'src/main/res/raw/deer')
-
-sceneform.asset('sampledata/models/worf/worf.fbx',
-        'default',
-        'sampledata/models/worf/worf.sfa',
-        'src/main/res/raw/worf')
 
 sceneform.asset('sampledata/models/parrot/parrot.fbx',
         'default',
@@ -331,3 +326,54 @@ sceneform.asset('sampledata/models/panda/panda.fbx',
         'default',
         'sampledata/models/panda/panda.sfa',
         'src/main/res/raw/panda')
+
+
+sceneform.asset('sampledata/models/monkey/monkey.fbx',
+        'default',
+        'sampledata/models/monkey/monkey.sfa',
+        'src/main/res/raw/monkey')
+
+sceneform.asset('sampledata/models/fish/fish.fbx',
+        'default',
+        'sampledata/models/fish/fish.sfa',
+        'src/main/res/raw/fish')
+
+sceneform.asset('sampledata/models/smilodon/smilodon.fbx',
+        'default',
+        'sampledata/models/smilodon/smilodon.sfa',
+        'src/main/res/raw/smilodon')
+
+sceneform.asset('sampledata/models/sheep/sheep.fbx',
+        'default',
+        'sampledata/models/sheep/sheep.sfa',
+        'src/main/res/raw/sheep')
+
+sceneform.asset('sampledata/models/lamb/lamb.fbx',
+        'default',
+        'sampledata/models/lamb/lamb.sfa',
+        'src/main/res/raw/lamb')
+
+sceneform.asset('sampledata/models/lbex/lbex.fbx',
+        'default',
+        'sampledata/models/lbex/lbex.sfa',
+        'src/main/res/raw/lbex')
+
+sceneform.asset('sampledata/models/glider/glider.fbx',
+        'default',
+        'sampledata/models/glider/glider.sfa',
+        'src/main/res/raw/glider')
+
+sceneform.asset('sampledata/models/muskrat/muskrat.fbx',
+        'default',
+        'sampledata/models/muskrat/muskrat.sfa',
+        'src/main/res/raw/muskrat')
+
+sceneform.asset('sampledata/models/minmi/minmi.fbx',
+        'default',
+        'sampledata/models/minmi/minmi.sfa',
+        'src/main/res/raw/minmi')
+
+sceneform.asset('sampledata/models/wolf/worf.fbx',
+        'default',
+        'sampledata/models/wolf/worf.sfa',
+        'src/main/res/raw/worf')

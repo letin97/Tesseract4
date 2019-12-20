@@ -5,7 +5,6 @@
       "sdkFolder": "/home/lap12934-local/Android/Sdk",
       "isNativeCompilerSettingsCacheEnabled": false,
       "isBuildOnlyTargetAbiEnabled": true,
-      "ideBuildTargetAbi": "arm64-v8a,armeabi-v7a,armeabi",
       "splitsAbiFilterSet": [],
       "intermediatesFolder": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates",
       "gradleModulePathName": ":tesseract4android",
@@ -42,8 +41,10 @@
     "gradleBuildOutputFolder": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cxx/debug",
     "isDebuggableEnabled": true,
     "validAbiList": [
+      "ARMEABI_V7A",
       "ARM64_V8A",
-      "ARMEABI_V7A"
+      "X86",
+      "X86_64"
     ],
     "buildTargetSet": []
   },

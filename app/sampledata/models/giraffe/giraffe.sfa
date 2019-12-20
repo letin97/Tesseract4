@@ -56,6 +56,7 @@
     file: 'sampledata/models/giraffe/giraffe.fbx',
     name: 'giraffe',
     recenter: 'root',
+    scale: 0.1,
   },
   samplers: [
     {

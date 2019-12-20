@@ -56,7 +56,7 @@
     file: 'sampledata/models/whale/whale.fbx',
     name: 'whale',
     recenter: 'root',
-    scale: 0.39600600000000002,
+    scale: 0.1,
   },
   samplers: [
     {

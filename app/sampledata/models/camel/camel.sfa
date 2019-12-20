@@ -56,7 +56,7 @@
     file: 'sampledata/models/camel/camel.fbx',
     name: 'camel',
     recenter: 'root',
-    scale: 0.52245399999999997,
+    scale: 0.1,
   },
   samplers: [
     {

@@ -14,7 +14,15 @@
     <Button
         android:id="@+id/close_button"
         android:background="@drawable/left"
-        android:layout_width="30dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:id="@+id/info_button"
+        android:layout_gravity="end"
+        android:background="@drawable/information"
+        android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_margin="10dp" />
 

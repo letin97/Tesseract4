@@ -1,0 +1,68 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/glider/glider.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'sugar_glider',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'glider_diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/glider/glider.fbx',
+    name: 'glider',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/glider/glider_diffuse.jpg',
+      name: 'glider_diffuse',
+      pipeline_name: 'glider_diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

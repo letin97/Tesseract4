@@ -56,6 +56,7 @@
     file: 'sampledata/models/deer/deer.fbx',
     name: 'deer',
     recenter: 'root',
+    scale: 0.1,
   },
   samplers: [
     {

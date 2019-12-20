@@ -57,6 +57,7 @@
     file: 'sampledata/models/shark/shark.fbx',
     name: 'shark',
     recenter: 'root',
+    scale: 0.1,
   },
   samplers: [
     {

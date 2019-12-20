@@ -1,5 +1,6 @@
 package com.example.letrongtin.tesseract4;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -36,7 +37,9 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
 
     private static final String TAG = OcrInitAsyncTask.class.getSimpleName();
 
+    @SuppressLint("StaticFieldLeak")
     private CaptureActivity activity;
+    @SuppressLint("StaticFieldLeak")
     private Context context;
     private TessBaseAPI baseApi;
     private ProgressDialog dialog;
@@ -79,6 +82,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+        dialog.setIcon(R.drawable.ic_dialog);
         dialog.setTitle("Please wait");
         dialog.setMessage("Checking for data installation...");
         dialog.setIndeterminate(false);
@@ -115,36 +119,52 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
 
         // Check if an incomplete download is present. If a *.download file is there, delete it and
         // any (possibly half-unzipped) Tesseract and Cube data files that may be there.
-        //File incomplete = new File(tessdataDir, destinationFilenameBase + ".download");
+        // File incomplete = new File(tessdataDir, destinationFilenameBase + ".download");
         File tesseractTestFile = new File(tessdataDir, languageCode + ".traineddata");
 
         // If language data files are not present, install them
-        boolean installSuccess;
+        boolean installSuccess = false;
+        
         if (!tesseractTestFile.exists()) {
             Log.d(TAG, "Language data for " + languageCode + " not found in " + tessdataDir.toString());
-
-            Log.d(TAG, "Downloading " + destinationFilenameBase + "...");
+            // Check assets for language data to install. If not present, download from Internet
             try {
-                installSuccess = downloadFile(destinationFilenameBase, downloadFile);
-                if (!installSuccess) {
-                    Log.e(TAG, "Download failed");
-                    return false;
-                }
+                Log.d(TAG, "Checking for language data (" + destinationFilenameBase + ") in application assets...");
+                // Check for a file like "eng.traineddata.zip" or "tesseract-ocr-3.01.eng.tar.zip"
+                installSuccess = installFromAssets(destinationFilenameBase, tessdataDir,
+                        downloadFile);
             } catch (IOException e) {
-                Log.e(TAG, "IOException received in doInBackground. Is a network connection available?");
-                return false;
+                Log.e(TAG, "IOException", e);
+            } catch (Exception e) {
+                Log.e(TAG, "Got exception", e);
             }
 
-            // If we have a tar file at this point because we downloaded v3.01+ data, untar it
-            String extension = destinationFilenameBase.substring(
-                    destinationFilenameBase.lastIndexOf('.'),
-                    destinationFilenameBase.length());
+            if (!installSuccess) {
+                Log.d(TAG, "Downloading " + destinationFilenameBase + "...");
+                try {
+                    installSuccess = downloadFile(destinationFilenameBase, downloadFile);
+                    if (!installSuccess) {
+                        Log.e(TAG, "Download failed");
+                        return false;
+                    }
+                } catch (IOException e) {
+                    Log.e(TAG, "IOException received in doInBackground. Is a network connection available?");
+                    return false;
+                }
+
+                // If we have a tar file at this point because we downloaded v3.01+ data, untar it
+                String extension = destinationFilenameBase.substring(
+                        destinationFilenameBase.lastIndexOf('.'),
+                        destinationFilenameBase.length());
+            } else {
+                Log.d(TAG, "Language data for " + languageCode + " already installed in "
+                        + tessdataDir.toString());
+                installSuccess = true;
+            }
         } else {
-            Log.d(TAG, "Language data for " + languageCode + " already installed in "
-                    + tessdataDir.toString());
             installSuccess = true;
         }
-
+        
         // Dismiss the progress dialog box, revealing the indeterminate dialog box behind it
         try {
             dialog.dismiss();
@@ -447,46 +467,74 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
             FileNotFoundException {
         // Attempt to open the zip archive
         publishProgress("Uncompressing data for " + languageName + "...", "0");
-        ZipInputStream inputStream = new ZipInputStream(context.getAssets().open(sourceFilename));
+//        ZipInputStream inputStream = new ZipInputStream(context.getAssets().open(sourceFilename));
+//
+//        // Loop through all the files and folders in the zip archive (but there should just be one)
+//        for (ZipEntry entry = inputStream.getNextEntry(); entry != null; entry = inputStream
+//                .getNextEntry()) {
+//            destinationFile = new File(destinationDir, entry.getName());
+//
+//            if (entry.isDirectory()) {
+//                destinationFile.mkdirs();
+//            } else {
+//                // Note getSize() returns -1 when the zipfile does not have the size set
+//                long zippedFileSize = entry.getSize();
+//
+//                // Create a file output stream
+//                FileOutputStream outputStream = new FileOutputStream(destinationFile);
+//                final int BUFFER = 8192;
+//
+//                // Buffer the output to the file
+//                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream, BUFFER);
+//                int unzippedSize = 0;
+//
+//                // Write the contents
+//                int count = 0;
+//                Integer percentComplete = 0;
+//                Integer percentCompleteLast = 0;
+//                byte[] data = new byte[BUFFER];
+//                while ((count = inputStream.read(data, 0, BUFFER)) != -1) {
+//                    bufferedOutputStream.write(data, 0, count);
+//                    unzippedSize += count;
+//                    percentComplete = (int) ((unzippedSize / (long) zippedFileSize) * 100);
+//                    if (percentComplete > percentCompleteLast) {
+//                        publishProgress("Uncompressing data for " + languageName + "...",
+//                                percentComplete.toString(), "0");
+//                        percentCompleteLast = percentComplete;
+//                    }
+//                }
+//                bufferedOutputStream.close();
+//            }
+//            inputStream.closeEntry();
+//        }
+//        inputStream.close();
 
-        // Loop through all the files and folders in the zip archive (but there should just be one)
-        for (ZipEntry entry = inputStream.getNextEntry(); entry != null; entry = inputStream
-                .getNextEntry()) {
-            destinationFile = new File(destinationDir, entry.getName());
+        InputStream inputStream = context.getAssets().open(sourceFilename);
+        int size = inputStream.available();
+        // Create a file output stream
+        FileOutputStream outputStream = new FileOutputStream(destinationFile);
+        final int BUFFER = 8192;
 
-            if (entry.isDirectory()) {
-                destinationFile.mkdirs();
-            } else {
-                // Note getSize() returns -1 when the zipfile does not have the size set
-                long zippedFileSize = entry.getSize();
+        // Buffer the output to the file
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream, BUFFER);
+        int unzippedSize = 0;
 
-                // Create a file output stream
-                FileOutputStream outputStream = new FileOutputStream(destinationFile);
-                final int BUFFER = 8192;
-
-                // Buffer the output to the file
-                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream, BUFFER);
-                int unzippedSize = 0;
-
-                // Write the contents
-                int count = 0;
-                Integer percentComplete = 0;
-                Integer percentCompleteLast = 0;
-                byte[] data = new byte[BUFFER];
-                while ((count = inputStream.read(data, 0, BUFFER)) != -1) {
-                    bufferedOutputStream.write(data, 0, count);
-                    unzippedSize += count;
-                    percentComplete = (int) ((unzippedSize / (long) zippedFileSize) * 100);
-                    if (percentComplete > percentCompleteLast) {
-                        publishProgress("Uncompressing data for " + languageName + "...",
-                                percentComplete.toString(), "0");
-                        percentCompleteLast = percentComplete;
-                    }
-                }
-                bufferedOutputStream.close();
+        // Write the contents
+        int count = 0;
+        Integer percentComplete = 0;
+        Integer percentCompleteLast = 0;
+        byte[] data = new byte[BUFFER];
+        while ((count = inputStream.read(data, 0, BUFFER)) != -1) {
+            bufferedOutputStream.write(data, 0, count);
+            unzippedSize += count;
+            percentComplete = (int) ((unzippedSize / (long) size) * 100);
+            if (percentComplete > percentCompleteLast) {
+                publishProgress("Uncompressing data for " + languageName + "...",
+                        percentComplete.toString(), "0");
+                percentCompleteLast = percentComplete;
             }
-            inputStream.closeEntry();
         }
+        bufferedOutputStream.close();
         inputStream.close();
         return true;
     }

@@ -56,6 +56,7 @@
     file: 'sampledata/models/bison/bison.fbx',
     name: 'bison',
     recenter: 'root',
+    scale: 0.5,
   },
   samplers: [
     {

@@ -26,10 +26,12 @@ public class PreferencesActivity extends PreferenceActivity implements SharedPre
     // Preference keys carried over from ZXing project
     public static final String KEY_AUTO_FOCUS = "preferences_auto_focus";
     public static final String KEY_DISABLE_CONTINUOUS_FOCUS = "preferences_disable_continuous_focus";
+    public static final String KEY_CONTINUOUS_DISPLAY_METADATA = "preferences_continuous_display_meta_data";
     public static final String KEY_HELP_VERSION_SHOWN = "preferences_help_version_shown";
     public static final String KEY_NOT_OUR_RESULTS_SHOWN = "preferences_not_our_results_shown";
     public static final String KEY_REVERSE_IMAGE = "preferences_reverse_image";
     public static final String KEY_PLAY_BEEP = "preferences_play_beep";
+    public static final String KEY_PLAY_MUSIC = "preferences_play_music";
     public static final String KEY_VIBRATE = "preferences_vibrate";
 
     public static final String TRANSLATOR_BING = "Bing Translator";

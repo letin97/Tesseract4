@@ -1,0 +1,69 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/lbex/lbex.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '13575_Ibex',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '13575_Ibex_diff',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/lbex/lbex.fbx',
+    name: 'lbex',
+    recenter: 'root',
+    scale: 0.1,
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/lbex/13575_Ibex_diff.jpg',
+      name: '13575_Ibex_diff',
+      pipeline_name: '13575_Ibex_diff.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

@@ -1,5 +1,6 @@
 package com.example.letrongtin.tesseract4;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.os.AsyncTask;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 
 public class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
+    @SuppressLint("StaticFieldLeak")
     private CaptureActivity activity;
     private TessBaseAPI baseApi;
     private byte[] data;

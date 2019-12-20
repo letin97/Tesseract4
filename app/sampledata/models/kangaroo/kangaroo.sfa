@@ -94,6 +94,7 @@
     file: 'sampledata/models/kangaroo/kangaroo.fbx',
     name: 'kangaroo',
     recenter: 'root',
+    scale: 0.1,
   },
   samplers: [
     {

@@ -94,6 +94,7 @@
     file: 'sampledata/models/mammoth/mammoth.fbx',
     name: 'mammoth',
     recenter: 'root',
+    scale: 0.1,
   },
   samplers: [
     {

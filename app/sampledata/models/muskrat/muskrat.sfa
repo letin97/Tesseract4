@@ -1,0 +1,106 @@
+{
+  animations: [
+    {
+      path: 'sampledata/models/muskrat/muskrat.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '13099_North_American_Muskrat',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'North American Muskrat_diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'North_American_Muskrat_mustache',
+      parameters: [
+        {
+          baseColor: [
+            0.30980000000000002,
+            0.2157,
+            0.1176,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/models/muskrat/muskrat.fbx',
+    name: 'muskrat',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/muskrat/North American Muskrat_diffuse.jpg',
+      name: 'North American Muskrat_diffuse',
+      pipeline_name: 'North American Muskrat_diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

@@ -13,11 +13,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.ClipboardManager;
 import android.text.SpannableStringBuilder;
 import android.text.style.CharacterStyle;
@@ -26,18 +30,21 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
-import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,8 +60,11 @@ import com.example.letrongtin.tesseract4.OcrResultText;
 import com.example.letrongtin.tesseract4.R;
 import com.example.letrongtin.tesseract4.camera.CameraManager;
 import com.example.letrongtin.tesseract4.camera.ShutterButton;
-import com.example.letrongtin.tesseract4.enums.AnimalEnum;
+import com.example.letrongtin.tesseract4.enums.LanguageNameEnum;
 import com.example.letrongtin.tesseract4.language.LanguageCodeHelper;
+import com.example.letrongtin.tesseract4.utils.OnSwipeTouchListener;
+import com.example.letrongtin.tesseract4.view.RecyclerViewAdapter;
+import com.example.letrongtin.tesseract4.view.RecyclerViewClickListener;
 import com.example.letrongtin.tesseract4.view.ViewfinderView;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
@@ -65,9 +75,13 @@ import org.opencv.core.Mat;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 public final class CaptureActivity extends AppCompatActivity implements SurfaceHolder.Callback,
-        ShutterButton.OnShutterButtonListener {
+        ShutterButton.OnShutterButtonListener, RecyclerViewClickListener {
 
     private static final String TAG = CaptureActivity.class.getSimpleName();
 
@@ -95,7 +109,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     public static final boolean DEFAULT_DISABLE_CONTINUOUS_FOCUS = true;
 
     /** Whether to beep by default when the shutter button is pressed. */
-    public static final boolean DEFAULT_TOGGLE_BEEP = false;
+    public static final boolean DEFAULT_TOGGLE_BEEP = true;
 
     /** Whether to initially show a looping, real-time OCR display. */
     public static final boolean DEFAULT_TOGGLE_CONTINUOUS = true;
@@ -113,7 +127,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     private static final boolean CONTINUOUS_DISPLAY_RECOGNIZED_TEXT = true;
 
     /** Flag to display recognition-related statistics on the scanning screen. */
-    private static final boolean CONTINUOUS_DISPLAY_METADATA = true;
+    private static final boolean CONTINUOUS_DISPLAY_METADATA = false;
 
     /** Flag to enable display of the on-screen shutter button. */
     private static final boolean DISPLAY_SHUTTER_BUTTON = false;
@@ -188,11 +202,71 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     private boolean isEngineReady;
     private boolean isPaused;
     private static boolean isFirstLaunch; // True if this is the first time the app is being run
-    private Button closeBtn;
+    private Button closeButton, infoButton;
+    private TextView notification;
+
+    AlertDialog dialogAnimal;
+    private int currentApiVersion;
 
     // openCV
     public Mat imageMat;
     public Mat imageMat2;
+
+    List<String> animalAfrikaans;
+    List<String> animalAlbanian;
+    List<String> animalArabic;
+    List<String> animalAzeri;
+    List<String> animalBasque;
+    List<String> animalBelarusian;
+    List<String> animalBengali;
+    List<String> animalBulgarian;
+    List<String> animalCatalan;
+    List<String> animalChinese_Sim;
+    List<String> animalChinese_Tra;
+    List<String> animalCroatian;
+    List<String> animalCzech;
+    List<String> animalDanish;
+    List<String> animalDutch;
+    List<String> animalEnglish;
+    List<String> animalEstonian;
+    List<String> animalFinnish;
+    List<String> animalFrench;
+    List<String> animalGalician;
+    List<String> animalGerman;
+    List<String> animalGreek;
+    List<String> animalHebrew;
+    List<String> animalHindi;
+    List<String> animalHungarian;
+    List<String> animalIcelandic;
+    List<String> animalIndonesian;
+    List<String> animalItalian;
+    List<String> animalJapanese;
+    List<String> animalKannada;
+    List<String> animalKorean;
+    List<String> animalLatvian;
+    List<String> animalLithuanian;
+    List<String> animalMacedonian;
+    List<String> animalMalay;
+    List<String> animalMalayalam;
+    List<String> animalMaltese;
+    List<String> animalNorwegian;
+    List<String> animalPolish;
+    List<String> animalPortuguese;
+    List<String> animalRomanian;
+    List<String> animalRussian;
+    List<String> animalSerbian;
+    List<String> animalSlovak;
+    List<String> animalSlovenian;
+    List<String> animalSpanish;
+    List<String> animalSwahili;
+    List<String> animalSwedish;
+    List<String> animalTagalog;
+    List<String> animalTamil;
+    List<String> animalTelugu;
+    List<String> animalThai;
+    List<String> animalTurkish;
+    List<String> animalUkrainian;
+    List<String> animalVietnamese;
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -218,7 +292,150 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         return cameraManager;
     }
 
-    @SuppressLint({"ServiceCast", "ClickableViewAccessibility"})
+
+    //
+    private RecyclerView recyclerView;
+    private List<String> nameAnimals;
+    private List<Integer> imageAnimals;
+    RecyclerViewAdapter adapter;
+
+    public int TOTAL_LIST_ITEMS = 69;
+    public int NUM_ITEMS_PAGE = 6;
+    private int noOfBtns;
+    private int currentPage = 0;
+    private Button[] btns;
+
+
+    private void Buttonfooter(View v) {
+        int val = TOTAL_LIST_ITEMS % NUM_ITEMS_PAGE;
+        val = val == 0? 0:1;
+        noOfBtns = TOTAL_LIST_ITEMS/NUM_ITEMS_PAGE + val;
+
+        LinearLayout ll = v.findViewById(R.id.btnLay);
+
+        btns =new Button[noOfBtns];
+
+        for(int i=0;i<noOfBtns;i++) {
+            btns[i] = new Button(this);
+            btns[i].setBackgroundColor(getResources().getColor(android.R.color.transparent));
+            btns[i].setText(""+(i+1));
+
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+            ll.addView(btns[i], lp);
+
+            final int j = i;
+            btns[j].setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    currentPage = j;
+                    loadList(j);
+                    checkBtnBackGroud(j);
+                }
+            });
+        }
+
+    }
+    /**
+     * Method for Checking Button Backgrounds
+     */
+    private void checkBtnBackGroud(int index)  {
+
+        for(int i=0;i<noOfBtns;i++) {
+            if(i==index) {
+                //btns[index].setBackgroundDrawable(getResources().getDrawable(R.drawable.custom_button));
+                btns[i].setTextColor(getResources().getColor(android.R.color.white));
+                btns[i].setTypeface(Typeface.DEFAULT_BOLD);
+            }
+            else {
+                btns[i].setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                btns[i].setTextColor(getResources().getColor(android.R.color.black));
+            }
+        }
+
+    }
+
+    private void loadList(int number) {
+
+        int start = number * NUM_ITEMS_PAGE;
+
+        ArrayList<String> sortName = new ArrayList<String>();
+        for(int i=start;i<(start)+NUM_ITEMS_PAGE;i++) {
+            if(i<nameAnimals.size()) {
+                sortName.add(nameAnimals.get(i));
+            }
+            else {
+                break;
+            }
+        }
+
+        ArrayList<Integer> sortImage = new ArrayList<Integer>();
+        for(int i=start;i<(start)+NUM_ITEMS_PAGE;i++) {
+            if(i<imageAnimals.size()) {
+                sortImage.add(imageAnimals.get(i));
+            }
+            else {
+                break;
+            }
+        }
+
+        adapter = new RecyclerViewAdapter(sortName, sortImage, this, this);
+        recyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
+    public void recyclerViewListClicked(View v, int position) {
+        dialogAnimal.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE|WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+        LayoutInflater factory = LayoutInflater.from(CaptureActivity.this);
+        final View view = factory.inflate(R.layout.animal_item, null);
+        ImageView imageView = view.findViewById(R.id.imageView);
+        imageView.setImageResource(imageAnimals.get(currentPage* NUM_ITEMS_PAGE + position));
+        EditText editTextName = view.findViewById(R.id.edtName);
+        TextView validate = view.findViewById(R.id.validate);
+        Button buttonCheckName = view.findViewById(R.id.btnCheckName);
+        Button buttonQuit = view.findViewById(R.id.btnQuit);
+        buttonQuit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogAnimal.dismiss();
+            }
+        });
+        ImageView btnClose = view.findViewById(R.id.btn_close);
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogAnimal.dismiss();
+            }
+        });
+        buttonCheckName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validate.setVisibility(View.VISIBLE);
+                String text = editTextName.getText().toString().trim().toLowerCase();
+
+                if (text.isEmpty()) {
+                    validate.setText("You did not enter a name!!!");
+                    return;
+                }
+
+                if (nameAnimals.get(currentPage * NUM_ITEMS_PAGE + position).trim().contains(text)) {
+                    dialogAnimal.dismiss();
+                    notification.setVisibility(View.VISIBLE);
+                    beepManager.playBeepSoundAndVibrate();
+                    Intent intent = new Intent(getApplicationContext(), ARActivity.class);
+                    intent.putExtra("RESULT_TEXT", nameAnimals.get(currentPage * NUM_ITEMS_PAGE + position));
+                    intent.putExtra("ANIMAL_NAME", nameAnimals.get(currentPage * NUM_ITEMS_PAGE + position));
+                    startActivity(intent);
+                } else {
+                    validate.setText("The answer is not correct!!!");
+                }
+            }
+        });
+
+        dialogAnimal.setContentView(view);
+    }
+
+
+    @SuppressLint({"ServiceCast", "ClickableViewAccessibility", "ResourceType"})
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -233,6 +450,33 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.capture);
+
+        currentApiVersion = android.os.Build.VERSION.SDK_INT;
+
+        final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+
+        // This work only for android 4.4+
+        if(currentApiVersion >= Build.VERSION_CODES.KITKAT) {
+            getWindow().getDecorView().setSystemUiVisibility(flags);
+
+            // Code below is to handle presses of Volume up or Volume down.
+            // Without this, after pressing volume buttons, the navigation bar will
+            // show up and won't hide
+            final View decorView = getWindow().getDecorView();
+            decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+               @Override
+               public void onSystemUiVisibilityChange(int visibility) {
+                   if((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                        decorView.setSystemUiVisibility(flags);
+                   }
+               }
+            });
+        }
 
         viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
         cameraButtonView = findViewById(R.id.camera_button_view);
@@ -344,13 +588,397 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
         isEngineReady = false;
 
-        closeBtn = findViewById(R.id.close_button);
-        closeBtn.setOnClickListener(new View.OnClickListener() {
+        notification = findViewById(R.id.notification);
+
+        closeButton = findViewById(R.id.close_button);
+        closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+
+        animalAfrikaans = Arrays.asList(getResources().getStringArray(R.array.animal_Afrikaans));
+        animalAlbanian = Arrays.asList(getResources().getStringArray(R.array.animal_Albanian));
+        animalArabic = Arrays.asList(getResources().getStringArray(R.array.animal_Arabic));
+        animalAzeri = Arrays.asList(getResources().getStringArray(R.array.animal_Azeri));
+        animalBasque = Arrays.asList(getResources().getStringArray(R.array.animal_Basque));
+        animalBelarusian = Arrays.asList(getResources().getStringArray(R.array.animal_Belarusian));
+        animalBengali = Arrays.asList(getResources().getStringArray(R.array.animal_Bengali));
+        animalBulgarian = Arrays.asList(getResources().getStringArray(R.array.animal_Bulgarian));
+        animalCatalan = Arrays.asList(getResources().getStringArray(R.array.animal_Catalan));
+        animalChinese_Sim = Arrays.asList(getResources().getStringArray(R.array.animal_Chinese_sim));
+        animalChinese_Tra = Arrays.asList(getResources().getStringArray(R.array.animal_Chinese_tra));
+        animalCroatian = Arrays.asList(getResources().getStringArray(R.array.animal_Croatian));
+        animalCzech = Arrays.asList(getResources().getStringArray(R.array.animal_Czech));
+        animalDanish = Arrays.asList(getResources().getStringArray(R.array.animal_Danish));
+        animalDutch = Arrays.asList(getResources().getStringArray(R.array.animal_Dutch));
+        animalEnglish = Arrays.asList(getResources().getStringArray(R.array.animal_English));
+        animalEstonian = Arrays.asList(getResources().getStringArray(R.array.animal_Estonian));
+        animalFinnish = Arrays.asList(getResources().getStringArray(R.array.animal_Finnish));
+        animalFrench = Arrays.asList(getResources().getStringArray(R.array.animal_French));
+        animalGalician = Arrays.asList(getResources().getStringArray(R.array.animal_Galician));
+        animalGerman = Arrays.asList(getResources().getStringArray(R.array.animal_German));
+        animalGreek = Arrays.asList(getResources().getStringArray(R.array.animal_Greek));
+        animalHebrew = Arrays.asList(getResources().getStringArray(R.array.animal_Hebrew));
+        animalHindi = Arrays.asList(getResources().getStringArray(R.array.animal_Hindi));
+        animalHungarian = Arrays.asList(getResources().getStringArray(R.array.animal_Hungarian));
+        animalIcelandic = Arrays.asList(getResources().getStringArray(R.array.animal_Icelandic));
+        animalIndonesian = Arrays.asList(getResources().getStringArray(R.array.animal_Indonesian));
+        animalItalian = Arrays.asList(getResources().getStringArray(R.array.animal_Italian));
+        animalJapanese = Arrays.asList(getResources().getStringArray(R.array.animal_Japanese));
+        animalKannada = Arrays.asList(getResources().getStringArray(R.array.animal_Kannada));
+        animalKorean = Arrays.asList(getResources().getStringArray(R.array.animal_Korean));
+        animalLatvian = Arrays.asList(getResources().getStringArray(R.array.animal_Latvian));
+        animalLithuanian = Arrays.asList(getResources().getStringArray(R.array.animal_Lithuanian));
+        animalMacedonian = Arrays.asList(getResources().getStringArray(R.array.animal_Macedonian));
+        animalMalay = Arrays.asList(getResources().getStringArray(R.array.animal_Malay));
+        animalMalayalam = Arrays.asList(getResources().getStringArray(R.array.animal_Malayalam));
+        animalMaltese = Arrays.asList(getResources().getStringArray(R.array.animal_Maltese));
+        animalNorwegian = Arrays.asList(getResources().getStringArray(R.array.animal_Norwegian));
+        animalPolish = Arrays.asList(getResources().getStringArray(R.array.animal_Polish));
+        animalPortuguese = Arrays.asList(getResources().getStringArray(R.array.animal_Portuguese));
+        animalRomanian = Arrays.asList(getResources().getStringArray(R.array.animal_Romanian));
+        animalRussian = Arrays.asList(getResources().getStringArray(R.array.animal_Russian));
+        animalSerbian = Arrays.asList(getResources().getStringArray(R.array.animal_Serbian));
+        animalSlovak = Arrays.asList(getResources().getStringArray(R.array.animal_Slovak));
+        animalSlovenian = Arrays.asList(getResources().getStringArray(R.array.animal_Slovenian));
+        animalSpanish = Arrays.asList(getResources().getStringArray(R.array.animal_Spanish));
+        animalSwahili = Arrays.asList(getResources().getStringArray(R.array.animal_Swahili));
+        animalSwedish = Arrays.asList(getResources().getStringArray(R.array.animal_Swedish));
+        animalTagalog = Arrays.asList(getResources().getStringArray(R.array.animal_Tagalog));
+        animalTamil = Arrays.asList(getResources().getStringArray(R.array.animal_Tamil));
+        animalTelugu = Arrays.asList(getResources().getStringArray(R.array.animal_Telugu));
+        animalThai = Arrays.asList(getResources().getStringArray(R.array.animal_Telugu));
+        animalTurkish = Arrays.asList(getResources().getStringArray(R.array.animal_Turkish));
+        animalUkrainian = Arrays.asList(getResources().getStringArray(R.array.animal_Ukrainian));
+        animalVietnamese = Arrays.asList(getResources().getStringArray(R.array.animal_Vietnamese));
+
+        beepManager.playBeepSoundAndVibrate();
+
+
+        // pagination
+        LayoutInflater factory = LayoutInflater.from(CaptureActivity.this);
+        final View v = factory.inflate(R.layout.pagination, null);
+        recyclerView = v.findViewById(R.id.recyclerView);
+
+        GridLayoutManager manager = new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(manager);
+        recyclerView.setHasFixedSize(false);
+        recyclerView.setOnTouchListener(new OnSwipeTouchListener(CaptureActivity.this) {
+            @Override
+            public void onSwipeLeft() {
+                if (currentPage < noOfBtns - 1) {
+                    currentPage += 1;
+                    loadList(currentPage);
+                    checkBtnBackGroud(currentPage);
+                }
+            }
+            @Override
+            public void onSwipeRight() {
+                if (currentPage >= 1) {
+                    currentPage -= 1;
+                    loadList(currentPage);
+                    checkBtnBackGroud(currentPage);
+                }
+            }
+        });
+
+
+        Buttonfooter(v);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String language = prefs.getString(PreferencesActivity.KEY_SOURCE_LANGUAGE_PREFERENCE, "eng");
+        LanguageNameEnum languageName = LanguageNameEnum.getLanguageNameEnum(language);
+
+        switch (languageName) {
+            case AFRIKAANS:
+                nameAnimals = animalAfrikaans;
+                break;
+            case ALBANIAN:
+                nameAnimals = animalAlbanian;
+                break;
+            case ARABIC:
+                nameAnimals = animalArabic;
+                break;
+            case AZERI:
+                nameAnimals = animalAzeri;
+                break;
+            case BASQUE:
+                nameAnimals = animalBasque;
+                break;
+            case BELARUSIAN:
+                nameAnimals = animalBelarusian;
+                break;
+            case BENGALI:
+                nameAnimals = animalBengali;
+                break;
+            case BULGARIAN:
+                nameAnimals = animalBulgarian;
+                break;
+            case CATALAN:
+                nameAnimals = animalCatalan;
+                break;
+            case CHINESE_SIMPLIFIED:
+                nameAnimals = animalChinese_Sim;
+                break;
+            case CHINESET_TRADITIONAL:
+                nameAnimals = animalChinese_Tra;
+                break;
+            case CROATIAN:
+                nameAnimals = animalCroatian;
+                break;
+            case CZECH:
+                nameAnimals = animalCzech;
+                break;
+            case DANISH:
+                nameAnimals = animalDanish;
+                break;
+            case DUTCH:
+                nameAnimals = animalDutch;
+                break;
+            case ENGLISH:
+                nameAnimals = animalEnglish;
+                break;
+            case ESTONIAN:
+                nameAnimals = animalEstonian;
+                break;
+            case FINNISH:
+                nameAnimals = animalFinnish;
+                break;
+            case FRENCH:
+                nameAnimals = animalFrench;
+                break;
+            case GALICIAN:
+                nameAnimals = animalGalician;
+                break;
+            case GERMAN:
+                nameAnimals = animalGerman;
+                break;
+            case GREEK:
+                nameAnimals = animalGreek;
+                break;
+            case HEBREW:
+                nameAnimals = animalHebrew;
+                break;
+            case HINDI:
+                nameAnimals = animalHindi;
+                break;
+            case HUNGARIAN:
+                nameAnimals = animalHungarian;
+                break;
+            case ICELANDIC:
+                nameAnimals = animalIcelandic;
+                break;
+            case INDONESIAN:
+                nameAnimals = animalIndonesian;
+                break;
+            case ITALIAN:
+                nameAnimals = animalItalian;
+                break;
+            case JAPANESE:
+                nameAnimals = animalJapanese;
+                break;
+            case KANNADA:
+                nameAnimals = animalKannada;
+                break;
+            case KOREAN:
+                nameAnimals = animalKorean;
+                break;
+            case LATVIAN:
+                nameAnimals = animalLatvian;
+                break;
+            case LITHUANIAN:
+                nameAnimals = animalLithuanian;
+                break;
+            case MACEDONIAN:
+                nameAnimals = animalMacedonian;
+                break;
+            case MALAY:
+                nameAnimals = animalMalay;
+                break;
+            case MALAYALAM:
+                nameAnimals = animalMalayalam;
+                break;
+            case MALTESE:
+                nameAnimals = animalMaltese;
+                break;
+            case NORWEGIAN:
+                nameAnimals = animalNorwegian;
+                break;
+            case POLISH:
+                nameAnimals = animalPolish;
+                break;
+            case PORTUGUESE:
+                nameAnimals = animalPortuguese;
+                break;
+            case ROMANIAN:
+                nameAnimals = animalRomanian;
+                break;
+            case RUSSIAN:
+                nameAnimals = animalRussian;
+                break;
+            case SERBIAN:
+                nameAnimals = animalSerbian;
+                break;
+            case SLOVAK:
+                nameAnimals = animalSlovak;
+                break;
+            case SLOVENIAN:
+                nameAnimals = animalSlovenian;
+                break;
+            case SPANISH:
+                nameAnimals = animalSpanish;
+                break;
+            case SWAHILI:
+                nameAnimals = animalSwahili;
+                break;
+            case SWEDISH:
+                nameAnimals = animalSwedish;
+                break;
+            case TAGALOG:
+                nameAnimals = animalTagalog;
+                break;
+            case TAMIL:
+                nameAnimals = animalTamil;
+                break;
+            case TELUGU:
+                nameAnimals = animalTelugu;
+                break;
+            case THAI:
+                nameAnimals = animalThai;
+                break;
+            case TURKISH:
+                nameAnimals = animalTurkish;
+                break;
+            case UKRAINIAN:
+                nameAnimals = animalUkrainian;
+                break;
+            case VIETNAMESE:
+                nameAnimals = animalVietnamese;
+                break;
+        }
+
+        imageAnimals = new ArrayList<>();
+        imageAnimals.add(R.drawable.animal_armadillo);
+        imageAnimals.add(R.drawable.animal_bear);
+        imageAnimals.add(R.drawable.animal_beaver);
+        imageAnimals.add(R.drawable.animal_bee);
+        imageAnimals.add(R.drawable.animal_bird);
+        imageAnimals.add(R.drawable.animal_bison);
+        imageAnimals.add(R.drawable.animal_butterfly);
+        imageAnimals.add(R.drawable.animal_camel);
+        imageAnimals.add(R.drawable.animal_cat);
+        imageAnimals.add(R.drawable.animal_chicken);
+        imageAnimals.add(R.drawable.animal_cow);
+        imageAnimals.add(R.drawable.animal_crab);
+        imageAnimals.add(R.drawable.animal_crocodile);
+        imageAnimals.add(R.drawable.animal_deer);
+        imageAnimals.add(R.drawable.animal_minmi);
+        imageAnimals.add(R.drawable.animal_dog);
+        imageAnimals.add(R.drawable.animal_dolphin);
+        imageAnimals.add(R.drawable.animal_duck);
+        imageAnimals.add(R.drawable.animal_elephant);
+        imageAnimals.add(R.drawable.animal_ferret);
+        imageAnimals.add(R.drawable.animal_fish);
+        imageAnimals.add(R.drawable.animal_fox);
+        imageAnimals.add(R.drawable.animal_frog);
+        imageAnimals.add(R.drawable.animal_gibbon);
+        imageAnimals.add(R.drawable.animal_giraffe);
+        imageAnimals.add(R.drawable.animal_goat);
+        imageAnimals.add(R.drawable.animal_goose);
+        imageAnimals.add(R.drawable.animal_gull);
+        imageAnimals.add(R.drawable.animal_hawk);
+        imageAnimals.add(R.drawable.animal_hippopotamus);
+        imageAnimals.add(R.drawable.animal_horse);
+        imageAnimals.add(R.drawable.animal_hyena);
+        imageAnimals.add(R.drawable.animal_kangaroo);
+        imageAnimals.add(R.drawable.animal_kingfisher);
+        imageAnimals.add(R.drawable.animal_koala);
+        imageAnimals.add(R.drawable.animal_lamb);
+        imageAnimals.add(R.drawable.animal_lion);
+        imageAnimals.add(R.drawable.animal_lizard);
+        imageAnimals.add(R.drawable.animal_mammoth);
+        imageAnimals.add(R.drawable.animal_manatee);
+        imageAnimals.add(R.drawable.animal_monkey);
+        imageAnimals.add(R.drawable.animal_otter);
+        imageAnimals.add(R.drawable.animal_panda);
+        imageAnimals.add(R.drawable.animal_parot);
+        imageAnimals.add(R.drawable.animal_peacock);
+        imageAnimals.add(R.drawable.animal_penguin);
+        imageAnimals.add(R.drawable.animal_pig);
+        imageAnimals.add(R.drawable.animal_rabbit);
+        imageAnimals.add(R.drawable.animal_racoon);
+        imageAnimals.add(R.drawable.animal_reindeer);
+        imageAnimals.add(R.drawable.animal_sea_lion);
+        imageAnimals.add(R.drawable.animal_seahorse);
+        imageAnimals.add(R.drawable.animal_shark);
+        imageAnimals.add(R.drawable.animal_sheep);
+        imageAnimals.add(R.drawable.animal_shrimp);
+        imageAnimals.add(R.drawable.animal_snail);
+        imageAnimals.add(R.drawable.animal_snake);
+        imageAnimals.add(R.drawable.animal_squirrel);
+        imageAnimals.add(R.drawable.animal_stork);
+        imageAnimals.add(R.drawable.animal_swan);
+        imageAnimals.add(R.drawable.animal_tapir);
+        imageAnimals.add(R.drawable.animal_tiger);
+        imageAnimals.add(R.drawable.animal_turtle);
+        imageAnimals.add(R.drawable.animal_mouse);
+        imageAnimals.add(R.drawable.animal_vulture);
+        imageAnimals.add(R.drawable.animal_walrus);
+        imageAnimals.add(R.drawable.animal_whale);
+        imageAnimals.add(R.drawable.animal_wolf);
+        imageAnimals.add(R.drawable.animal_wolverine);
+        imageAnimals.add(R.drawable.language);
+
+        loadList(0);
+        checkBtnBackGroud(0);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(CaptureActivity.this, R.style.DialogTheme);
+        builder.setView(v);
+        dialogAnimal = builder.create();
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogAnimal.dismiss();
+                notification.setVisibility(View.VISIBLE);
+            }
+        });
+
+        infoButton = findViewById(R.id.info_button);
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (v.getParent() != null) {
+                    ((ViewGroup) v.getParent()).removeView(v);
+                }
+                dialogAnimal.setContentView(v);
+                dialogAnimal.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+                dialogAnimal.show();
+                dialogAnimal.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+                dialogAnimal.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+                notification.setVisibility(View.INVISIBLE);
+            }
+        });
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if(currentApiVersion >= Build.VERSION_CODES.KITKAT && hasFocus)
+        {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
     }
 
     @Override
@@ -436,9 +1064,9 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         if (lastResult != null) {
             handleOcrDecode(lastResult);
         } else {
-            Toast toast = Toast.makeText(this, "OCR failed. Please try again.", Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.TOP, 0, 0);
-            toast.show();
+//            Toast toast = Toast.makeText(this, "OCR failed. Please try again.", Toast.LENGTH_SHORT);
+//            toast.setGravity(Gravity.TOP, 0, 0);
+//            toast.show();
             resumeContinuousDecoding();
         }
     }
@@ -677,6 +1305,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
         // Display the name of the OCR engine we're initializing in the indeterminate progress dialog box
         indeterminateDialog = new ProgressDialog(this, R.style.MyProgressDialogStyle);
+        indeterminateDialog.setIcon(R.drawable.ic_dialog);
         indeterminateDialog.setTitle("Please wait");
         String ocrEngineModeName = getOcrEngineModeName();
         if (ocrEngineModeName.equals("Both")) {
@@ -726,9 +1355,9 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
         // Test whether the result is null
         if (ocrResult.getText() == null || ocrResult.getText().equals("")) {
-            Toast toast = Toast.makeText(this, "OCR failed. Please try again.", Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.TOP, 0, 0);
-            toast.show();
+//            Toast toast = Toast.makeText(this, "OCR failed. Please try again.", Toast.LENGTH_SHORT);
+//            toast.setGravity(Gravity.TOP, 0, 0);
+//            toast.show();
             return;
         }
 
@@ -808,31 +1437,45 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         int meanConfidence = ocrResult.getMeanConfidence();
 
         if (CONTINUOUS_DISPLAY_RECOGNIZED_TEXT) {
+            // Intent ARActivity
+            String resultText = ocrResult.getText().trim().toLowerCase();
+            String nameAnimal = "";
+
+            Optional<String> matchingItem;
+
+            matchingItem = nameAnimals.stream()
+                    .filter(s -> resultText.contains(s.trim().toLowerCase()))
+                    .findFirst();
+
+            if (matchingItem.isPresent()) {
+                nameAnimal = animalEnglish.get(nameAnimals.indexOf(matchingItem.get()));
+            }
+
+            if (!nameAnimal.isEmpty()) {
+                beepManager.playBeepSoundAndVibrate();
+                Intent intent = new Intent(getApplicationContext(), ARActivity.class);
+                intent.putExtra("RESULT_TEXT", resultText);
+                intent.putExtra("ANIMAL_NAME", nameAnimal);
+                startActivity(intent);
+            }
+        }
+
+        if (prefs.getBoolean(PreferencesActivity.KEY_CONTINUOUS_DISPLAY_METADATA, false)) {
+
             // Display the recognized text on the screen
             statusViewTop.setText(ocrResult.getText());
             int scaledSize = Math.max(22, 32 - ocrResult.getText().length() / 4);
             statusViewTop.setTextSize(TypedValue.COMPLEX_UNIT_SP, scaledSize);
             statusViewTop.setTextColor(Color.BLACK);
             statusViewTop.setBackgroundResource(R.color.status_top_text_background);
-
             statusViewTop.getBackground().setAlpha(meanConfidence * (255 / 100));
 
-            // Intent ARActivity\
-            String nameAnimal = ocrResult.getText().toLowerCase();
-            AnimalEnum animalEnum = AnimalEnum.getAnimalEnum(nameAnimal);
-            if (animalEnum != null) {
-                Intent intent = new Intent(getApplicationContext(), ARActivity.class);
-                intent.putExtra("ANIMAL_NAME", nameAnimal);
-                startActivity(intent);
-            }
-        }
-
-        if (CONTINUOUS_DISPLAY_METADATA) {
             // Display recognition-related metadata at the bottom of the screen
             long recognitionTimeRequired = ocrResult.getRecognitionTimeRequired();
             statusViewBottom.setTextSize(14);
-            statusViewBottom.setText("Language: " + sourceLanguageReadable + " - Mean confidence: " +
-                    meanConfidence + " - Time required: " + recognitionTimeRequired + " ms");
+//            statusViewBottom.setText("Language: " + sourceLanguageReadable + " - Mean confidence: " +
+//                    meanConfidence + " - Time required: " + recognitionTimeRequired + " ms");
+            statusViewBottom.setText("Language: " + sourceLanguageReadable);
         }
     }
 
@@ -848,12 +1491,13 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         // Reset the text in the recognized text box.
         statusViewTop.setText("");
 
-        if (CONTINUOUS_DISPLAY_METADATA) {
+        if (prefs.getBoolean(PreferencesActivity.KEY_CONTINUOUS_DISPLAY_METADATA, false)) {
             // Color text delimited by '-' as red.
             statusViewBottom.setTextSize(14);
-            CharSequence cs = setSpanBetweenTokens("Language: " + sourceLanguageReadable + " - OCR failed - Time required: "
-                    + obj.getTimeRequired() + " ms", "-", new ForegroundColorSpan(0xFFFF0000));
-            statusViewBottom.setText(cs);
+//            CharSequence cs = setSpanBetweenTokens("Language: " + sourceLanguageReadable + " - No result - Time required: "
+//                    + obj.getTimeRequired() + " ms", "-", new ForegroundColorSpan(0xFFFF0000));
+
+            statusViewBottom.setText("Language: " + sourceLanguageReadable);
         }
     }
 
@@ -908,9 +1552,9 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
             case OPTIONS_COPY_RECOGNIZED_TEXT_ID:
                 clipboardManager.setText(ocrResultView.getText());
                 if (clipboardManager.hasText()) {
-                    Toast toast = Toast.makeText(this, "Text copied.", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.BOTTOM, 0, 0);
-                    toast.show();
+//                    Toast toast = Toast.makeText(this, "Text copied.", Toast.LENGTH_LONG);
+//                    toast.setGravity(Gravity.BOTTOM, 0, 0);
+//                    toast.show();
                 }
                 return true;
             case OPTIONS_SHARE_RECOGNIZED_TEXT_ID:
@@ -922,9 +1566,9 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
             case OPTIONS_COPY_TRANSLATED_TEXT_ID:
                 clipboardManager.setText(translationView.getText());
                 if (clipboardManager.hasText()) {
-                    Toast toast = Toast.makeText(this, "Text copied.", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.BOTTOM, 0, 0);
-                    toast.show();
+//                    Toast toast = Toast.makeText(this, "Text copied.", Toast.LENGTH_LONG);
+//                    toast.setGravity(Gravity.BOTTOM, 0, 0);
+//                    toast.show();
                 }
                 return true;
             case OPTIONS_SHARE_TRANSLATED_TEXT_ID:
@@ -943,7 +1587,8 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
      */
     private void resetStatusView() {
         resultView.setVisibility(View.GONE);
-        if (CONTINUOUS_DISPLAY_METADATA) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if (prefs.getBoolean(PreferencesActivity.KEY_CONTINUOUS_DISPLAY_METADATA, false)) {
             statusViewBottom.setText("");
             statusViewBottom.setTextSize(14);
             statusViewBottom.setTextColor(getResources().getColor(R.color.status_text));
@@ -965,9 +1610,9 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
     /** Displays a pop-up message showing the name of the current OCR source language. */
     public void showLanguageName() {
-        Toast toast = Toast.makeText(this, "Language: " + sourceLanguageReadable, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.TOP, 0, 0);
-        toast.show();
+//        Toast toast = Toast.makeText(this, "Language: " + sourceLanguageReadable, Toast.LENGTH_LONG);
+//        toast.setGravity(Gravity.TOP, 0, 0);
+//        toast.show();
     }
 
     /**
@@ -976,7 +1621,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
      */
     public void setStatusViewForContinuous() {
         viewfinderView.removeResultText();
-        if (CONTINUOUS_DISPLAY_METADATA) {
+        if (prefs.getBoolean(PreferencesActivity.KEY_CONTINUOUS_DISPLAY_METADATA, false)) {
             statusViewBottom.setText("Language: " + sourceLanguageReadable + " - waiting for OCR...");
         }
     }
@@ -1181,6 +1826,12 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         // Beep
         prefs.edit().putBoolean(PreferencesActivity.KEY_PLAY_BEEP, CaptureActivity.DEFAULT_TOGGLE_BEEP).commit();
 
+        // Music
+        prefs.edit().putBoolean(PreferencesActivity.KEY_PLAY_MUSIC, HomeActivity.DEFAULT_TOGGLE_MUSIC).commit();
+
+        // Music
+        prefs.edit().putBoolean(PreferencesActivity.KEY_CONTINUOUS_DISPLAY_METADATA, CaptureActivity.CONTINUOUS_DISPLAY_METADATA).commit();
+
         // Character blacklist
         prefs.edit().putString(PreferencesActivity.KEY_CHARACTER_BLACKLIST,
                 OcrCharacterHelper.getDefaultBlacklist(CaptureActivity.DEFAULT_SOURCE_LANGUAGE_CODE)).commit();
@@ -1202,6 +1853,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     public void displayProgressDialog() {
         // Set up the indeterminate progress dialog box
         indeterminateDialog = new ProgressDialog(this, R.style.MyProgressDialogStyle);
+        indeterminateDialog.setIcon(R.drawable.ic_dialog);
         indeterminateDialog.setTitle("Please wait");
         String ocrEngineModeName = getOcrEngineModeName();
         if (ocrEngineModeName.equals("Both")) {
@@ -1225,10 +1877,12 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
      */
     public void showErrorMessage(String title, String message) {
         new AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
+                .setIcon(R.drawable.error)
                 .setTitle(title)
                 .setMessage(message)
                 .setOnCancelListener(new FinishListener(this))
                 .setPositiveButton( "Done", new FinishListener(this))
                 .show();
     }
+
 }
