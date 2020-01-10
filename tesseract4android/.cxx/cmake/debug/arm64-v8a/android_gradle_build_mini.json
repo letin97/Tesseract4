@@ -1,38 +1,38 @@
 {
   "buildFiles": [
-    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/CMakeLists.txt",
-    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/libjpeg/CMakeLists.txt",
-    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/libpng/CMakeLists.txt",
-    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/leptonica/CMakeLists.txt",
-    "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp/tesseract/CMakeLists.txt"
+    "E:\\Tesseract4\\tesseract4android\\src\\main\\cpp\\CMakeLists.txt",
+    "E:\\Tesseract4\\tesseract4android\\src\\main\\cpp\\libjpeg\\CMakeLists.txt",
+    "E:\\Tesseract4\\tesseract4android\\src\\main\\cpp\\libpng\\CMakeLists.txt",
+    "E:\\Tesseract4\\tesseract4android\\src\\main\\cpp\\leptonica\\CMakeLists.txt",
+    "E:\\Tesseract4\\tesseract4android\\src\\main\\cpp\\tesseract\\CMakeLists.txt"
   ],
   "cleanCommands": [
-    "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a --target clean"
+    "C:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\arm64-v8a --target clean"
   ],
   "libraries": {
     "tesseract-Debug-arm64-v8a": {
       "artifactName": "tesseract",
-      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a --target tesseract",
+      "buildCommand": "C:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\arm64-v8a --target tesseract",
       "abi": "arm64-v8a",
-      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/debug/obj/arm64-v8a/libtesseract.so"
+      "output": "E:\\Tesseract4\\tesseract4android\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libtesseract.so"
     },
     "leptonica-Debug-arm64-v8a": {
       "artifactName": "leptonica",
-      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a --target leptonica",
+      "buildCommand": "C:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\arm64-v8a --target leptonica",
       "abi": "arm64-v8a",
-      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/debug/obj/arm64-v8a/libleptonica.so"
+      "output": "E:\\Tesseract4\\tesseract4android\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libleptonica.so"
     },
     "png-Debug-arm64-v8a": {
       "artifactName": "png",
-      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a --target png",
+      "buildCommand": "C:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\arm64-v8a --target png",
       "abi": "arm64-v8a",
-      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/debug/obj/arm64-v8a/libpng.so"
+      "output": "E:\\Tesseract4\\tesseract4android\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libpng.so"
     },
     "jpeg-Debug-arm64-v8a": {
       "artifactName": "jpeg",
-      "buildCommand": "/home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/arm64-v8a --target jpeg",
+      "buildCommand": "C:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\arm64-v8a --target jpeg",
       "abi": "arm64-v8a",
-      "output": "/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/debug/obj/arm64-v8a/libjpeg.so"
+      "output": "E:\\Tesseract4\\tesseract4android\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libjpeg.so"
     }
   }
 }

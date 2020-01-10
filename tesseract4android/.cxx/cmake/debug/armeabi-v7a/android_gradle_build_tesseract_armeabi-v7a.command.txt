@@ -1,7 +1,7 @@
-Executable : /home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake
+Executable : C:\Users\MSI\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe
 arguments : 
 --build
-/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/armeabi-v7a
+E:\Tesseract4\tesseract4android\.cxx\cmake\debug\armeabi-v7a
 --target
 tesseract
 jvmArgs : 

@@ -5,7 +5,63 @@
   },
   {
     "level": "INFO",
-    "message": "JSON \u0027/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/debug/x86_64/android_gradle_build.json\u0027 was up-to-date"
+    "message": "rebuilding JSON E:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\x86_64\\android_gradle_build.json due to:"
+  },
+  {
+    "level": "INFO",
+    "message": "- command changed from previous, will remove stale json folder"
+  },
+  {
+    "level": "INFO",
+    "message": "- a dependent build file changed"
+  },
+  {
+    "level": "INFO",
+    "message": "  - E:\\home\\lap12934-local\\Documents\\UIT\\Tesseract4\\tesseract4android\\src\\main\\cpp\\CMakeLists.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "  - E:\\home\\lap12934-local\\Documents\\UIT\\Tesseract4\\tesseract4android\\src\\main\\cpp\\libjpeg\\CMakeLists.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "  - E:\\home\\lap12934-local\\Documents\\UIT\\Tesseract4\\tesseract4android\\src\\main\\cpp\\libpng\\CMakeLists.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "  - E:\\home\\lap12934-local\\Documents\\UIT\\Tesseract4\\tesseract4android\\src\\main\\cpp\\leptonica\\CMakeLists.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "  - E:\\home\\lap12934-local\\Documents\\UIT\\Tesseract4\\tesseract4android\\src\\main\\cpp\\tesseract\\CMakeLists.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "removing stale contents from \u0027E:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\x86_64\u0027"
+  },
+  {
+    "level": "INFO",
+    "message": "created folder \u0027E:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\x86_64\u0027"
+  },
+  {
+    "level": "INFO",
+    "message": "executing cmake Executable : C:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe\narguments : \n-HE:\\Tesseract4\\tesseract4android\\src\\main\\cpp\n-BE:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\x86_64\n-DANDROID_ABI\u003dx86_64\n-DANDROID_PLATFORM\u003dandroid-16\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dE:\\Tesseract4\\tesseract4android\\build\\intermediates\\cmake\\debug\\obj\\x86_64\n-DCMAKE_BUILD_TYPE\u003dDebug\n-DANDROID_NDK\u003dC:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\ndk-bundle\n-DCMAKE_CXX_FLAGS\u003d\n-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\ndk-bundle\\build\\cmake\\android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\ninja.exe\n-GAndroid Gradle - Ninja\njvmArgs : \n\n"
+  },
+  {
+    "level": "INFO",
+    "message": "Executable : C:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe\narguments : \n-HE:\\Tesseract4\\tesseract4android\\src\\main\\cpp\n-BE:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\x86_64\n-DANDROID_ABI\u003dx86_64\n-DANDROID_PLATFORM\u003dandroid-16\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dE:\\Tesseract4\\tesseract4android\\build\\intermediates\\cmake\\debug\\obj\\x86_64\n-DCMAKE_BUILD_TYPE\u003dDebug\n-DANDROID_NDK\u003dC:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\ndk-bundle\n-DCMAKE_CXX_FLAGS\u003d\n-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\ndk-bundle\\build\\cmake\\android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\MSI\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\ninja.exe\n-GAndroid Gradle - Ninja\njvmArgs : \n\n"
+  },
+  {
+    "level": "INFO",
+    "message": "done executing cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "write build output E:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\x86_64\\build_output.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "write command file E:\\Tesseract4\\tesseract4android\\.cxx\\cmake\\debug\\x86_64\\build_command.txt"
   },
   {
     "level": "INFO",

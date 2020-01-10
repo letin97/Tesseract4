@@ -179,7 +179,8 @@ public class ARActivity extends AppCompatActivity {
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                startActivityForResult(intent, 1);
+                //finish();
             }
         });
 
@@ -195,22 +196,22 @@ public class ARActivity extends AppCompatActivity {
             }
         });
 
-        infoButton = findViewById(R.id.info_button);
-        infoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                alertDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
-//                alertDialog.show();
-//                alertDialog.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
-//                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-//                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-//                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-//                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-//                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-//                alertDialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
-                startActivityForResult(intent, 1);
-            }
-        });
+//        infoButton = findViewById(R.id.info_button);
+//        infoButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                alertDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+////                alertDialog.show();
+////                alertDialog.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+////                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+////                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+////                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+////                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+////                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+////                alertDialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+//                startActivityForResult(intent, 1);
+//            }
+//        });
 
         prefManager = new PrefManager(this);
 
@@ -249,16 +250,16 @@ public class ARActivity extends AppCompatActivity {
             }
 
             if (resultCode == Activity.RESULT_CANCELED) {
-
-                if (!isFirstAnimal) {
-                    finish();
-                    return;
-                }
-
-                if (nameAnimal == null || "".equals(nameAnimal)){
-                    finish();
-                    return;
-                }
+                finish();
+//                if (!isFirstAnimal) {
+//                    finish();
+//                    return;
+//                }
+//
+//                if (nameAnimal == null || "".equals(nameAnimal)){
+//                    finish();
+//                    return;
+//                }
             }
 
             if (isFirstAnimal) {

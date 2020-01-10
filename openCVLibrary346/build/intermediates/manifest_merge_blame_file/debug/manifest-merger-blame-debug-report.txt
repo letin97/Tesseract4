@@ -6,8 +6,8 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="8"
-8-->/home/lap12934-local/Documents/UIT/Tesseract4/openCVLibrary346/src/main/AndroidManifest.xml
+8-->E:\Tesseract4\openCVLibrary346\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="21" />
-9-->/home/lap12934-local/Documents/UIT/Tesseract4/openCVLibrary346/src/main/AndroidManifest.xml
+9-->E:\Tesseract4\openCVLibrary346\src\main\AndroidManifest.xml
 10
 11</manifest>

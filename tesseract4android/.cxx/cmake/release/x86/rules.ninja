@@ -25,7 +25,7 @@ rule CUSTOM_COMMAND
 rule C_COMPILER__jpeg
   depfile = $DEP_FILE
   deps = gcc
-  command = /home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang  --target=i686-none-linux-android16 --gcc-toolchain=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $IN_ABS
+  command = C:\Users\MSI\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $IN_ABS
   description = Building C object $out
 
 
@@ -33,7 +33,7 @@ rule C_COMPILER__jpeg
 # Rule for linking C shared library.
 
 rule C_SHARED_LIBRARY_LINKER__jpeg
-  command = $PRE_LINK && /home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang  --target=i686-none-linux-android16 --gcc-toolchain=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = cmd.exe /C "$PRE_LINK && C:\Users\MSI\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking C shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -44,7 +44,7 @@ rule C_SHARED_LIBRARY_LINKER__jpeg
 rule C_COMPILER__png
   depfile = $DEP_FILE
   deps = gcc
-  command = /home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang  --target=i686-none-linux-android16 --gcc-toolchain=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $IN_ABS
+  command = C:\Users\MSI\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $IN_ABS
   description = Building C object $out
 
 
@@ -52,7 +52,7 @@ rule C_COMPILER__png
 # Rule for linking C shared library.
 
 rule C_SHARED_LIBRARY_LINKER__png
-  command = $PRE_LINK && /home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang  --target=i686-none-linux-android16 --gcc-toolchain=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = cmd.exe /C "$PRE_LINK && C:\Users\MSI\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking C shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -63,7 +63,7 @@ rule C_SHARED_LIBRARY_LINKER__png
 rule C_COMPILER__leptonica
   depfile = $DEP_FILE
   deps = gcc
-  command = /home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang  --target=i686-none-linux-android16 --gcc-toolchain=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $IN_ABS
+  command = C:\Users\MSI\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $IN_ABS
   description = Building C object $out
 
 
@@ -73,7 +73,7 @@ rule C_COMPILER__leptonica
 rule CXX_COMPILER__leptonica
   depfile = $DEP_FILE
   deps = gcc
-  command = /home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++  --target=i686-none-linux-android16 --gcc-toolchain=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $IN_ABS
+  command = C:\Users\MSI\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $IN_ABS
   description = Building CXX object $out
 
 
@@ -81,8 +81,10 @@ rule CXX_COMPILER__leptonica
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__leptonica
-  command = $PRE_LINK && /home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++  --target=i686-none-linux-android16 --gcc-toolchain=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = cmd.exe /C "$PRE_LINK && C:\Users\MSI\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE @$RSP_FILE  && $POST_BUILD"
   description = Linking CXX shared library $TARGET_FILE
+  rspfile = $RSP_FILE
+  rspfile_content = $in $LINK_PATH $LINK_LIBRARIES
   restat = $RESTAT
 
 
@@ -92,7 +94,7 @@ rule CXX_SHARED_LIBRARY_LINKER__leptonica
 rule CXX_COMPILER__tesseract
   depfile = $DEP_FILE
   deps = gcc
-  command = /home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++  --target=i686-none-linux-android16 --gcc-toolchain=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $IN_ABS
+  command = C:\Users\MSI\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $IN_ABS
   description = Building CXX object $out
 
 
@@ -100,8 +102,10 @@ rule CXX_COMPILER__tesseract
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__tesseract
-  command = $PRE_LINK && /home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++  --target=i686-none-linux-android16 --gcc-toolchain=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/lap12934-local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = cmd.exe /C "$PRE_LINK && C:\Users\MSI\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/MSI/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE @$RSP_FILE  && $POST_BUILD"
   description = Linking CXX shared library $TARGET_FILE
+  rspfile = $RSP_FILE
+  rspfile_content = $in $LINK_PATH $LINK_LIBRARIES
   restat = $RESTAT
 
 
@@ -109,7 +113,7 @@ rule CXX_SHARED_LIBRARY_LINKER__tesseract
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/cmake -H/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/src/main/cpp -B/home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/.cxx/cmake/release/x86
+  command = C:\Users\MSI\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe -HE:\Tesseract4\tesseract4android\src\main\cpp -BE:\Tesseract4\tesseract4android\.cxx\cmake\release\x86
   description = Re-running CMake...
   generator = 1
 
@@ -118,7 +122,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/ninja -t clean
+  command = C:\Users\MSI\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe -t clean
   description = Cleaning all built files...
 
 
@@ -126,6 +130,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /home/lap12934-local/Android/Sdk/cmake/3.6.4111459/bin/ninja -t targets
+  command = C:\Users\MSI\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe -t targets
   description = All primary targets available:
 
