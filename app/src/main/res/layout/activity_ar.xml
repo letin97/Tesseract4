@@ -21,7 +21,7 @@
     <Button
         android:id="@+id/info_button"
         android:layout_gravity="end"
-        android:background="@drawable/information"
+        android:background="@drawable/ic_animal"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_margin="10dp" />

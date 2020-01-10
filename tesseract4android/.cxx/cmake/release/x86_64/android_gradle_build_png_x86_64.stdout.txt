@@ -1,0 +1,19 @@
+[1/19] Building C object libpng/CMakeFiles/png.dir/src/pngerror.c.o
+[2/19] Building C object libpng/CMakeFiles/png.dir/src/pngget.c.o
+[3/19] Building C object libpng/CMakeFiles/png.dir/src/png.c.o
+[4/19] Building C object libpng/CMakeFiles/png.dir/src/pngmem.c.o
+[5/19] Building C object libpng/CMakeFiles/png.dir/src/pngpread.c.o
+[6/19] Building C object libpng/CMakeFiles/png.dir/src/pngread.c.o
+[7/19] Building C object libpng/CMakeFiles/png.dir/src/pngrio.c.o
+[8/19] Building C object libpng/CMakeFiles/png.dir/src/pngrtran.c.o
+[9/19] Building C object libpng/CMakeFiles/png.dir/src/pngrutil.c.o
+[10/19] Building C object libpng/CMakeFiles/png.dir/src/pngset.c.o
+[11/19] Building C object libpng/CMakeFiles/png.dir/src/pngtrans.c.o
+[12/19] Building C object libpng/CMakeFiles/png.dir/src/pngwio.c.o
+[13/19] Building C object libpng/CMakeFiles/png.dir/src/pngwrite.c.o
+[14/19] Building C object libpng/CMakeFiles/png.dir/src/pngwtran.c.o
+[15/19] Building C object libpng/CMakeFiles/png.dir/src/pngwutil.c.o
+[16/19] Building C object libpng/CMakeFiles/png.dir/src/arm/arm_init.c.o
+[17/19] Building C object libpng/CMakeFiles/png.dir/src/arm/filter_neon_intrinsics.c.o
+[18/19] Building C object libpng/CMakeFiles/png.dir/src/arm/palette_neon_intrinsics.c.o
+[19/19] Linking C shared library /home/lap12934-local/Documents/UIT/Tesseract4/tesseract4android/build/intermediates/cmake/release/obj/x86_64/libpng.so

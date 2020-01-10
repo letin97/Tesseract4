@@ -44,7 +44,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (view.getId()) {
             case R.id.btn_start:
-                intent = new Intent(this, CaptureActivity.class);
+                intent = new Intent(this, ARActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 break;
             case R.id.btn_setting:

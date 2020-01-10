@@ -1,8 +1,15 @@
 package com.example.letrongtin.tesseract4.activity;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
+import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,8 +27,10 @@ import com.example.letrongtin.tesseract4.R;
 import com.example.letrongtin.tesseract4.enums.AnimalNameEnum;
 import com.example.letrongtin.tesseract4.slider.PrefManager;
 import com.google.ar.core.Anchor;
+import com.google.ar.core.Config;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
+import com.google.ar.core.Session;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.ModelRenderable;
@@ -31,6 +40,8 @@ import com.google.ar.sceneform.ux.BaseArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
 public class ARActivity extends AppCompatActivity {
+
+    private static final String TAG = ARActivity.class.getSimpleName();
 
     // ARCore
     private ArFragment arFragment;
@@ -42,9 +53,17 @@ public class ARActivity extends AppCompatActivity {
     private PrefManager prefManager;
     private int currentApiVersion;
 
+    Intent intent;
+    private static boolean isFirstLaunch = false;
+    private static boolean isFirstAnimal = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        intent = new Intent(getApplicationContext(), CaptureActivity.class);
+        startActivityForResult(intent, 1);
+
         setContentView(R.layout.activity_ar);
 
         currentApiVersion = android.os.Build.VERSION.SDK_INT;
@@ -80,21 +99,21 @@ public class ARActivity extends AppCompatActivity {
         //arFragment.getPlaneDiscoveryController().setInstructionView(null);
 
 
-        if (savedInstanceState == null) {
-            Bundle extras = getIntent().getExtras();
-            if(extras == null) {
-                resultText = null;
-                nameAnimal = null;
-            } else {
-                resultText = extras.getString("RESULT_TEXT");
-                nameAnimal = extras.getString("ANIMAL_NAME");
-            }
-        } else {
-            resultText = (String) savedInstanceState.getSerializable("RESULT_TEXT");
-            nameAnimal = (String) savedInstanceState.getSerializable("ANIMAL_NAME");
-        }
+//        if (savedInstanceState == null) {
+//            Bundle extras = getIntent().getExtras();
+//            if(extras == null) {
+//                resultText = null;
+//                nameAnimal = null;
+//            } else {
+//                resultText = extras.getString("RESULT_TEXT");
+//                nameAnimal = extras.getString("ANIMAL_NAME");
+//            }
+//        } else {
+//            resultText = (String) savedInstanceState.getSerializable("RESULT_TEXT");
+//            nameAnimal = (String) savedInstanceState.getSerializable("ANIMAL_NAME");
+//        }
 
-        setupModel(nameAnimal);
+        //setupModel(nameAnimal);
 
         arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
             @Override
@@ -103,6 +122,7 @@ public class ARActivity extends AppCompatActivity {
                 AnchorNode anchorNode = new AnchorNode(anchor);
                 anchorNode.setParent(arFragment.getArSceneView().getScene());
                 createModel(anchorNode);
+                isFirstAnimal = true;
             }
         });
 
@@ -179,15 +199,16 @@ public class ARActivity extends AppCompatActivity {
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                alertDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
-                alertDialog.show();
-                alertDialog.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-                alertDialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+//                alertDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+//                alertDialog.show();
+//                alertDialog.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+//                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+//                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+//                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+//                alertDialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -202,8 +223,7 @@ public class ARActivity extends AppCompatActivity {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        if(currentApiVersion >= Build.VERSION_CODES.KITKAT && hasFocus)
-        {
+        if (currentApiVersion >= Build.VERSION_CODES.KITKAT && hasFocus) {
             getWindow().getDecorView().setSystemUiVisibility(
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                             | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -212,6 +232,61 @@ public class ARActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+
+                if ("".equals(data.getStringExtra("ANIMAL_NAME")) || data.getStringExtra("ANIMAL_NAME") == null) {
+                    finish();
+                    return;
+                }
+
+                nameAnimal = data.getStringExtra("ANIMAL_NAME");
+                setupModel(nameAnimal);
+            }
+
+            if (resultCode == Activity.RESULT_CANCELED) {
+
+                if (!isFirstAnimal) {
+                    finish();
+                    return;
+                }
+
+                if (nameAnimal == null || "".equals(nameAnimal)){
+                    finish();
+                    return;
+                }
+            }
+
+            if (isFirstAnimal) {
+                if (arFragment != null) {
+                    // hiding the plane discovery
+                    // arFragment.getPlaneDiscoveryController().hide();
+                    // arFragment.getPlaneDiscoveryController().setInstructionView(null);
+                    arFragment.getArSceneView().getSession().getConfig().setPlaneFindingMode(Config.PlaneFindingMode.DISABLED);
+                    //arFragment.getArSceneView().getPlaneRenderer().setEnabled(false);
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (arFragment != null)
+            arFragment.onResume();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (arFragment != null)
+            arFragment.onPause();
+
     }
 
     private void setupModel(String name) {
@@ -235,18 +310,18 @@ public class ARActivity extends AppCompatActivity {
             case BEAVER:
                 idAnimal = R.raw.beaver;
                 break;
-            case BEE:
-                idAnimal = R.raw.bee;
-                break;
+//            case BEE:
+//                idAnimal = R.raw.bee;
+//                break;
             case BIRD:
                 idAnimal = R.raw.bird;
                 break;
             case BISON:
                 idAnimal = R.raw.bison;
                 break;
-            case BUTTERFLY:
-                idAnimal = R.raw.butterfly;
-                break;
+//            case BUTTERFLY:
+//                idAnimal = R.raw.butterfly;
+//                break;
             case CAMEL:
                 idAnimal = R.raw.camel;
                 break;
@@ -331,9 +406,9 @@ public class ARActivity extends AppCompatActivity {
             case KOALA:
                 idAnimal = R.raw.koala_bear;
                 break;
-            case LAMB:
-                idAnimal = R.raw.lamb;
-                break;
+//            case LAMB:
+//                idAnimal = R.raw.lamb;
+//                break;
             case LION:
                 idAnimal = R.raw.lion;
                 break;
@@ -352,15 +427,15 @@ public class ARActivity extends AppCompatActivity {
             case OTTER:
                 idAnimal = R.raw.otter;
                 break;
-            case PANDA:
-                idAnimal = R.raw.panda;
-                break;
+//            case PANDA:
+//                idAnimal = R.raw.panda;
+//                break;
             case PARROT:
                 idAnimal = R.raw.parrot;
                 break;
-            case PEACOCK:
-                //idAnimal = R.raw.pea
-                break;
+//            case PEACOCK:
+//                //idAnimal = R.raw.pea
+//                break;
             case PENGUIN:
                 idAnimal = R.raw.penguin;
                 break;
@@ -391,9 +466,9 @@ public class ARActivity extends AppCompatActivity {
             case SHRIMP:
                 idAnimal = R.raw.shrimp;
                 break;
-            case SNAIL:
-                //
-                break;
+//            case SNAIL:
+//                //
+//                break;
             case SNAKE:
                 idAnimal = R.raw.snake;
                 break;
@@ -482,7 +557,4 @@ public class ARActivity extends AppCompatActivity {
                 .setPositiveButton( "Done", new FinishListener(this))
                 .show();
     }
-
-
-
 }

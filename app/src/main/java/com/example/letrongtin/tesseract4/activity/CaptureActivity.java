@@ -1,6 +1,7 @@
 package com.example.letrongtin.tesseract4.activity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -212,6 +213,8 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     public Mat imageMat;
     public Mat imageMat2;
 
+    Intent intent;
+
     List<String> animalAfrikaans;
     List<String> animalAlbanian;
     List<String> animalArabic;
@@ -299,7 +302,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
     private List<Integer> imageAnimals;
     RecyclerViewAdapter adapter;
 
-    public int TOTAL_LIST_ITEMS = 69;
+    public int TOTAL_LIST_ITEMS = 63;
     public int NUM_ITEMS_PAGE = 6;
     private int noOfBtns;
     private int currentPage = 0;
@@ -417,19 +420,27 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
                     return;
                 }
 
-                if (nameAnimals.get(currentPage * NUM_ITEMS_PAGE + position).trim().contains(text)) {
+                if (text.contains(nameAnimals.get(currentPage * NUM_ITEMS_PAGE + position).trim())) {
                     dialogAnimal.dismiss();
                     notification.setVisibility(View.VISIBLE);
 
                     String nameAnimal = "";
-                    nameAnimal = animalEnglish.get(currentPage * NUM_ITEMS_PAGE + position);
+                    List<String> temp = new ArrayList<String>(animalEnglish);
+                    temp.remove(3);
+                    temp.remove(5);
+                    temp.remove(33);
+                    temp.remove(39);
+                    temp.remove(40);
+                    temp.remove(50);
+
+                    nameAnimal = temp.get(currentPage * NUM_ITEMS_PAGE + position);
 
                     if (!nameAnimal.isEmpty()) {
                         beepManager.playBeepSoundAndVibrate();
-                        Intent intent = new Intent(getApplicationContext(), ARActivity.class);
                         intent.putExtra("RESULT_TEXT", nameAnimals.get(currentPage * NUM_ITEMS_PAGE + position));
                         intent.putExtra("ANIMAL_NAME", nameAnimal);
-                        startActivity(intent);
+                        setResult(Activity.RESULT_OK, intent);
+                        finish();
                     } else {
                         validate.setText("Unrecognized error!!!");
                     }
@@ -603,6 +614,7 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setResult(Activity.RESULT_CANCELED, intent);
                 finish();
             }
         });
@@ -665,7 +677,6 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
         beepManager.playBeepSoundAndVibrate();
 
-
         // pagination
         LayoutInflater factory = LayoutInflater.from(CaptureActivity.this);
         final View v = factory.inflate(R.layout.pagination, null);
@@ -701,171 +712,178 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
 
         switch (languageName) {
             case AFRIKAANS:
-                nameAnimals = animalAfrikaans;
+                nameAnimals = new ArrayList<String>(animalAfrikaans);
                 break;
             case ALBANIAN:
-                nameAnimals = animalAlbanian;
+                nameAnimals = new ArrayList<String>(animalAlbanian);
                 break;
             case ARABIC:
-                nameAnimals = animalArabic;
+                nameAnimals = new ArrayList<String>(animalArabic);
                 break;
             case AZERI:
-                nameAnimals = animalAzeri;
+                nameAnimals = new ArrayList<String>(animalAzeri);
                 break;
             case BASQUE:
-                nameAnimals = animalBasque;
+                nameAnimals = new ArrayList<String>(animalBasque);
                 break;
             case BELARUSIAN:
-                nameAnimals = animalBelarusian;
+                nameAnimals = new ArrayList<String>(animalBelarusian);
                 break;
             case BENGALI:
-                nameAnimals = animalBengali;
+                nameAnimals = new ArrayList<String>(animalBengali);
                 break;
             case BULGARIAN:
-                nameAnimals = animalBulgarian;
+                nameAnimals = new ArrayList<String>(animalBulgarian);
                 break;
             case CATALAN:
-                nameAnimals = animalCatalan;
+                nameAnimals = new ArrayList<String>(animalCatalan);
                 break;
             case CHINESE_SIMPLIFIED:
-                nameAnimals = animalChinese_Sim;
+                nameAnimals = new ArrayList<String>(animalChinese_Sim);
                 break;
             case CHINESET_TRADITIONAL:
-                nameAnimals = animalChinese_Tra;
+                nameAnimals = new ArrayList<String>(animalChinese_Tra);
                 break;
             case CROATIAN:
-                nameAnimals = animalCroatian;
+                nameAnimals = new ArrayList<String>(animalCroatian);
                 break;
             case CZECH:
-                nameAnimals = animalCzech;
+                nameAnimals = new ArrayList<String>(animalCzech);
                 break;
             case DANISH:
-                nameAnimals = animalDanish;
+                nameAnimals = new ArrayList<String>(animalDanish);
                 break;
             case DUTCH:
-                nameAnimals = animalDutch;
+                nameAnimals = new ArrayList<String>(animalDutch);
                 break;
             case ENGLISH:
-                nameAnimals = animalEnglish;
+                nameAnimals = new ArrayList<String>(animalEnglish);
                 break;
             case ESTONIAN:
-                nameAnimals = animalEstonian;
+                nameAnimals = new ArrayList<String>(animalEstonian);
                 break;
             case FINNISH:
-                nameAnimals = animalFinnish;
+                nameAnimals = new ArrayList<String>(animalFinnish);
                 break;
             case FRENCH:
-                nameAnimals = animalFrench;
+                nameAnimals = new ArrayList<String>(animalFrench);
                 break;
             case GALICIAN:
-                nameAnimals = animalGalician;
+                nameAnimals = new ArrayList<String>(animalGalician);
                 break;
             case GERMAN:
-                nameAnimals = animalGerman;
+                nameAnimals = new ArrayList<String>(animalGerman);
                 break;
             case GREEK:
-                nameAnimals = animalGreek;
+                nameAnimals = new ArrayList<String>(animalGreek);
                 break;
             case HEBREW:
-                nameAnimals = animalHebrew;
+                nameAnimals = new ArrayList<String>(animalHebrew);
                 break;
             case HINDI:
-                nameAnimals = animalHindi;
+                nameAnimals = new ArrayList<String>(animalHindi);
                 break;
             case HUNGARIAN:
-                nameAnimals = animalHungarian;
+                nameAnimals = new ArrayList<String>(animalHungarian);
                 break;
             case ICELANDIC:
-                nameAnimals = animalIcelandic;
+                nameAnimals = new ArrayList<String>(animalIcelandic);
                 break;
             case INDONESIAN:
-                nameAnimals = animalIndonesian;
+                nameAnimals = new ArrayList<String>(animalIndonesian);
                 break;
             case ITALIAN:
-                nameAnimals = animalItalian;
+                nameAnimals = new ArrayList<String>(animalItalian);
                 break;
             case JAPANESE:
-                nameAnimals = animalJapanese;
+                nameAnimals = new ArrayList<String>(animalJapanese);
                 break;
             case KANNADA:
-                nameAnimals = animalKannada;
+                nameAnimals = new ArrayList<String>(animalKannada);
                 break;
             case KOREAN:
-                nameAnimals = animalKorean;
+                nameAnimals = new ArrayList<String>(animalKorean);
                 break;
             case LATVIAN:
-                nameAnimals = animalLatvian;
+                nameAnimals = new ArrayList<String>(animalLatvian);
                 break;
             case LITHUANIAN:
-                nameAnimals = animalLithuanian;
+                nameAnimals = new ArrayList<String>(animalLithuanian);
                 break;
             case MACEDONIAN:
-                nameAnimals = animalMacedonian;
+                nameAnimals = new ArrayList<String>(animalMacedonian);
                 break;
             case MALAY:
-                nameAnimals = animalMalay;
+                nameAnimals = new ArrayList<String>(animalMalay);
                 break;
             case MALAYALAM:
-                nameAnimals = animalMalayalam;
+                nameAnimals = new ArrayList<String>(animalMalayalam);
                 break;
             case MALTESE:
-                nameAnimals = animalMaltese;
+                nameAnimals = new ArrayList<String>(animalMaltese);
                 break;
             case NORWEGIAN:
-                nameAnimals = animalNorwegian;
+                nameAnimals = new ArrayList<String>(animalNorwegian);
                 break;
             case POLISH:
-                nameAnimals = animalPolish;
+                nameAnimals = new ArrayList<String>(animalPolish);
                 break;
             case PORTUGUESE:
-                nameAnimals = animalPortuguese;
+                nameAnimals = new ArrayList<String>(animalPortuguese);
                 break;
             case ROMANIAN:
-                nameAnimals = animalRomanian;
+                nameAnimals = new ArrayList<String>(animalRomanian);
                 break;
             case RUSSIAN:
-                nameAnimals = animalRussian;
+                nameAnimals = new ArrayList<String>(animalRussian);
                 break;
             case SERBIAN:
-                nameAnimals = animalSerbian;
+                nameAnimals = new ArrayList<String>(animalSerbian);
                 break;
             case SLOVAK:
-                nameAnimals = animalSlovak;
+                nameAnimals = new ArrayList<String>(animalSlovak);
                 break;
             case SLOVENIAN:
-                nameAnimals = animalSlovenian;
+                nameAnimals = new ArrayList<String>(animalSlovenian);
                 break;
             case SPANISH:
-                nameAnimals = animalSpanish;
+                nameAnimals = new ArrayList<String>(animalSpanish);
                 break;
             case SWAHILI:
-                nameAnimals = animalSwahili;
+                nameAnimals = new ArrayList<String>(animalSwahili);
                 break;
             case SWEDISH:
-                nameAnimals = animalSwedish;
+                nameAnimals = new ArrayList<String>(animalSwedish);
                 break;
             case TAGALOG:
-                nameAnimals = animalTagalog;
+                nameAnimals = new ArrayList<String>(animalTagalog);
                 break;
             case TAMIL:
-                nameAnimals = animalTamil;
+                nameAnimals = new ArrayList<String>(animalTamil);
                 break;
             case TELUGU:
-                nameAnimals = animalTelugu;
+                nameAnimals = new ArrayList<String>(animalTelugu);
                 break;
             case THAI:
-                nameAnimals = animalThai;
+                nameAnimals = new ArrayList<String>(animalThai);
                 break;
             case TURKISH:
-                nameAnimals = animalTurkish;
+                nameAnimals = new ArrayList<String>(animalTurkish);
                 break;
             case UKRAINIAN:
-                nameAnimals = animalUkrainian;
+                nameAnimals = new ArrayList<String>(animalUkrainian);
                 break;
             case VIETNAMESE:
-                nameAnimals = animalVietnamese;
+                nameAnimals = new ArrayList<String>(animalVietnamese);
                 break;
         }
+
+        nameAnimals.remove(3);
+        nameAnimals.remove(5);
+        nameAnimals.remove(33);
+        nameAnimals.remove(39);
+        nameAnimals.remove(40);
+        nameAnimals.remove(50);
 
         imageAnimals = new ArrayList<>();
         imageAnimals.add(R.drawable.animal_armadillo);
@@ -938,6 +956,13 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
         imageAnimals.add(R.drawable.animal_wolf);
         imageAnimals.add(R.drawable.animal_wolverine);
 
+        imageAnimals.remove(3);
+        imageAnimals.remove(5);
+        imageAnimals.remove(33);
+        imageAnimals.remove(39);
+        imageAnimals.remove(40);
+        imageAnimals.remove(50);
+
         loadList(0);
         checkBtnBackGroud(0);
 
@@ -972,6 +997,8 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
                 notification.setVisibility(View.INVISIBLE);
             }
         });
+
+        intent = new Intent();
     }
 
     @Override
@@ -1455,15 +1482,24 @@ public final class CaptureActivity extends AppCompatActivity implements SurfaceH
                     .findFirst();
 
             if (matchingItem.isPresent()) {
-                nameAnimal = animalEnglish.get(nameAnimals.indexOf(matchingItem.get()));
+                List<String> temp = new ArrayList<String>(animalEnglish);
+                temp.remove(3);
+                temp.remove(5);
+                temp.remove(33);
+                temp.remove(39);
+                temp.remove(40);
+                temp.remove(50);
+                nameAnimal = temp.get(nameAnimals.indexOf(matchingItem.get()));
             }
 
             if (!nameAnimal.isEmpty()) {
                 beepManager.playBeepSoundAndVibrate();
-                Intent intent = new Intent(getApplicationContext(), ARActivity.class);
+                //intent = new Intent(getApplicationContext(), ARActivity.class);
                 intent.putExtra("RESULT_TEXT", resultText);
                 intent.putExtra("ANIMAL_NAME", nameAnimal);
-                startActivity(intent);
+                setResult(Activity.RESULT_OK, intent);
+                //startActivity(intent);
+                finish();
             }
         }
 
